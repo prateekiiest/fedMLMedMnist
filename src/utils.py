@@ -5,6 +5,7 @@
 import copy
 import torch
 from torchvision import datasets, transforms
+from dataset import getDataClient1, getDataClient2
 from sampling import mnist_iid, mnist_noniid, mnist_noniid_unequal
 from sampling import cifar_iid, cifar_noniid
 
@@ -53,13 +54,20 @@ def get_dataset(args):
         train_dataset = datasets.MNIST(data_dir, train=True, download=True,
                                        transform=apply_transform)
 
+        client1Data = getDataClient1()
+        client2Data = getDataClient2()
+        
         test_dataset = datasets.MNIST(data_dir, train=False, download=True,
-                                      transform=apply_transform)
+                                     transform=apply_transform)
 
+        test_dataset_client1 = client1Data[1]
+        test_dataset_client2 = client2Data[1]
+        train_dataset_client1 = client1Data[0]
+        train_dataset_client2 = client2Data[0]
         # sample training data amongst users
         if args.iid:
             # Sample IID user data from Mnist
-            user_groups = mnist_iid(train_dataset, args.num_users)
+            user_groups = mnist_iid(train_dataset_client1, train_dataset_client2)
         else:
             # Sample Non-IID user data from Mnist
             if args.unequal:
@@ -69,8 +77,8 @@ def get_dataset(args):
                 # Chose euqal splits for every user
                 user_groups = mnist_noniid(train_dataset, args.num_users)
 
+    #return train_dataset_client1, train_dataset_client2, test_dataset_client1,test_dataset_client2, user_groups
     return train_dataset, test_dataset, user_groups
-
 
 def average_weights(w):
     """
@@ -93,10 +101,10 @@ def exp_details(args):
 
     print('    Federated parameters:')
     if args.iid:
-        print('    IID')
-    else:
         print('    Non-IID')
-    print(f'    Fraction of users  : {args.frac}')
+    else:
+        print('    IID')
+    print(f'    Number of users  : 2')
     print(f'    Local Batch size   : {args.local_bs}')
     print(f'    Local Epochs       : {args.local_ep}\n')
     return

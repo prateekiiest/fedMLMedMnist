@@ -7,20 +7,38 @@ import numpy as np
 from torchvision import datasets, transforms
 
 
-def mnist_iid(dataset, num_users):
+def mnist_iid(dataset1, dataset2):
     """
     Sample I.I.D. client data from MNIST dataset
     :param dataset:
     :param num_users:
     :return: dict of image index
     """
-    num_items = int(len(dataset)/num_users)
+    """
+    # first user will have covid x rays and normal ones
+    # second user will have consolidation x rays and normal ones
     dict_users, all_idxs = {}, [i for i in range(len(dataset))]
     for i in range(num_users):
         dict_users[i] = set(np.random.choice(all_idxs, num_items,
                                              replace=False))
         all_idxs = list(set(all_idxs) - dict_users[i])
     return dict_users
+    """
+    num_users = 2 
+    dict_users = {}
+    num_items = {}
+    num_items[0] = 1000
+    num_items[1] = 1000
+    all_idxs ={}
+    all_idxs[0] = [i for i in range(len(dataset1))]
+    all_idxs[1] = [i for i in range(len(dataset2))]
+    for i in range(num_users):
+        dict_users[i] = set(np.random.choice(all_idxs[i], num_items[i],
+                                            replace=False))
+        all_idxs[i] = list(set(all_idxs[i]) - dict_users[i])
+    return dict_users
+
+
 
 
 def mnist_noniid(dataset, num_users):
@@ -194,5 +212,8 @@ if __name__ == '__main__':
                                        transforms.Normalize((0.1307,),
                                                             (0.3081,))
                                    ]))
-    num = 100
+    
+
+
+    num = 2
     d = mnist_noniid(dataset_train, num)
