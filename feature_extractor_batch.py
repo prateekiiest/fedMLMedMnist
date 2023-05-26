@@ -8,9 +8,6 @@ import torchvision.transforms as transforms
 from PIL import Image
 from tqdm import tqdm
 
-folder_path = 'lake'
-save_file = 'img_features_lake.xlsx'
-
 # Load the pre-trained ResNet18 model
 resnet = models.resnet18(weights='ResNet18_Weights.IMAGENET1K_V1')
 
@@ -62,15 +59,34 @@ def extract_features_batch(img_folder_path: str):
     img_files = os.listdir(img_folder_path)
     num_imgs = len(img_files)
 
-    features_df = pd.DataFrame()
+    features_df = pd.DataFrame(columns = [i for i in range(512)])
 
     for i in tqdm(range(num_imgs)):
         img_path = os.path.join(img_folder_path, img_files[i])
         img_features = extract_features(img_path)
+        # print(len(img_features))
+        # features_df[img_files[i]] = img_features
+        features_df.loc[img_files[i]] = img_features
 
-        features_df[img_files[i]] = img_features
+    # features_df = features_df.transpose()
+    # features_df.columns = 'features'
+    
 
-    features_df.to_excel(save_file, index=False)
+    print(features_df.head())
+
+    return features_df
 
 
-extract_features_batch(folder_path)
+
+f_names = ['Normal', 'COVID', 'Lung_Opacity']
+final_df = pd.DataFrame()
+save_file = f'img_features_lake_9000.xlsx'
+
+for f_name in f_names:
+    folder_path = f'/home/anvay/Desktop/fedMLMedMnist/COVID-19_Radiography_Dataset/{f_name}/images'
+    
+    df = extract_features_batch(folder_path)
+    df = df.sample(3000)
+    final_df = pd.concat([final_df, df])
+
+final_df.to_excel(save_file)
