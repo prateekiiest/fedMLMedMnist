@@ -1,0 +1,341 @@
+CNNAptos(
+  (conv1): Conv2d(3, 10, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(10, 20, kernel_size=(5, 5), stride=(1, 1))
+  (conv2_drop): Dropout2d(p=0.5, inplace=False)
+  (fc1): Linear(in_features=100820, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=2, bias=True)
+)
+Train Epoch: 1 [0/2554 (0%)]	Loss: 0.685814
+              precision    recall  f1-score   support
+
+      Normal       0.29      0.71      0.42        14
+        Mild       0.87      0.52      0.65        50
+
+    accuracy                           0.56        64
+   macro avg       0.58      0.62      0.53        64
+weighted avg       0.74      0.56      0.60        64
+
+
+Train loss: 0.47979066595435144
+Train Epoch: 2 [0/2554 (0%)]	Loss: 0.312331
+              precision    recall  f1-score   support
+
+      Normal       0.97      0.93      0.95        42
+        Mild       0.88      0.95      0.91        22
+
+    accuracy                           0.94        64
+   macro avg       0.93      0.94      0.93        64
+weighted avg       0.94      0.94      0.94        64
+
+
+Train loss: 0.299349932000041
+Train Epoch: 3 [0/2554 (0%)]	Loss: 0.174520
+              precision    recall  f1-score   support
+
+      Normal       1.00      0.93      0.96        44
+        Mild       0.87      1.00      0.93        20
+
+    accuracy                           0.95        64
+   macro avg       0.93      0.97      0.95        64
+weighted avg       0.96      0.95      0.95        64
+
+
+Train loss: 0.2875069949775934
+Train Epoch: 1 [0/1819 (0%)]	Loss: 0.217605
+              precision    recall  f1-score   support
+
+      Normal       0.90      0.96      0.93        48
+      Severe       0.85      0.69      0.76        16
+
+    accuracy                           0.89        64
+   macro avg       0.87      0.82      0.84        64
+weighted avg       0.89      0.89      0.89        64
+
+
+Train loss: 0.21105830345688195
+Train Epoch: 2 [0/1819 (0%)]	Loss: 0.203505
+              precision    recall  f1-score   support
+
+      Normal       0.94      0.96      0.95        51
+      Severe       0.83      0.77      0.80        13
+
+    accuracy                           0.92        64
+   macro avg       0.89      0.87      0.88        64
+weighted avg       0.92      0.92      0.92        64
+
+
+Train loss: 0.1965612630391943
+Train Epoch: 3 [0/1819 (0%)]	Loss: 0.114314
+              precision    recall  f1-score   support
+
+      Normal       0.98      1.00      0.99        56
+      Severe       1.00      0.88      0.93         8
+
+    accuracy                           0.98        64
+   macro avg       0.99      0.94      0.96        64
+weighted avg       0.98      0.98      0.98        64
+
+
+Train loss: 0.19857264335813193
+########################
+
+Client 1 Test Statistics
+
+==========================
+
+For client 1 original classes :  ['Normal', 'Mild']
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.92      0.90      0.91        67
+        Mild       0.89      0.92      0.90        61
+
+    accuracy                           0.91       128
+   macro avg       0.91      0.91      0.91       128
+weighted avg       0.91      0.91      0.91       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.89      0.99      0.94        74
+        Mild       0.98      0.83      0.90        54
+
+    accuracy                           0.92       128
+   macro avg       0.93      0.91      0.92       128
+weighted avg       0.93      0.92      0.92       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.96      0.95      0.96        79
+        Mild       0.92      0.94      0.93        49
+
+    accuracy                           0.95       128
+   macro avg       0.94      0.94      0.94       128
+weighted avg       0.95      0.95      0.95       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.90      0.96      0.93        76
+        Mild       0.94      0.85      0.89        52
+
+    accuracy                           0.91       128
+   macro avg       0.92      0.90      0.91       128
+weighted avg       0.92      0.91      0.91       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.97      0.95      0.96        63
+        Mild       0.93      0.96      0.95        45
+
+    accuracy                           0.95       108
+   macro avg       0.95      0.95      0.95       108
+weighted avg       0.95      0.95      0.95       108
+
+----------------------
+
+==========================
+
+Testing client 1 on client 2 original classes :  ['Normal', 'Severe']
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.95      0.99      0.97        95
+      Severe       0.97      0.85      0.90        33
+
+    accuracy                           0.95       128
+   macro avg       0.96      0.92      0.94       128
+weighted avg       0.95      0.95      0.95       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.91      0.98      0.94        95
+      Severe       0.92      0.73      0.81        33
+
+    accuracy                           0.91       128
+   macro avg       0.92      0.85      0.88       128
+weighted avg       0.91      0.91      0.91       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.92      0.98      0.95       100
+      Severe       0.90      0.68      0.78        28
+
+    accuracy                           0.91       128
+   macro avg       0.91      0.83      0.86       128
+weighted avg       0.91      0.91      0.91       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.90      0.94      0.92        70
+      Severe       0.76      0.65      0.70        20
+
+    accuracy                           0.88        90
+   macro avg       0.83      0.80      0.81        90
+weighted avg       0.87      0.88      0.87        90
+
+----------------------
+
+########################
+
+Client 2 Test Statistics
+
+==========================
+
+For client 2 original classes :  ['Normal', 'Severe']
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.95      0.99      0.97        95
+      Severe       0.97      0.85      0.90        33
+
+    accuracy                           0.95       128
+   macro avg       0.96      0.92      0.94       128
+weighted avg       0.95      0.95      0.95       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.91      0.98      0.94        95
+      Severe       0.92      0.73      0.81        33
+
+    accuracy                           0.91       128
+   macro avg       0.92      0.85      0.88       128
+weighted avg       0.91      0.91      0.91       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.92      0.98      0.95       100
+      Severe       0.90      0.68      0.78        28
+
+    accuracy                           0.91       128
+   macro avg       0.91      0.83      0.86       128
+weighted avg       0.91      0.91      0.91       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.90      0.94      0.92        70
+      Severe       0.76      0.65      0.70        20
+
+    accuracy                           0.88        90
+   macro avg       0.83      0.80      0.81        90
+weighted avg       0.87      0.88      0.87        90
+
+----------------------
+
+==========================
+
+Testing client 2 on client 1 original classes :  ['Normal', 'Mild']
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.92      0.90      0.91        67
+        Mild       0.89      0.92      0.90        61
+
+    accuracy                           0.91       128
+   macro avg       0.91      0.91      0.91       128
+weighted avg       0.91      0.91      0.91       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.89      0.99      0.94        74
+        Mild       0.98      0.83      0.90        54
+
+    accuracy                           0.92       128
+   macro avg       0.93      0.91      0.92       128
+weighted avg       0.93      0.92      0.92       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.96      0.95      0.96        79
+        Mild       0.92      0.94      0.93        49
+
+    accuracy                           0.95       128
+   macro avg       0.94      0.94      0.94       128
+weighted avg       0.95      0.95      0.95       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.90      0.96      0.93        76
+        Mild       0.94      0.85      0.89        52
+
+    accuracy                           0.91       128
+   macro avg       0.92      0.90      0.91       128
+weighted avg       0.92      0.91      0.91       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.97      0.95      0.96        63
+        Mild       0.93      0.96      0.95        45
+
+    accuracy                           0.95       108
+   macro avg       0.95      0.95      0.95       108
+weighted avg       0.95      0.95      0.95       108
+
+----------------------
+
+========================================
+
+========================================
+
+Test on original client distribution for client 1 : 92.74%
+Test on client 2 distribution for client 1 : 91.77%
+Test on original client distribution for client 2 : 91.77%
+Test on client 1 distribution for client 2 : 92.74%
