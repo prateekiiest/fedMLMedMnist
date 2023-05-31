@@ -1,19 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Python version: 3.6
-<<<<<<< HEAD
-=======
 
->>>>>>> 6d77aaae (add v5)
 from sklearn.metrics import classification_report
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, Dataset
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 6d77aaae (add v5)
 class DatasetSplit(Dataset):
     """An abstract Dataset class wrapped around Pytorch Dataset class.
     """

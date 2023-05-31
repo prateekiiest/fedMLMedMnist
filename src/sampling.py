@@ -1,18 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Python version: 3.6
-<<<<<<< HEAD
-import numpy as np
-from torchvision import datasets, transforms
-
-=======
 
 
 import numpy as np
 from torchvision import datasets, transforms
 
 
->>>>>>> 6d77aaae (add v5)
 def mnist_iid(dataset1, dataset2):
     """
     Sample I.I.D. client data from MNIST dataset
@@ -44,12 +38,9 @@ def mnist_iid(dataset1, dataset2):
         all_idxs[i] = list(set(all_idxs[i]) - dict_users[i])
     return dict_users
 
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 6d77aaae (add v5)
 def mnist_noniid(dataset, num_users):
     """
     Sample non-I.I.D client data from MNIST dataset
@@ -78,10 +69,6 @@ def mnist_noniid(dataset, num_users):
                 (dict_users[i], idxs[rand*num_imgs:(rand+1)*num_imgs]), axis=0)
     return dict_users
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6d77aaae (add v5)
 def mnist_noniid_unequal(dataset, num_users):
     """
     Sample non-I.I.D client data from MNIST dataset s.t clients
@@ -171,10 +158,6 @@ def mnist_noniid_unequal(dataset, num_users):
 
     return dict_users
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6d77aaae (add v5)
 def cifar_iid(dataset, num_users):
     """
     Sample I.I.D. client data from CIFAR10 dataset
@@ -190,10 +173,6 @@ def cifar_iid(dataset, num_users):
         all_idxs = list(set(all_idxs) - dict_users[i])
     return dict_users
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6d77aaae (add v5)
 def cifar_noniid(dataset, num_users):
     """
     Sample non-I.I.D client data from CIFAR10 dataset
@@ -222,7 +201,6 @@ def cifar_noniid(dataset, num_users):
                 (dict_users[i], idxs[rand*num_imgs:(rand+1)*num_imgs]), axis=0)
     return dict_users
 
-<<<<<<< HEAD
 def ham10000_iid(dataset1, dataset2):
     """
     Sample I.I.D. client data from MNIST dataset
@@ -518,5 +496,3 @@ def aptos_noniid_unequal(dataset, num_users):
                     axis=0)
 
     return dict_users
-=======
->>>>>>> 6d77aaae (add v5)
