@@ -1,9 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Python version: 3.6
+<<<<<<< HEAD
 from torch import nn
 import torch.nn.functional as F
 
+=======
+
+from torch import nn
+import torch.nn.functional as F
+
+
+>>>>>>> 6d77aaae (add v5)
 class MLP(nn.Module):
     def __init__(self, dim_in, dim_hidden, dim_out):
         super(MLP, self).__init__()
@@ -21,6 +29,10 @@ class MLP(nn.Module):
         x = self.layer_hidden(x)
         return self.softmax(x)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d77aaae (add v5)
 class CNNMnist(nn.Module):
     def __init__(self, args):
         super(CNNMnist, self).__init__()
@@ -40,6 +52,7 @@ class CNNMnist(nn.Module):
         return F.log_softmax(x, dim=1)
 
 class CNNDermaMnist(nn.Module):
+<<<<<<< HEAD
     def __init__(self, args):
         super(CNNDermaMnist, self).__init__()
         self.conv1 = nn.Conv2d(args.num_channels, 10, kernel_size=5)
@@ -65,6 +78,10 @@ class CNNAptos(nn.Module):
         self.conv2_drop = nn.Dropout2d()
         self.fc1 = nn.Linear(100820, 50)
         self.fc2 = nn.Linear(50, 2)
+=======
+    def __init__(self) -> None:
+        super().__init__()
+>>>>>>> 6d77aaae (add v5)
     
     def forward(self, x):   
         x = F.relu(F.max_pool2d(self.conv1(x), 2))

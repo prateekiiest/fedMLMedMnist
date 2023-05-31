@@ -3,6 +3,8 @@
 # Python version: 3.6
 import argparse
 
+
+
 def args_parser():
     parser = argparse.ArgumentParser()
 
@@ -21,6 +23,7 @@ def args_parser():
                         help='learning rate')
     parser.add_argument('--momentum', type=float, default=0.5,
                         help='SGD momentum (default: 0.5)')
+    parser.add_argument('--random', type=bool, default=False, help='random')
     parser.add_argument('--subset', type=bool, default=False, help='use subset')
 
     # model arguments

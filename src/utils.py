@@ -11,6 +11,9 @@ from sampling import cifar_iid, cifar_noniid
 from sampling import ham10000_iid, ham10000_noniid, ham10000_noniid_unequal
 from sampling import aptos_iid, aptos_noniid, aptos_noniid_unequal
 
+
+
+
 def get_dataset(args):
     """ Returns train and test datasets and a user group which is a dict where
     the keys are the user index and the values are the corresponding data for
@@ -22,6 +25,10 @@ def get_dataset(args):
         if(args.subset == True):
             train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClientSubset(0.5)
 
+            if(args.random==True):
+                train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClientSubset(0.1)
+            else:
+                train_client1_raw, train_client2_raw, test_client1_raw,test_client2_raw = getDataClientSubModlib()
         else:
             train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClient()
 
@@ -108,6 +115,7 @@ def average_weights(w):
             w_avg[key] += w[i][key]
         w_avg[key] = torch.div(w_avg[key], len(w))
     return w_avg
+
 
 def exp_details(args):
     print('\nExperimental details:')

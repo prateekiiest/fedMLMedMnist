@@ -1,12 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Python version: 3.6
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6d77aaae (add v5)
 import os
 import copy
 import time
 import pickle
 import numpy as np
 from tqdm import tqdm
+<<<<<<< HEAD
 import torch
 from tensorboardX import SummaryWriter
 from options import args_parser
@@ -14,6 +20,18 @@ from update import LocalUpdate, test_inference
 from models import MLP, CNNDermaMnist, CNNMnist, CNNAptos
 from utils import get_dataset, average_weights, exp_details
 
+=======
+
+import torch
+from tensorboardX import SummaryWriter
+
+from options import args_parser
+from update import LocalUpdate, test_inference
+from models import MLP, CNNDermaMnist, CNNMnist
+from utils import get_dataset, average_weights, exp_details
+
+
+>>>>>>> 6d77aaae (add v5)
 if __name__ == '__main__':
     start_time = time.time()
 
@@ -31,21 +49,35 @@ if __name__ == '__main__':
     target_name_client1 = []
     target_name_client2 = []
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d77aaae (add v5)
     if(args.dataset == 'mnist'):
         target_name_client1 = ["Negative Corona","Positive Corona"]
         target_name_client2 = ["Negative Lung Op","Positive Lung Op"]
 
+<<<<<<< HEAD
     elif(args.dataset == 'ham10000'):
         target_name_client1 = ["Negative mel", "Positive mel"]
         target_name_client2 = ["Negative nv", "Positive nv"]
     elif(args.dataset == 'aptos'):
         target_name_client1 = ["Normal", "Mild"]
         target_name_client2 = ["Normal", "Severe"]
+=======
+    elif(args.dataset == 'dermamnist'):
+        target_name_client1 = []
+        target_name_client2 = []
+>>>>>>> 6d77aaae (add v5)
     else:
         raise  Exception("Dataset '%s' is not supported" % args.dataset)
     
     # load dataset and user groups
+<<<<<<< HEAD
     train_dataset, test_dataset = {}, {}
+=======
+    train_dataset, test_dataset ={}, {}
+>>>>>>> 6d77aaae (add v5)
 
     train_dataset_client1, train_dataset_client2, test_dataset_client1,test_dataset_client2, user_groups = get_dataset(args)
     # BUILD MODEL
@@ -58,10 +90,15 @@ if __name__ == '__main__':
         # Convolutional neural netork
         if args.dataset == 'mnist':
             global_model = CNNMnist(args=args)
+<<<<<<< HEAD
         elif args.dataset == 'ham10000':
             global_model = CNNDermaMnist(args=args)
         elif args.dataset == 'aptos':
             global_model = CNNAptos(args=args)
+=======
+        elif args.dataset == 'dermamnist':
+            global_model = CNNDermaMnist(args=args)
+>>>>>>> 6d77aaae (add v5)
         else: # TODO: Add support for other datasets
             raise NotImplementedError
     else:

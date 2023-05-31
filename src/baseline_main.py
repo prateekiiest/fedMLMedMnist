@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Python version: 3.6
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6d77aaae (add v5)
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
@@ -10,7 +15,11 @@ from sklearn.metrics import classification_report
 from utils import get_dataset
 from options import args_parser
 from update import test_inference, test_inference_base2
+<<<<<<< HEAD
 from models import MLP, CNNDermaMnist, CNNMnist, CNNAptos
+=======
+from models import MLP, CNNDermaMnist, CNNMnist
+>>>>>>> 6d77aaae (add v5)
 
 if __name__ == '__main__':
     args = args_parser()
@@ -21,10 +30,15 @@ if __name__ == '__main__':
     target_name_client1 = []
     target_name_client2 = []
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d77aaae (add v5)
     if(args.dataset == 'mnist'):
         target_name_client1 = ["Negative Corona","Positive Corona"]
         target_name_client2 = ["Negative Lung Op","Positive Lung Op"]
 
+<<<<<<< HEAD
     elif(args.dataset == 'ham10000'):
         target_name_client1 = ["Negative mel", "Positive mel"]
         target_name_client2 = ["Negative nv", "Positive nv"]
@@ -33,11 +47,20 @@ if __name__ == '__main__':
         target_name_client1 = ["Normal", "Mild"]
         target_name_client2 = ["Normal", "Severe"]
 
+=======
+    elif(args.dataset == 'dermamnist'):
+        target_name_client1 = []
+        target_name_client2 = []
+>>>>>>> 6d77aaae (add v5)
     else:
         raise  Exception("Dataset '%s' is not supported" % args.dataset)
     
     # load datasets
+<<<<<<< HEAD
     train_dataset, test_dataset = {}, {}
+=======
+    train_dataset, test_dataset ={}, {}
+>>>>>>> 6d77aaae (add v5)
     train_dataset_client1, train_dataset_client2, test_dataset_client1,test_dataset_client2, user_groups = get_dataset(args)
     # BUILD MODEL
     train_dataset[1] = train_dataset_client1
@@ -49,11 +72,17 @@ if __name__ == '__main__':
         # Convolutional neural netork
         if args.dataset == 'mnist':
             global_model = CNNMnist(args=args)
+<<<<<<< HEAD
         elif args.dataset == 'ham10000':
             global_model = CNNDermaMnist(args=args)
             #TODO: Add support for different datasets
         elif args.dataset == 'aptos':
             global_model = CNNAptos(args=args)
+=======
+        elif args.dataset == 'dermamnist':
+            global_model = CNNDermaMnist(args=args)
+            #TODO: Add support for different datasets
+>>>>>>> 6d77aaae (add v5)
         else:
             raise  Exception("Dataset '%s' is not supported" % args.dataset)
     elif args.model == 'mlp':

@@ -59,8 +59,8 @@ def getDataClient():
 
     data2 = []
     for id, level in enumerate(levels2):
-      for file in os.listdir(os.path.join(data_dir2, level)):
-        data2.append(['{}/{}'.format(level, file), level])
+        for file in os.listdir(os.path.join(data_dir2, level)):
+            data2.append(['{}/{}'.format(level, file), level])
 
     data2 = pd.DataFrame(data2, columns = ['image_file', 'lung_opacity_result'])
 
@@ -92,6 +92,10 @@ def getDataClient():
     testClient2 = testDataSet[testDataSet["client_id"]=="2"]
 
     return trainClient1, trainClient2, testClient1, testClient2
+
+
+
+
 
 def getDataClientSubset(sampleFrac):
     
@@ -148,6 +152,8 @@ def getDataClientSubset(sampleFrac):
     finalCommon = pd.concat([common_data, common_data2])
     finalCommon["output"] = finalCommon["result"].astype('category').cat.codes
     finalCommon = finalCommon.drop("result", axis=1)
+
+
 
     trainDataSet, testDataSet = train_test_split(finalCommon, test_size=0.2)
 

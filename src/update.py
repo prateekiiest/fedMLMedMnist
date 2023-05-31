@@ -1,11 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Python version: 3.6
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d77aaae (add v5)
 from sklearn.metrics import classification_report
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, Dataset
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d77aaae (add v5)
 class DatasetSplit(Dataset):
     """An abstract Dataset class wrapped around Pytorch Dataset class.
     """
@@ -103,11 +111,17 @@ class LocalUpdate(object):
         loss, total, correct = 0.0, 0.0, 0.0
         target_names = []
         if(userId==2):
+<<<<<<< HEAD
             # target_names = ["Negative Lung Op","Positive Lung Op"]
             target_names = ["Normal", "Severe"]
         else:
             # target_names= ["Negative Corona","Positive Corona"]
             target_names = ["Normal", "Mild"]
+=======
+            target_names = ["Negative Lung Op","Positive Lung Op"]
+        else:
+            target_names= ["Negative Corona","Positive Corona"]
+>>>>>>> 6d77aaae (add v5)
 
 
         for batch_idx, (images, labels) in enumerate(self.testloader):
@@ -177,8 +191,12 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
 
         print("Client 1 Test Statistics\n")
 
+<<<<<<< HEAD
         # target_names = ["Negative Corona","Positive Corona"]
         target_names = ["Normal", "Mild"]
+=======
+        target_names = ["Negative Corona","Positive Corona"]
+>>>>>>> 6d77aaae (add v5)
 
         print("==========================\n")
         print("For client 1 original classes : ", target_names)
@@ -216,8 +234,12 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
 
 
 
+<<<<<<< HEAD
         # target_names = ["Negative Lung Op","Positive Lung Op"]
         target_names = ["Normal", "Severe"]
+=======
+        target_names = ["Negative Lung Op","Positive Lung Op"]
+>>>>>>> 6d77aaae (add v5)
 
         print("==========================\n")
         print("Testing client 1 on client 2 original classes : ", target_names)
@@ -266,8 +288,12 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
         
         print("Client 2 Test Statistics\n")
 
+<<<<<<< HEAD
         # target_names = ["Negative Lung Op","Positive Lung Op"]
         target_names = ["Normal", "Severe"]
+=======
+        target_names = ["Negative Lung Op","Positive Lung Op"]
+>>>>>>> 6d77aaae (add v5)
 
         print("==========================\n")
         print("For client 2 original classes : ", target_names)
@@ -307,8 +333,12 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
     
     
     
+<<<<<<< HEAD
         # target_names = ["Negative Corona","Positive Corona"]
         target_names = ["Normal", "Mild"]
+=======
+        target_names = ["Negative Corona","Positive Corona"]
+>>>>>>> 6d77aaae (add v5)
 
         print("==========================\n")
         print("Testing client 2 on client 1 original classes : ", target_names)
@@ -353,8 +383,12 @@ def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clien
 
         print("Client 1 Test Statistics\n")
 
+<<<<<<< HEAD
         # target_names = ["Negative Corona","Positive Corona"]
         target_names = ["Normal", "Mild"]
+=======
+        target_names = ["Negative Corona","Positive Corona"]
+>>>>>>> 6d77aaae (add v5)
 
         print("==========================\n")
         print("For client 1 original classes : ", target_names)
@@ -395,8 +429,12 @@ def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clien
         
 
 
+<<<<<<< HEAD
         # target_names = ["Negative Lung Op","Positive Lung Op"]
         target_names = ["Normal", "Severe"]
+=======
+        target_names = ["Negative Lung Op","Positive Lung Op"]
+>>>>>>> 6d77aaae (add v5)
 
         print("==========================\n")
         print("Testing client 1 on client 2 original classes : ", target_names)
@@ -441,8 +479,12 @@ def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clien
         
         print("Client 2 Test Statistics\n")
 
+<<<<<<< HEAD
         # target_names = ["Negative Lung Op","Positive Lung Op"]
         target_names = ["Normal", "Severe"]
+=======
+        target_names = ["Negative Lung Op","Positive Lung Op"]
+>>>>>>> 6d77aaae (add v5)
 
         print("==========================\n")
         print("For client 2 original classes : ", target_names)
@@ -482,8 +524,12 @@ def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clien
     
     
     
+<<<<<<< HEAD
         # target_names = ["Negative Corona","Positive Corona"]
         target_names = ["Normal", "Mild"]
+=======
+        target_names = ["Negative Corona","Positive Corona"]
+>>>>>>> 6d77aaae (add v5)
 
         print("==========================\n")
         print("Testing client 2 on client 1 original classes : ", target_names)
