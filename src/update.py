@@ -85,7 +85,7 @@ class LocalUpdate(object):
                     else:
                         labels[labels==0]= 1
                         labels[labels==2]= 0
-                elif self.args.dataset == "aptos":
+                elif self.args.dataset == "aptos" or self.args.dataset == "octmnist":
                     if self.userId == 2:
                         labels[labels==3]= 1
                         labels[labels==2]= 0
@@ -121,6 +121,8 @@ class LocalUpdate(object):
                 target_names = ["Negative Lung Op","Positive Lung Op"]
             elif(args.dataset=="ham10000"):
                 target_names = ["Negative nv", "Positive nv"]
+            elif(args.dataset=="octmnist"):
+                target_names = ["NORMAL", "DRUSEN"]
             else: #aptos
                 target_names = ["Normal", "Severe"]
         else:
@@ -128,6 +130,8 @@ class LocalUpdate(object):
                 target_names = ["Negative Corona","Positive Corona"]
             elif(args.dataset=="ham10000"):
                 target_names = ["Negative mel", "Positive mel"]
+            elif(args.dataset=="octmnist"):
+                target_names = ["NORMAL", "DME"]
             else:
                 target_names = ["Normal", "Mild"]
 
@@ -146,7 +150,7 @@ class LocalUpdate(object):
                 else:
                     labels[labels==0]= 1
                     labels[labels==2]= 0
-            elif self.args.dataset == "aptos":
+            elif self.args.dataset == "aptos" or self.args.dataset == "octmnist":
                 if self.userId == 2:
                     labels[labels==3]= 1
                     labels[labels==2]= 0
@@ -206,6 +210,8 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             target_names = ["Negative Corona","Positive Corona"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative mel", "Positive mel"]
+        elif(args.dataset=="octmnist"):
+            target_names = ["NORMAL", "DME"]
         else:
             target_names = ["Normal", "Mild"]
 
@@ -252,6 +258,8 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             target_names = ["Negative Lung Op","Positive Lung Op"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative nv", "Positive nv"]
+        elif(args.dataset=="octmnist"):
+            target_names = ["NORMAL", "DRUSEN"]
         else: #aptos
             target_names = ["Normal", "Severe"]
 
@@ -276,7 +284,7 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             if args.dataset == "COVID":
                 labels[labels==0]= 1
                 labels[labels==2]= 0
-            elif args.dataset == "aptos":
+            elif args.dataset == "aptos" or args.dataset == "octmnist":
                 labels[labels==3]= 1
                 labels[labels==2]= 0
         
@@ -319,6 +327,8 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             target_names = ["Negative Lung Op","Positive Lung Op"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative nv", "Positive nv"]
+        elif(args.dataset=="octmnist"):
+            target_names = ["NORMAL", "DRUSEN"]
         else: #aptos
             target_names = ["Normal", "Severe"]
 
@@ -343,12 +353,10 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             if args.dataset == "COVID":
                 labels[labels==0]= 1
                 labels[labels==2]= 0
-            elif args.dataset == "aptos":
+            elif args.dataset == "aptos" or args.dataset == "octmnist":
                 labels[labels==3]= 1
                 labels[labels==2]= 0
 
-            # elif args.dataset == "aptos":
-            #     labels[labels==3]= 1
             batch_loss = criterion(outputs, labels)
             loss += batch_loss.item()
 
@@ -359,10 +367,7 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             y_true = labels
             y_pred_d = y_pred.cpu().detach().numpy()
             y_true_d = y_true.cpu().detach().numpy()
-            # print("========================")
-            # print("Prediction :",y_pred_d)
-            # print("True :",y_true_d)
-            # print("========================")
+
             rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
             print(rep)
@@ -371,11 +376,14 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             total += len(labels)
         accuracy_client2_original = correct/total
     
-    
-    
-    
-        # target_names = ["Negative Corona","Positive Corona"]
-        target_names = ["Normal", "Mild"]
+        if(args.dataset=="COVID"):
+            target_names = ["Negative COVID","Positive COVID"]
+        elif(args.dataset=="ham10000"):
+            target_names = ["Negative mel", "Positive mel"]
+        elif(args.dataset=="octmnist"):
+            target_names = ["NORMAL", "DME"]
+        else: #aptos
+            target_names = ["Normal", "Mild"]
 
         print("==========================\n")
         print("Testing client 2 on client 1 original classes : ", target_names)
@@ -434,6 +442,8 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             target_names = ["Negative Corona","Positive Corona"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative mel", "Positive mel"]
+        elif(args.dataset=="octmnist"):
+            target_names = ["NORMAL", "DME"]
         else:
             target_names = ["Normal", "Mild"]
 
@@ -479,8 +489,14 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             total += len(labels)
         accuracy_client1_original = correct/total
 
-        # target_names = ["Negative Lung Op","Positive Lung Op"]
-        target_names = ["Normal", "Severe"]
+        if(args.dataset=="COVID"):
+            target_names = ["Negative Lung Op","Positive Lung Op"]
+        elif(args.dataset=="ham10000"):
+            target_names = ["Negative nv", "Positive nv"]
+        elif(args.dataset=="octmnist"):
+            target_names = ["NORMAL", "DRUSEN"]
+        else:
+            target_names = ["Normal", "Severe"]
 
         print("==========================\n")
         print("Testing client 1 on client 2 original classes : ", target_names)
@@ -501,7 +517,7 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
                 labels[labels==0]= 1
                 labels[labels==2]= 0
 
-            elif args.dataset == "aptos":
+            elif args.dataset == "aptos" or args.dataset == "octmnist":
                 labels[labels==3]= 1
                 labels[labels==2]= 0
 
@@ -516,10 +532,7 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
            
             y_pred_d = y_pred.detach().numpy()
             y_true_d = y_true.detach().numpy()
-            # print("========================")
-            # print("Prediction :",y_pred_d)
-            # print("True :",y_true_d)
-            # print("========================")
+            
             rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
             print(rep)
@@ -541,14 +554,14 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             target_names = ["Negative Lung Op","Positive Lung Op"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative nv", "Positive nv"]
+        elif(args.dataset=="octmnist"):
+            target_names = ["NORMAL", "DRUSEN"]
         else: #aptos
             target_names = ["Normal", "Severe"]
-
 
         print("==========================\n")
         print("For client 2 original classes : ", target_names)
   
-
         loss, total, correct = 0.0, 0.0, 0.0
 
         testloader = DataLoader(test_dataset2, batch_size=128,
@@ -564,7 +577,7 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             if args.dataset == "COVID":
                 labels[labels==0]= 1
                 labels[labels==2]= 0
-            elif args.dataset == "aptos":
+            elif args.dataset == "aptos" or args.dataset == "octmnist":
                 labels[labels==3]= 1
                 labels[labels==2]= 0
 
@@ -587,17 +600,15 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             total += len(labels)
         accuracy_client2_original = correct/total
     
-    
-
         if(args.dataset=="COVID"):
             target_names = ["Negative Corona","Positive Corona"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative mel", "Positive mel"]
+        elif(args.dataset=="octmnist"):
+            target_names = ["NORMAL", "DME"]
         else:
             target_names = ["Normal", "Mild"]
     
-
-
         print("==========================\n")
         print("Testing client 2 on client 1 original classes : ", target_names)
         
@@ -616,9 +627,7 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             if args.dataset == "COVID":
                 labels[labels==3] = 0
                 labels[labels==1] = 1
-            # elif args.dataset == "aptos":
-            #     labels[labels==2]= 1
-
+            
             batch_loss = criterion(outputs, labels)
             loss += batch_loss.item()
 
@@ -629,10 +638,7 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             y_true = labels
             y_pred_d = y_pred.detach().numpy()
             y_true_d = y_true.detach().numpy()
-            # print("========================")
-            # print("Prediction :",y_pred_d)
-            # print("True :",y_true_d)
-            # print("========================")
+            
             rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
             print(rep)
@@ -643,9 +649,6 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
 
         return accuracy_client2_original, accuracy_client2_onDist1
     
-    
-    
-
 def test_inference_base2(args, model, test_dataset1, test_dataset2):
     """ Returns the test accuracy and loss.
     """

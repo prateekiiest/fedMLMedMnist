@@ -1,0 +1,4271 @@
+
+Experimental details:
+    Model     : cnn
+    Optimizer : sgd
+    Learning  : 0.01
+    Global Rounds   : 10
+
+    Federated parameters:
+   IID
+    Number of users  : 2
+    Local Batch size   : 10
+    Local Epochs       : 8
+
+CNNAptos(
+  (conv1): Conv2d(3, 10, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(10, 20, kernel_size=(5, 5), stride=(1, 1))
+  (conv2_drop): Dropout2d(p=0.5, inplace=False)
+  (fc1): Linear(in_features=100820, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=2, bias=True)
+)
+
+ | Global Training Round : 1 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 0 | Local Epoch : 0 | [0/204 (0%)]	Loss: 0.698107
+| Global Round : 0 | Local Epoch : 0 | [100/204 (48%)]	Loss: 0.753137
+| Global Round : 0 | Local Epoch : 0 | [80/204 (95%)]	Loss: 0.872530
+| Global Round : 0 | Local Epoch : 1 | [0/204 (0%)]	Loss: 0.628237
+| Global Round : 0 | Local Epoch : 1 | [100/204 (48%)]	Loss: 0.592943
+| Global Round : 0 | Local Epoch : 1 | [80/204 (95%)]	Loss: 0.600397
+| Global Round : 0 | Local Epoch : 2 | [0/204 (0%)]	Loss: 0.587042
+| Global Round : 0 | Local Epoch : 2 | [100/204 (48%)]	Loss: 0.489750
+| Global Round : 0 | Local Epoch : 2 | [80/204 (95%)]	Loss: 0.401115
+| Global Round : 0 | Local Epoch : 3 | [0/204 (0%)]	Loss: 0.644206
+| Global Round : 0 | Local Epoch : 3 | [100/204 (48%)]	Loss: 0.272472
+| Global Round : 0 | Local Epoch : 3 | [80/204 (95%)]	Loss: 0.160130
+| Global Round : 0 | Local Epoch : 4 | [0/204 (0%)]	Loss: 0.398865
+| Global Round : 0 | Local Epoch : 4 | [100/204 (48%)]	Loss: 0.155404
+| Global Round : 0 | Local Epoch : 4 | [80/204 (95%)]	Loss: 0.080189
+| Global Round : 0 | Local Epoch : 5 | [0/204 (0%)]	Loss: 0.163651
+| Global Round : 0 | Local Epoch : 5 | [100/204 (48%)]	Loss: 0.316255
+| Global Round : 0 | Local Epoch : 5 | [80/204 (95%)]	Loss: 0.217241
+| Global Round : 0 | Local Epoch : 6 | [0/204 (0%)]	Loss: 0.715367
+| Global Round : 0 | Local Epoch : 6 | [100/204 (48%)]	Loss: 0.185760
+| Global Round : 0 | Local Epoch : 6 | [80/204 (95%)]	Loss: 0.294528
+| Global Round : 0 | Local Epoch : 7 | [0/204 (0%)]	Loss: 0.340848
+| Global Round : 0 | Local Epoch : 7 | [100/204 (48%)]	Loss: 0.284665
+| Global Round : 0 | Local Epoch : 7 | [80/204 (95%)]	Loss: 1.239937
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+        Mild       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00       0.0
+        Mild       0.00      0.00      0.00       2.0
+
+    accuracy                           0.00       2.0
+   macro avg       0.00      0.00      0.00       2.0
+weighted avg       0.00      0.00      0.00       2.0
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00       0.0
+        Mild       0.00      0.00      0.00       2.0
+
+    accuracy                           0.00       2.0
+   macro avg       0.00      0.00      0.00       2.0
+weighted avg       0.00      0.00      0.00       2.0
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+        Mild       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+      Severe       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00       0.0
+      Severe       0.00      0.00      0.00       2.0
+
+    accuracy                           0.00       2.0
+   macro avg       0.00      0.00      0.00       2.0
+weighted avg       0.00      0.00      0.00       2.0
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00       0.0
+      Severe       0.00      0.00      0.00       2.0
+
+    accuracy                           0.00       2.0
+   macro avg       0.00      0.00      0.00       2.0
+weighted avg       0.00      0.00      0.00       2.0
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+      Severe       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+Training accuracy [0.6923076923076923]
+
+ | Global Training Round : 2 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 1 | Local Epoch : 0 | [0/204 (0%)]	Loss: 0.340701
+| Global Round : 1 | Local Epoch : 0 | [100/204 (48%)]	Loss: 0.325096
+| Global Round : 1 | Local Epoch : 0 | [80/204 (95%)]	Loss: 0.053401
+| Global Round : 1 | Local Epoch : 1 | [0/204 (0%)]	Loss: 0.175666
+| Global Round : 1 | Local Epoch : 1 | [100/204 (48%)]	Loss: 0.281340
+| Global Round : 1 | Local Epoch : 1 | [80/204 (95%)]	Loss: 0.064538
+| Global Round : 1 | Local Epoch : 2 | [0/204 (0%)]	Loss: 0.347817
+| Global Round : 1 | Local Epoch : 2 | [100/204 (48%)]	Loss: 0.363705
+| Global Round : 1 | Local Epoch : 2 | [80/204 (95%)]	Loss: 0.235277
+| Global Round : 1 | Local Epoch : 3 | [0/204 (0%)]	Loss: 0.091148
+| Global Round : 1 | Local Epoch : 3 | [100/204 (48%)]	Loss: 0.086352
+| Global Round : 1 | Local Epoch : 3 | [80/204 (95%)]	Loss: 0.103006
+| Global Round : 1 | Local Epoch : 4 | [0/204 (0%)]	Loss: 0.600460
+| Global Round : 1 | Local Epoch : 4 | [100/204 (48%)]	Loss: 0.086095
+| Global Round : 1 | Local Epoch : 4 | [80/204 (95%)]	Loss: 0.100382
+| Global Round : 1 | Local Epoch : 5 | [0/204 (0%)]	Loss: 0.522384
+| Global Round : 1 | Local Epoch : 5 | [100/204 (48%)]	Loss: 0.110258
+| Global Round : 1 | Local Epoch : 5 | [80/204 (95%)]	Loss: 0.293255
+| Global Round : 1 | Local Epoch : 6 | [0/204 (0%)]	Loss: 0.085414
+| Global Round : 1 | Local Epoch : 6 | [100/204 (48%)]	Loss: 0.168209
+| Global Round : 1 | Local Epoch : 6 | [80/204 (95%)]	Loss: 0.055276
+| Global Round : 1 | Local Epoch : 7 | [0/204 (0%)]	Loss: 0.424706
+| Global Round : 1 | Local Epoch : 7 | [100/204 (48%)]	Loss: 0.165672
+| Global Round : 1 | Local Epoch : 7 | [80/204 (95%)]	Loss: 0.408141
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+        Mild       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+        Mild       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+        Mild       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+      Severe       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+      Severe       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+      Severe       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+Training accuracy [0.6923076923076923, 0.8076923076923077]
+ 
+Avg Training Stats after 2 global rounds:
+Training Loss : 0.3796508493168014
+Train Accuracy: 80.77% 
+
+
+ | Global Training Round : 3 |
+
+----------------
+user chosen 2
+----------------
+----------------
+| Global Round : 2 | Local Epoch : 0 | [0/144 (0%)]	Loss: 0.144487
+| Global Round : 2 | Local Epoch : 0 | [100/144 (67%)]	Loss: 0.433590
+| Global Round : 2 | Local Epoch : 1 | [0/144 (0%)]	Loss: 0.581596
+| Global Round : 2 | Local Epoch : 1 | [100/144 (67%)]	Loss: 0.126505
+| Global Round : 2 | Local Epoch : 2 | [0/144 (0%)]	Loss: 0.090261
+| Global Round : 2 | Local Epoch : 2 | [100/144 (67%)]	Loss: 0.400551
+| Global Round : 2 | Local Epoch : 3 | [0/144 (0%)]	Loss: 0.044132
+| Global Round : 2 | Local Epoch : 3 | [100/144 (67%)]	Loss: 0.247974
+| Global Round : 2 | Local Epoch : 4 | [0/144 (0%)]	Loss: 0.485132
+| Global Round : 2 | Local Epoch : 4 | [100/144 (67%)]	Loss: 0.059620
+| Global Round : 2 | Local Epoch : 5 | [0/144 (0%)]	Loss: 0.177599
+| Global Round : 2 | Local Epoch : 5 | [100/144 (67%)]	Loss: 0.243736
+| Global Round : 2 | Local Epoch : 6 | [0/144 (0%)]	Loss: 0.136225
+| Global Round : 2 | Local Epoch : 6 | [100/144 (67%)]	Loss: 0.264638
+| Global Round : 2 | Local Epoch : 7 | [0/144 (0%)]	Loss: 0.206277
+| Global Round : 2 | Local Epoch : 7 | [100/144 (67%)]	Loss: 0.200471
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00       1.0
+        Mild       0.00      0.00      0.00       0.0
+
+    accuracy                           0.00       1.0
+   macro avg       0.00      0.00      0.00       1.0
+weighted avg       0.00      0.00      0.00       1.0
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00       1.0
+      Severe       0.00      0.00      0.00       0.0
+
+    accuracy                           0.00       1.0
+   macro avg       0.00      0.00      0.00       1.0
+weighted avg       0.00      0.00      0.00       1.0
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+Training accuracy [0.6923076923076923, 0.8076923076923077, 0.9473684210526315]
+
+ | Global Training Round : 4 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 3 | Local Epoch : 0 | [0/204 (0%)]	Loss: 0.721012
+| Global Round : 3 | Local Epoch : 0 | [100/204 (48%)]	Loss: 0.246507
+| Global Round : 3 | Local Epoch : 0 | [80/204 (95%)]	Loss: 0.045544
+| Global Round : 3 | Local Epoch : 1 | [0/204 (0%)]	Loss: 0.105547
+| Global Round : 3 | Local Epoch : 1 | [100/204 (48%)]	Loss: 0.222549
+| Global Round : 3 | Local Epoch : 1 | [80/204 (95%)]	Loss: 0.416178
+| Global Round : 3 | Local Epoch : 2 | [0/204 (0%)]	Loss: 0.418311
+| Global Round : 3 | Local Epoch : 2 | [100/204 (48%)]	Loss: 0.048792
+| Global Round : 3 | Local Epoch : 2 | [80/204 (95%)]	Loss: 0.077601
+| Global Round : 3 | Local Epoch : 3 | [0/204 (0%)]	Loss: 0.962801
+| Global Round : 3 | Local Epoch : 3 | [100/204 (48%)]	Loss: 0.290769
+| Global Round : 3 | Local Epoch : 3 | [80/204 (95%)]	Loss: 0.219904
+| Global Round : 3 | Local Epoch : 4 | [0/204 (0%)]	Loss: 0.060679
+| Global Round : 3 | Local Epoch : 4 | [100/204 (48%)]	Loss: 0.083439
+| Global Round : 3 | Local Epoch : 4 | [80/204 (95%)]	Loss: 0.162855
+| Global Round : 3 | Local Epoch : 5 | [0/204 (0%)]	Loss: 0.051911
+| Global Round : 3 | Local Epoch : 5 | [100/204 (48%)]	Loss: 0.366231
+| Global Round : 3 | Local Epoch : 5 | [80/204 (95%)]	Loss: 0.421848
+| Global Round : 3 | Local Epoch : 6 | [0/204 (0%)]	Loss: 0.134562
+| Global Round : 3 | Local Epoch : 6 | [100/204 (48%)]	Loss: 0.223508
+| Global Round : 3 | Local Epoch : 6 | [80/204 (95%)]	Loss: 0.229597
+| Global Round : 3 | Local Epoch : 7 | [0/204 (0%)]	Loss: 0.342225
+| Global Round : 3 | Local Epoch : 7 | [100/204 (48%)]	Loss: 0.165111
+| Global Round : 3 | Local Epoch : 7 | [80/204 (95%)]	Loss: 0.047833
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+        Mild       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+        Mild       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+      Severe       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+      Severe       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+Training accuracy [0.6923076923076923, 0.8076923076923077, 0.9473684210526315, 0.8846153846153846]
+ 
+Avg Training Stats after 4 global rounds:
+Training Loss : 0.30617159457788584
+Train Accuracy: 88.46% 
+
+
+ | Global Training Round : 5 |
+
+----------------
+user chosen 2
+----------------
+----------------
+| Global Round : 4 | Local Epoch : 0 | [0/144 (0%)]	Loss: 0.190229
+| Global Round : 4 | Local Epoch : 0 | [100/144 (67%)]	Loss: 0.068427
+| Global Round : 4 | Local Epoch : 1 | [0/144 (0%)]	Loss: 0.142169
+| Global Round : 4 | Local Epoch : 1 | [100/144 (67%)]	Loss: 0.206100
+| Global Round : 4 | Local Epoch : 2 | [0/144 (0%)]	Loss: 0.062858
+| Global Round : 4 | Local Epoch : 2 | [100/144 (67%)]	Loss: 0.299464
+| Global Round : 4 | Local Epoch : 3 | [0/144 (0%)]	Loss: 0.058775
+| Global Round : 4 | Local Epoch : 3 | [100/144 (67%)]	Loss: 0.201486
+| Global Round : 4 | Local Epoch : 4 | [0/144 (0%)]	Loss: 0.071438
+| Global Round : 4 | Local Epoch : 4 | [100/144 (67%)]	Loss: 0.444403
+| Global Round : 4 | Local Epoch : 5 | [0/144 (0%)]	Loss: 0.029694
+| Global Round : 4 | Local Epoch : 5 | [100/144 (67%)]	Loss: 0.028783
+| Global Round : 4 | Local Epoch : 6 | [0/144 (0%)]	Loss: 0.047388
+| Global Round : 4 | Local Epoch : 6 | [100/144 (67%)]	Loss: 0.058532
+| Global Round : 4 | Local Epoch : 7 | [0/144 (0%)]	Loss: 0.030357
+| Global Round : 4 | Local Epoch : 7 | [100/144 (67%)]	Loss: 0.221048
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00       1.0
+        Mild       0.00      0.00      0.00       0.0
+
+    accuracy                           0.00       1.0
+   macro avg       0.00      0.00      0.00       1.0
+weighted avg       0.00      0.00      0.00       1.0
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00       1.0
+      Severe       0.00      0.00      0.00       0.0
+
+    accuracy                           0.00       1.0
+   macro avg       0.00      0.00      0.00       1.0
+weighted avg       0.00      0.00      0.00       1.0
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+Training accuracy [0.6923076923076923, 0.8076923076923077, 0.9473684210526315, 0.8846153846153846, 0.9473684210526315]
+
+ | Global Training Round : 6 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 5 | Local Epoch : 0 | [0/204 (0%)]	Loss: 0.771896
+| Global Round : 5 | Local Epoch : 0 | [100/204 (48%)]	Loss: 0.316824
+| Global Round : 5 | Local Epoch : 0 | [80/204 (95%)]	Loss: 0.038117
+| Global Round : 5 | Local Epoch : 1 | [0/204 (0%)]	Loss: 0.231217
+| Global Round : 5 | Local Epoch : 1 | [100/204 (48%)]	Loss: 0.306041
+| Global Round : 5 | Local Epoch : 1 | [80/204 (95%)]	Loss: 0.037599
+| Global Round : 5 | Local Epoch : 2 | [0/204 (0%)]	Loss: 0.184117
+| Global Round : 5 | Local Epoch : 2 | [100/204 (48%)]	Loss: 0.119255
+| Global Round : 5 | Local Epoch : 2 | [80/204 (95%)]	Loss: 0.141758
+| Global Round : 5 | Local Epoch : 3 | [0/204 (0%)]	Loss: 0.073281
+| Global Round : 5 | Local Epoch : 3 | [100/204 (48%)]	Loss: 0.241584
+| Global Round : 5 | Local Epoch : 3 | [80/204 (95%)]	Loss: 0.097830
+| Global Round : 5 | Local Epoch : 4 | [0/204 (0%)]	Loss: 0.125519
+| Global Round : 5 | Local Epoch : 4 | [100/204 (48%)]	Loss: 0.084941
+| Global Round : 5 | Local Epoch : 4 | [80/204 (95%)]	Loss: 0.254983
+| Global Round : 5 | Local Epoch : 5 | [0/204 (0%)]	Loss: 0.155852
+| Global Round : 5 | Local Epoch : 5 | [100/204 (48%)]	Loss: 0.161170
+| Global Round : 5 | Local Epoch : 5 | [80/204 (95%)]	Loss: 1.024035
+| Global Round : 5 | Local Epoch : 6 | [0/204 (0%)]	Loss: 0.361937
+| Global Round : 5 | Local Epoch : 6 | [100/204 (48%)]	Loss: 0.033574
+| Global Round : 5 | Local Epoch : 6 | [80/204 (95%)]	Loss: 0.158513
+| Global Round : 5 | Local Epoch : 7 | [0/204 (0%)]	Loss: 0.077902
+| Global Round : 5 | Local Epoch : 7 | [100/204 (48%)]	Loss: 0.498605
+| Global Round : 5 | Local Epoch : 7 | [80/204 (95%)]	Loss: 0.136397
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+        Mild       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+        Mild       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+      Severe       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+      Severe       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+Training accuracy [0.6923076923076923, 0.8076923076923077, 0.9473684210526315, 0.8846153846153846, 0.9473684210526315, 0.8846153846153846]
+ 
+Avg Training Stats after 6 global rounds:
+Training Loss : 0.27006456994943345
+Train Accuracy: 88.46% 
+
+
+ | Global Training Round : 7 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 6 | Local Epoch : 0 | [0/204 (0%)]	Loss: 0.614741
+| Global Round : 6 | Local Epoch : 0 | [100/204 (48%)]	Loss: 0.164468
+| Global Round : 6 | Local Epoch : 0 | [80/204 (95%)]	Loss: 0.080056
+| Global Round : 6 | Local Epoch : 1 | [0/204 (0%)]	Loss: 0.272981
+| Global Round : 6 | Local Epoch : 1 | [100/204 (48%)]	Loss: 0.233252
+| Global Round : 6 | Local Epoch : 1 | [80/204 (95%)]	Loss: 0.018633
+| Global Round : 6 | Local Epoch : 2 | [0/204 (0%)]	Loss: 0.186530
+| Global Round : 6 | Local Epoch : 2 | [100/204 (48%)]	Loss: 0.553906
+| Global Round : 6 | Local Epoch : 2 | [80/204 (95%)]	Loss: 0.063521
+| Global Round : 6 | Local Epoch : 3 | [0/204 (0%)]	Loss: 0.060589
+| Global Round : 6 | Local Epoch : 3 | [100/204 (48%)]	Loss: 0.044390
+| Global Round : 6 | Local Epoch : 3 | [80/204 (95%)]	Loss: 0.212280
+| Global Round : 6 | Local Epoch : 4 | [0/204 (0%)]	Loss: 0.195739
+| Global Round : 6 | Local Epoch : 4 | [100/204 (48%)]	Loss: 0.242462
+| Global Round : 6 | Local Epoch : 4 | [80/204 (95%)]	Loss: 0.044125
+| Global Round : 6 | Local Epoch : 5 | [0/204 (0%)]	Loss: 0.097711
+| Global Round : 6 | Local Epoch : 5 | [100/204 (48%)]	Loss: 0.080538
+| Global Round : 6 | Local Epoch : 5 | [80/204 (95%)]	Loss: 0.242232
+| Global Round : 6 | Local Epoch : 6 | [0/204 (0%)]	Loss: 0.158714
+| Global Round : 6 | Local Epoch : 6 | [100/204 (48%)]	Loss: 0.122433
+| Global Round : 6 | Local Epoch : 6 | [80/204 (95%)]	Loss: 0.034038
+| Global Round : 6 | Local Epoch : 7 | [0/204 (0%)]	Loss: 0.119362
+| Global Round : 6 | Local Epoch : 7 | [100/204 (48%)]	Loss: 0.093472
+| Global Round : 6 | Local Epoch : 7 | [80/204 (95%)]	Loss: 0.123499
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+        Mild       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+        Mild       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+      Severe       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+      Severe       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+Training accuracy [0.6923076923076923, 0.8076923076923077, 0.9473684210526315, 0.8846153846153846, 0.9473684210526315, 0.8846153846153846, 0.8461538461538461]
+
+ | Global Training Round : 8 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 7 | Local Epoch : 0 | [0/204 (0%)]	Loss: 0.511795
+| Global Round : 7 | Local Epoch : 0 | [100/204 (48%)]	Loss: 0.052222
+| Global Round : 7 | Local Epoch : 0 | [80/204 (95%)]	Loss: 1.095026
+| Global Round : 7 | Local Epoch : 1 | [0/204 (0%)]	Loss: 0.030227
+| Global Round : 7 | Local Epoch : 1 | [100/204 (48%)]	Loss: 0.034651
+| Global Round : 7 | Local Epoch : 1 | [80/204 (95%)]	Loss: 0.036299
+| Global Round : 7 | Local Epoch : 2 | [0/204 (0%)]	Loss: 0.181416
+| Global Round : 7 | Local Epoch : 2 | [100/204 (48%)]	Loss: 0.022029
+| Global Round : 7 | Local Epoch : 2 | [80/204 (95%)]	Loss: 0.019071
+| Global Round : 7 | Local Epoch : 3 | [0/204 (0%)]	Loss: 0.021486
+| Global Round : 7 | Local Epoch : 3 | [100/204 (48%)]	Loss: 0.030856
+| Global Round : 7 | Local Epoch : 3 | [80/204 (95%)]	Loss: 0.024402
+| Global Round : 7 | Local Epoch : 4 | [0/204 (0%)]	Loss: 0.025433
+| Global Round : 7 | Local Epoch : 4 | [100/204 (48%)]	Loss: 0.041681
+| Global Round : 7 | Local Epoch : 4 | [80/204 (95%)]	Loss: 0.017028
+| Global Round : 7 | Local Epoch : 5 | [0/204 (0%)]	Loss: 0.019578
+| Global Round : 7 | Local Epoch : 5 | [100/204 (48%)]	Loss: 0.605978
+| Global Round : 7 | Local Epoch : 5 | [80/204 (95%)]	Loss: 0.019065
+| Global Round : 7 | Local Epoch : 6 | [0/204 (0%)]	Loss: 0.203320
+| Global Round : 7 | Local Epoch : 6 | [100/204 (48%)]	Loss: 0.377922
+| Global Round : 7 | Local Epoch : 6 | [80/204 (95%)]	Loss: 0.049218
+| Global Round : 7 | Local Epoch : 7 | [0/204 (0%)]	Loss: 0.096831
+| Global Round : 7 | Local Epoch : 7 | [100/204 (48%)]	Loss: 0.227031
+| Global Round : 7 | Local Epoch : 7 | [80/204 (95%)]	Loss: 0.023828
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+        Mild       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+        Mild       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.50      1.00      0.67         1
+      Severe       0.00      0.00      0.00         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+      Severe       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+Training accuracy [0.6923076923076923, 0.8076923076923077, 0.9473684210526315, 0.8846153846153846, 0.9473684210526315, 0.8846153846153846, 0.8461538461538461, 0.8846153846153846]
+ 
+Avg Training Stats after 8 global rounds:
+Training Loss : 0.24426361657451276
+Train Accuracy: 88.46% 
+
+
+ | Global Training Round : 9 |
+
+----------------
+user chosen 2
+----------------
+----------------
+| Global Round : 8 | Local Epoch : 0 | [0/144 (0%)]	Loss: 0.080482
+| Global Round : 8 | Local Epoch : 0 | [100/144 (67%)]	Loss: 0.041884
+| Global Round : 8 | Local Epoch : 1 | [0/144 (0%)]	Loss: 0.007111
+| Global Round : 8 | Local Epoch : 1 | [100/144 (67%)]	Loss: 0.110715
+| Global Round : 8 | Local Epoch : 2 | [0/144 (0%)]	Loss: 0.075761
+| Global Round : 8 | Local Epoch : 2 | [100/144 (67%)]	Loss: 0.031781
+| Global Round : 8 | Local Epoch : 3 | [0/144 (0%)]	Loss: 0.113008
+| Global Round : 8 | Local Epoch : 3 | [100/144 (67%)]	Loss: 0.080787
+| Global Round : 8 | Local Epoch : 4 | [0/144 (0%)]	Loss: 0.028445
+| Global Round : 8 | Local Epoch : 4 | [100/144 (67%)]	Loss: 0.244521
+| Global Round : 8 | Local Epoch : 5 | [0/144 (0%)]	Loss: 0.608089
+| Global Round : 8 | Local Epoch : 5 | [100/144 (67%)]	Loss: 0.293724
+| Global Round : 8 | Local Epoch : 6 | [0/144 (0%)]	Loss: 0.117467
+| Global Round : 8 | Local Epoch : 6 | [100/144 (67%)]	Loss: 0.105011
+| Global Round : 8 | Local Epoch : 7 | [0/144 (0%)]	Loss: 0.064968
+| Global Round : 8 | Local Epoch : 7 | [100/144 (67%)]	Loss: 0.021156
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+Training accuracy [0.6923076923076923, 0.8076923076923077, 0.9473684210526315, 0.8846153846153846, 0.9473684210526315, 0.8846153846153846, 0.8461538461538461, 0.8846153846153846, 1.0]
+
+ | Global Training Round : 10 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 9 | Local Epoch : 0 | [0/204 (0%)]	Loss: 0.111288
+| Global Round : 9 | Local Epoch : 0 | [100/204 (48%)]	Loss: 0.153572
+| Global Round : 9 | Local Epoch : 0 | [80/204 (95%)]	Loss: 0.213926
+| Global Round : 9 | Local Epoch : 1 | [0/204 (0%)]	Loss: 0.057533
+| Global Round : 9 | Local Epoch : 1 | [100/204 (48%)]	Loss: 0.079838
+| Global Round : 9 | Local Epoch : 1 | [80/204 (95%)]	Loss: 0.512263
+| Global Round : 9 | Local Epoch : 2 | [0/204 (0%)]	Loss: 0.065474
+| Global Round : 9 | Local Epoch : 2 | [100/204 (48%)]	Loss: 0.044124
+| Global Round : 9 | Local Epoch : 2 | [80/204 (95%)]	Loss: 0.093404
+| Global Round : 9 | Local Epoch : 3 | [0/204 (0%)]	Loss: 0.093310
+| Global Round : 9 | Local Epoch : 3 | [100/204 (48%)]	Loss: 0.083376
+| Global Round : 9 | Local Epoch : 3 | [80/204 (95%)]	Loss: 0.059590
+| Global Round : 9 | Local Epoch : 4 | [0/204 (0%)]	Loss: 0.014780
+| Global Round : 9 | Local Epoch : 4 | [100/204 (48%)]	Loss: 0.126072
+| Global Round : 9 | Local Epoch : 4 | [80/204 (95%)]	Loss: 0.000697
+| Global Round : 9 | Local Epoch : 5 | [0/204 (0%)]	Loss: 0.054630
+| Global Round : 9 | Local Epoch : 5 | [100/204 (48%)]	Loss: 0.031748
+| Global Round : 9 | Local Epoch : 5 | [80/204 (95%)]	Loss: 0.019835
+| Global Round : 9 | Local Epoch : 6 | [0/204 (0%)]	Loss: 0.110466
+| Global Round : 9 | Local Epoch : 6 | [100/204 (48%)]	Loss: 0.055111
+| Global Round : 9 | Local Epoch : 6 | [80/204 (95%)]	Loss: 0.103113
+| Global Round : 9 | Local Epoch : 7 | [0/204 (0%)]	Loss: 0.199193
+| Global Round : 9 | Local Epoch : 7 | [100/204 (48%)]	Loss: 0.044263
+| Global Round : 9 | Local Epoch : 7 | [80/204 (95%)]	Loss: 0.128350
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+        Mild       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+        Mild       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+        Mild       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+        Mild       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         2
+      Severe       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      0.50      0.67         2
+
+    accuracy                           0.50         2
+   macro avg       0.50      0.25      0.33         2
+weighted avg       1.00      0.50      0.67         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         1
+      Severe       0.50      1.00      0.67         1
+
+    accuracy                           0.50         2
+   macro avg       0.25      0.50      0.33         2
+weighted avg       0.25      0.50      0.33         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.00      0.00      0.00         0
+      Severe       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       0.50      0.50      0.50         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         1
+      Severe       1.00      1.00      1.00         1
+
+    accuracy                           1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+Training accuracy [0.6923076923076923, 0.8076923076923077, 0.9473684210526315, 0.8846153846153846, 0.9473684210526315, 0.8846153846153846, 0.8461538461538461, 0.8846153846153846, 1.0, 0.9230769230769231]
+ 
+Avg Training Stats after 10 global rounds:
+Training Loss : 0.22612881300187188
+Train Accuracy: 92.31% 
+
+########################
+
+Client 1 Test Statistics
+
+==========================
+
+For client 1 original classes :  ['Normal', 'Mild']
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.91      0.97      0.94        32
+        Mild       0.96      0.90      0.93        30
+
+    accuracy                           0.94        62
+   macro avg       0.94      0.93      0.94        62
+weighted avg       0.94      0.94      0.94        62
+
+----------------------
+
+==========================
+
+Testing client 1 on client 2 original classes :  ['Normal', 'Severe']
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.83      0.97      0.90        36
+      Severe       0.83      0.42      0.56        12
+
+    accuracy                           0.83        48
+   macro avg       0.83      0.69      0.73        48
+weighted avg       0.83      0.83      0.81        48
+
+----------------------
+
+########################
+
+Client 2 Test Statistics
+
+==========================
+
+For client 2 original classes :  ['Normal', 'Severe']
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.83      0.97      0.90        36
+      Severe       0.83      0.42      0.56        12
+
+    accuracy                           0.83        48
+   macro avg       0.83      0.69      0.73        48
+weighted avg       0.83      0.83      0.81        48
+
+----------------------
+
+==========================
+
+Testing client 2 on client 1 original classes :  ['Normal', 'Mild']
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.91      0.97      0.94        32
+        Mild       0.96      0.90      0.93        30
+
+    accuracy                           0.94        62
+   macro avg       0.94      0.93      0.94        62
+weighted avg       0.94      0.94      0.94        62
+
+----------------------
+
+Test accuracy on client 1 0.9354838709677419
+Test accuracy on client 2 0.8333333333333334
+========================================
+
+========================================
+
+Test on original client distribution for client 1 : 93.55%
+Test on client 2 distribution for client 1 : 83.33%
+Test on original client distribution for client 2 : 83.33%
+Test on client 1 distribution for client 2 : 93.55%

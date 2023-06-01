@@ -6,7 +6,6 @@
 import numpy as np
 from torchvision import datasets, transforms
 
-
 def COVID_iid(dataset1, dataset2):
     """
     Sample I.I.D. client data from COVID dataset

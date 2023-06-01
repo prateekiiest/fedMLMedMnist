@@ -11,7 +11,7 @@ import torch
 from tensorboardX import SummaryWriter
 from options import args_parser
 from update import LocalUpdate, test_inference
-from models import MLP, CNNDermaMnist, CNNCOVID, CNNAptos
+from models import MLP, CNNDermaMnist, CNNCOVID, CNNAptos, CNNOCTmnist
 from utils import get_dataset, average_weights, exp_details
 
 if __name__ == '__main__':
@@ -38,9 +38,15 @@ if __name__ == '__main__':
     elif(args.dataset == 'ham10000'):
         target_name_client1 = ["Negative mel", "Positive mel"]
         target_name_client2 = ["Negative nv", "Positive nv"]
+
     elif(args.dataset == 'aptos'):
         target_name_client1 = ["Normal", "Mild"]
         target_name_client2 = ["Normal", "Severe"]
+
+    elif(args.dataset == 'octmnist'):
+        target_name_client1 = ["Normal", "DME"]
+        target_name_client2 = ["Normal", "DRUSEN"]
+
     else:
         raise  Exception("Dataset '%s' is not supported" % args.dataset)
     
@@ -62,7 +68,9 @@ if __name__ == '__main__':
             global_model = CNNDermaMnist(args=args)
         elif args.dataset == 'aptos':
             global_model = CNNAptos(args=args)
-        else: # TODO: Add support for other datasets
+        elif args.dataset == 'octmnist':
+            global_model = CNNOCTmnist(args=args)
+        else: 
             raise NotImplementedError
     else:
         exit('Error: unrecognized model')
