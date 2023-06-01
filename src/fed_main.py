@@ -112,7 +112,7 @@ if __name__ == '__main__':
         list_acc, list_loss = [], []
         global_model.eval()
         for userId in range(1,3):
-            acc, loss = local_model.inference(userId = userId,model=global_model)
+            acc, loss = local_model.inference(args, userId = userId,model=global_model)
             list_acc.append(acc)
             list_loss.append(loss)
         train_accuracy.append(sum(list_acc)/len(list_acc))

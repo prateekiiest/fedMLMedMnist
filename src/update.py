@@ -94,7 +94,7 @@ class LocalUpdate(object):
 
         return model.state_dict(), sum(epoch_loss) / len(epoch_loss)
 
-    def inference(self, userId, model):
+    def inference(self, args, userId, model):
         """ Returns the inference accuracy and loss.
         """
 
@@ -105,17 +105,19 @@ class LocalUpdate(object):
         loss, total, correct = 0.0, 0.0, 0.0
         target_names = []
         if(userId==2):
-<<<<<<< HEAD
-            # target_names = ["Negative Lung Op","Positive Lung Op"]
-            target_names = ["Normal", "Severe"]
+            if(args.dataset=="mnist"):
+                target_names = ["Negative Lung Op","Positive Lung Op"]
+            elif(args.dataset=="ham10000"):
+                target_names = ["Negative nv", "Positive nv"]
+            else: #aptos
+                target_names = ["Normal", "Severe"]
         else:
-            # target_names= ["Negative Corona","Positive Corona"]
-            target_names = ["Normal", "Mild"]
-=======
-            target_names = ["Negative Lung Op","Positive Lung Op"]
-        else:
-            target_names= ["Negative Corona","Positive Corona"]
->>>>>>> 6d77aaae (add v5)
+            if(args.dataset=="mnist"):
+                target_names = ["Negative Corona","Positive Corona"]
+            elif(args.dataset=="ham10000"):
+                target_names = ["Negative mel", "Positive mel"]
+            else:
+                target_names = ["Normal", "Mild"]
 
 
         for batch_idx, (images, labels) in enumerate(self.testloader):
@@ -178,19 +180,18 @@ def test_inference(args, model, test_dataset1, test_dataset2):
     return acc1, acc_on_other1,acc2, acc_on_other2
 
 
-def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
+def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clientId):
     if(clientId=="client1"):
 
         print("########################\n")
 
         print("Client 1 Test Statistics\n")
-
-<<<<<<< HEAD
-        # target_names = ["Negative Corona","Positive Corona"]
-        target_names = ["Normal", "Mild"]
-=======
-        target_names = ["Negative Corona","Positive Corona"]
->>>>>>> 6d77aaae (add v5)
+        if(args.dataset=="mnist"):
+            target_names = ["Negative Corona","Positive Corona"]
+        elif(args.dataset=="ham10000"):
+            target_names = ["Negative mel", "Positive mel"]
+        else:
+            target_names = ["Normal", "Mild"]
 
         print("==========================\n")
         print("For client 1 original classes : ", target_names)
@@ -224,16 +225,16 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
             correct += torch.sum(torch.eq(pred_labels, labels)).item()
             total += len(labels)
         accuracy_client1_original = correct/total
+        
+        
+        if(args.dataset=="mnist"):
+            target_names = ["Negative Lung Op","Positive Lung Op"]
+        elif(args.dataset=="ham10000"):
+            target_names = ["Negative nv", "Positive nv"]
+        else: #aptos
+            target_names = ["Normal", "Severe"]
 
 
-
-
-<<<<<<< HEAD
-        # target_names = ["Negative Lung Op","Positive Lung Op"]
-        target_names = ["Normal", "Severe"]
-=======
-        target_names = ["Negative Lung Op","Positive Lung Op"]
->>>>>>> 6d77aaae (add v5)
 
         print("==========================\n")
         print("Testing client 1 on client 2 original classes : ", target_names)
@@ -282,12 +283,13 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
         
         print("Client 2 Test Statistics\n")
 
-<<<<<<< HEAD
-        # target_names = ["Negative Lung Op","Positive Lung Op"]
-        target_names = ["Normal", "Severe"]
-=======
-        target_names = ["Negative Lung Op","Positive Lung Op"]
->>>>>>> 6d77aaae (add v5)
+        if(args.dataset=="mnist"):
+            target_names = ["Negative Lung Op","Positive Lung Op"]
+        elif(args.dataset=="ham10000"):
+            target_names = ["Negative nv", "Positive nv"]
+        else: #aptos
+            target_names = ["Normal", "Severe"]
+
 
         print("==========================\n")
         print("For client 2 original classes : ", target_names)
@@ -327,12 +329,8 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
     
     
     
-<<<<<<< HEAD
         # target_names = ["Negative Corona","Positive Corona"]
         target_names = ["Normal", "Mild"]
-=======
-        target_names = ["Negative Corona","Positive Corona"]
->>>>>>> 6d77aaae (add v5)
 
         print("==========================\n")
         print("Testing client 2 on client 1 original classes : ", target_names)
@@ -370,19 +368,20 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
         return accuracy_client2_original, accuracy_client2_onDist1
 
 
-def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clientId):
+def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion, clientId):
     if(clientId=="client1"):
         
         print("########################\n")
 
         print("Client 1 Test Statistics\n")
 
-<<<<<<< HEAD
-        # target_names = ["Negative Corona","Positive Corona"]
-        target_names = ["Normal", "Mild"]
-=======
-        target_names = ["Negative Corona","Positive Corona"]
->>>>>>> 6d77aaae (add v5)
+        if(args.dataset=="mnist"):
+            target_names = ["Negative Corona","Positive Corona"]
+        elif(args.dataset=="ham10000"):
+            target_names = ["Negative mel", "Positive mel"]
+        else:
+            target_names = ["Normal", "Mild"]
+
 
         print("==========================\n")
         print("For client 1 original classes : ", target_names)
@@ -423,12 +422,8 @@ def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clien
         
 
 
-<<<<<<< HEAD
         # target_names = ["Negative Lung Op","Positive Lung Op"]
         target_names = ["Normal", "Severe"]
-=======
-        target_names = ["Negative Lung Op","Positive Lung Op"]
->>>>>>> 6d77aaae (add v5)
 
         print("==========================\n")
         print("Testing client 1 on client 2 original classes : ", target_names)
@@ -473,12 +468,13 @@ def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clien
         
         print("Client 2 Test Statistics\n")
 
-<<<<<<< HEAD
-        # target_names = ["Negative Lung Op","Positive Lung Op"]
-        target_names = ["Normal", "Severe"]
-=======
-        target_names = ["Negative Lung Op","Positive Lung Op"]
->>>>>>> 6d77aaae (add v5)
+        if(args.dataset=="mnist"):
+            target_names = ["Negative Lung Op","Positive Lung Op"]
+        elif(args.dataset=="ham10000"):
+            target_names = ["Negative nv", "Positive nv"]
+        else: #aptos
+            target_names = ["Normal", "Severe"]
+
 
         print("==========================\n")
         print("For client 2 original classes : ", target_names)
@@ -516,14 +512,15 @@ def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clien
         accuracy_client2_original = correct/total
     
     
+
+        if(args.dataset=="mnist"):
+            target_names = ["Negative Corona","Positive Corona"]
+        elif(args.dataset=="ham10000"):
+            target_names = ["Negative mel", "Positive mel"]
+        else:
+            target_names = ["Normal", "Mild"]
     
-    
-<<<<<<< HEAD
-        # target_names = ["Negative Corona","Positive Corona"]
-        target_names = ["Normal", "Mild"]
-=======
-        target_names = ["Negative Corona","Positive Corona"]
->>>>>>> 6d77aaae (add v5)
+
 
         print("==========================\n")
         print("Testing client 2 on client 1 original classes : ", target_names)
@@ -577,11 +574,11 @@ def test_inference_base2(args, model, test_dataset1, test_dataset2):
 
     device = 'cpu' if args.gpu else 'cpu'
     criterion = nn.NLLLoss().to(device)
-    acc1, acc_on_other1 = inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, "client1")
+    acc1, acc_on_other1 = inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion, "client1")
 
     device = 'cpu' if args.gpu else 'cpu'
     criterion = nn.NLLLoss().to(device)
-    acc2, acc_on_other2 = inf_test_base2( model,test_dataset1, test_dataset2,device, criterion, "client2")
+    acc2, acc_on_other2 = inf_test_base2( model, args, test_dataset1, test_dataset2,device, criterion, "client2")
 
     accuracy = max(acc1, acc2)
     return acc1, acc_on_other1,acc2, acc_on_other2
