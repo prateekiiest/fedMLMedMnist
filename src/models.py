@@ -68,8 +68,7 @@ class CNNAptos(nn.Module):
         self.conv2_drop = nn.Dropout2d()
         self.fc1 = nn.Linear(100820, 50)
         self.fc2 = nn.Linear(50, 2)
-    def __init__(self) -> None:
-        super().__init__()
+
     
     def forward(self, x):   
         x = F.relu(F.max_pool2d(self.conv1(x), 2))
