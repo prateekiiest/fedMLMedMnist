@@ -10,7 +10,7 @@ from sklearn.metrics import classification_report
 from utils import get_dataset
 from options import args_parser
 from update import test_inference, test_inference_base2
-from models import MLP, CNNDermaMnist, CNNMnist, CNNAptos
+from models import MLP, CNNDermaMnist, CNNMnist, CNNAptos, CNNOCTMnist
 
 if __name__ == '__main__':
     args = args_parser()
@@ -32,6 +32,10 @@ if __name__ == '__main__':
     elif(args.dataset == 'aptos'):
         target_name_client1 = ["Normal", "Mild"]
         target_name_client2 = ["Normal", "Severe"]
+    
+    elif(args.dataset == 'octmnist'):
+        target_name_client1 = ["Normal", "DME"]
+        target_name_client2 = ["Normal", "DRUSEN"]
 
     else:
         raise  Exception("Dataset '%s' is not supported" % args.dataset)
@@ -54,6 +58,8 @@ if __name__ == '__main__':
             #TODO: Add support for different datasets
         elif args.dataset == 'aptos':
             global_model = CNNAptos(args=args)
+        elif args.dataset == 'octmnist':
+            global_model = CNNOCTMnist(args=args)
         else:
             raise  Exception("Dataset '%s' is not supported" % args.dataset)
     elif args.model == 'mlp':

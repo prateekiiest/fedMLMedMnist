@@ -392,7 +392,7 @@ def getDataClientSubset_Aptos(sampleFrac):
 
 
   data2['path'] = path2 + '/' + data2['image_file']
-  data2['result'] = data2['result'].map({'Normal/images': 'Negative', 'Mild/images': 'Positive'})
+  data2['result'] = data2['result'].map({'Normal/images': 'Negative', 'Severe/images': 'Positive'})
   data2 = data2.sample(frac=sampleFrac).reset_index(drop=True) # Shuffle dataframe
 
   data2['image'] = data2['path'].map(lambda x: np.asarray(Image.open(x)))
@@ -402,6 +402,135 @@ def getDataClientSubset_Aptos(sampleFrac):
 
   common_data = pd.DataFrame({"result": data['result'] + "_" + "Mild", "image": data['image'], "client_id": "1" })
   common_data2 = pd.DataFrame({"result": data2['result'] + "_" + "Severe", "image": data2['image'], "client_id": " 2" })
+  
+  finalCommon = pd.concat([common_data, common_data2])
+  finalCommon["output"] = finalCommon["result"].astype('category').cat.codes
+  finalCommon = finalCommon.drop("result", axis=1)
+
+  trainDataSet, testDataSet = train_test_split(finalCommon, test_size=0.2)
+
+  trainClient1 = trainDataSet[trainDataSet["client_id"]=="1"]
+  trainClient2 = trainDataSet[trainDataSet["client_id"]=="2"]
+  testClient1 = testDataSet[testDataSet["client_id"]=="1"]
+  testClient2 = testDataSet[testDataSet["client_id"]=="2"]
+
+  return trainClient1, trainClient2, testClient1, testClient2
+
+def getDataClient_OCT():
+  apply_transform = transforms.Compose([transforms.ToTensor(),transforms.Normalize((0.1307,), (0.3081,))])
+    
+  levels = ['NORMAL/images', 'DME/images']
+  path = 'OCT/'
+  data_dir = os.path.join(path)
+
+  data = []
+  for id, level in enumerate(levels):
+    for file in os.listdir(os.path.join(data_dir, level)):
+      data.append(['{}/{}'.format(level, file), level])
+
+
+  data = pd.DataFrame(data, columns = ['image_file', 'result'])
+
+
+  data['path'] = path + '/' + data['image_file']
+  data['result'] = data['result'].map({'NORMAL/images': 'Negative', 'DME/images': 'Positive'})
+  data = data.sample(frac=1).reset_index(drop=True) # Shuffle dataframe
+
+  data['image'] = data['path'].map(lambda x: np.asarray(Image.open(x)))
+
+  for k in range(len(data.image)):
+    data.image[k] = apply_transform(data.image[k])    
+
+  
+  levels2 = ['NORMAL/images', 'DRUSEN/images']
+  path2 = 'OCT/'
+  data_dir2 = os.path.join(path2)
+
+  data2 = []
+  for id, level in enumerate(levels2):
+    for file in os.listdir(os.path.join(data_dir2, level)):
+      data2.append(['{}/{}'.format(level, file), level])
+
+  data2 = pd.DataFrame(data2, columns = ['image_file', 'result'])
+
+
+  data2['path'] = path2 + '/' + data2['image_file']
+  data2['result'] = data2['result'].map({'NORMAL/images': 'Negative', 'DRUSEN/images': 'Positive'})
+  data2 = data2.sample(frac=1).reset_index(drop=True) # Shuffle dataframe
+
+  data2['image'] = data2['path'].map(lambda x: np.asarray(Image.open(x)))
+
+  for k in range(len(data2.image)):
+    data2.image[k] = apply_transform(data2.image[k])    
+
+
+  common_data = pd.DataFrame({"result": data['result'] + "_" + "DME", "image": data['image'], "client_id": "1" })
+  common_data2 = pd.DataFrame({"result": data2['result'] + "_" + "DRUSEN", "image": data2['image'], "client_id": "2" })
+
+  finalCommon = pd.concat([common_data, common_data2])
+  finalCommon["output"] = finalCommon["result"].astype('category').cat.codes
+  finalCommon = finalCommon.drop("result", axis=1)
+
+
+
+  trainDataSet, testDataSet = train_test_split(finalCommon, test_size=0.2)
+
+  trainClient1 = trainDataSet[trainDataSet["client_id"]=="1"]
+  trainClient2 = trainDataSet[trainDataSet["client_id"]=="2"]
+  testClient1 = testDataSet[testDataSet["client_id"]=="1"]
+  testClient2 = testDataSet[testDataSet["client_id"]=="2"]
+
+  return trainClient1, trainClient2, testClient1, testClient2
+
+def getDataClientSubset_OCT(sampleFrac):
+  apply_transform = transforms.Compose([transforms.ToTensor(),transforms.Normalize((0.1307,), (0.3081,))])
+    
+  levels = ['NORMAL/images', 'DME/images']
+  path = 'OCT/'
+  data_dir = os.path.join(path)
+
+  data = []
+  for id, level in enumerate(levels):
+    for file in os.listdir(os.path.join(data_dir, level)):
+      data.append(['{}/{}'.format(level, file), level])
+
+
+  data = pd.DataFrame(data, columns = ['image_file', 'result'])
+
+
+  data['path'] = path + '/' + data['image_file']
+  data['result'] = data['result'].map({'NORMAL/images': 'Negative', 'DME/images': 'Positive'})
+  data = data.sample(frac=sampleFrac).reset_index(drop=True) # Shuffle dataframe
+
+  data['image'] = data['path'].map(lambda x: np.asarray(Image.open(x)))
+
+  for k in range(len(data.image)):
+    data.image[k] = apply_transform(data.image[k])    
+
+  
+  levels2 = ['NORMAL/images', 'DRUSEN/images']
+  path2 = 'OCT/'
+  data_dir2 = os.path.join(path2)
+
+  data2 = []
+  for id, level in enumerate(levels2):
+    for file in os.listdir(os.path.join(data_dir2, level)):
+      data2.append(['{}/{}'.format(level, file), level])
+
+  data2 = pd.DataFrame(data2, columns = ['image_file', 'result'])
+
+
+  data2['path'] = path2 + '/' + data2['image_file']
+  data2['result'] = data2['result'].map({'NORMAL/images': 'Negative', 'DRUSEN/images': 'Positive'})
+  data2 = data2.sample(frac=sampleFrac).reset_index(drop=True) # Shuffle dataframe
+
+  data2['image'] = data2['path'].map(lambda x: np.asarray(Image.open(x)))
+
+  for k in range(len(data2.image)):
+    data2.image[k] = apply_transform(data2.image[k])    
+
+  common_data = pd.DataFrame({"result": data['result'] + "_" + "DME", "image": data['image'], "client_id": "1" })
+  common_data2 = pd.DataFrame({"result": data2['result'] + "_" + "DRUSEN", "image": data2['image'], "client_id": " 2" })
   
   finalCommon = pd.concat([common_data, common_data2])
   finalCommon["output"] = finalCommon["result"].astype('category').cat.codes

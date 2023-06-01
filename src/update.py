@@ -104,10 +104,12 @@ class LocalUpdate(object):
         target_names = []
         if(userId==2):
             # target_names = ["Negative Lung Op","Positive Lung Op"]
-            target_names = ["Normal", "Severe"]
+            # target_names = ["Normal", "Severe"]
+            target_names = ["NORMAL", "DRUSEN"]
         else:
             # target_names= ["Negative Corona","Positive Corona"]
-            target_names = ["Normal", "Mild"]
+            # target_names = ["Normal", "Mild"]
+            target_names = ["NORMAL", "DME"]
 
 
         for batch_idx, (images, labels) in enumerate(self.testloader):
@@ -178,7 +180,8 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
         print("Client 1 Test Statistics\n")
 
         # target_names = ["Negative Corona","Positive Corona"]
-        target_names = ["Normal", "Mild"]
+        # target_names = ["Normal", "Mild"]
+        target_names = ["NORMAL", "DME"]
 
         print("==========================\n")
         print("For client 1 original classes : ", target_names)
@@ -217,7 +220,8 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
 
 
         # target_names = ["Negative Lung Op","Positive Lung Op"]
-        target_names = ["Normal", "Severe"]
+        # target_names = ["Normal", "Severe"]
+        target_names = ["NORMAL", "DRUSEN"]
 
         print("==========================\n")
         print("Testing client 1 on client 2 original classes : ", target_names)
@@ -267,7 +271,8 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
         print("Client 2 Test Statistics\n")
 
         # target_names = ["Negative Lung Op","Positive Lung Op"]
-        target_names = ["Normal", "Severe"]
+        # target_names = ["Normal", "Severe"]
+        target_names = ["NORMAL", "DRUSEN"]
 
         print("==========================\n")
         print("For client 2 original classes : ", target_names)
@@ -308,7 +313,8 @@ def inf_test(model, test_dataset1, test_dataset2, device, criterion, clientId):
     
     
         # target_names = ["Negative Corona","Positive Corona"]
-        target_names = ["Normal", "Mild"]
+        # target_names = ["Normal", "Mild"]
+        target_names = ["NORMAL", "DME"]
 
         print("==========================\n")
         print("Testing client 2 on client 1 original classes : ", target_names)
@@ -354,7 +360,8 @@ def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clien
         print("Client 1 Test Statistics\n")
 
         # target_names = ["Negative Corona","Positive Corona"]
-        target_names = ["Normal", "Mild"]
+        # target_names = ["Normal", "Mild"]
+        target_names = ["NORMAL", "DME"]
 
         print("==========================\n")
         print("For client 1 original classes : ", target_names)
@@ -396,7 +403,8 @@ def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clien
 
 
         # target_names = ["Negative Lung Op","Positive Lung Op"]
-        target_names = ["Normal", "Severe"]
+        # target_names = ["Normal", "Severe"]
+        target_names = ["NORMAL", "DRUSEN"]
 
         print("==========================\n")
         print("Testing client 1 on client 2 original classes : ", target_names)
@@ -442,7 +450,8 @@ def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clien
         print("Client 2 Test Statistics\n")
 
         # target_names = ["Negative Lung Op","Positive Lung Op"]
-        target_names = ["Normal", "Severe"]
+        # target_names = ["Normal", "Severe"]
+        target_names = ["NORMAL", "DRUSEN"]
 
         print("==========================\n")
         print("For client 2 original classes : ", target_names)
@@ -483,7 +492,8 @@ def inf_test_base2(model, test_dataset1, test_dataset2, device, criterion, clien
     
     
         # target_names = ["Negative Corona","Positive Corona"]
-        target_names = ["Normal", "Mild"]
+        # target_names = ["Normal", "Mild"]
+        target_names = ["NORMAL", "DME"]
 
         print("==========================\n")
         print("Testing client 2 on client 1 original classes : ", target_names)
