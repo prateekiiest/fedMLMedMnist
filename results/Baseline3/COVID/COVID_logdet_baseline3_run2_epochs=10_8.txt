@@ -1,0 +1,3443 @@
+
+Experimental details:
+    Model     : cnn
+    Optimizer : sgd
+    Learning  : 0.01
+    Global Rounds   : 10
+
+    Federated parameters:
+   IID
+    Number of users  : 2
+    Local Batch size   : 10
+    Local Epochs       : 8
+
+CNNCOVID(
+  (conv1): Conv2d(1, 10, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(10, 20, kernel_size=(5, 5), stride=(1, 1))
+  (conv2_drop): Dropout2d(p=0.5, inplace=False)
+  (fc1): Linear(in_features=100820, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=2, bias=True)
+)
+
+ | Global Training Round : 1 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 0 | Local Epoch : 0 | [0/420 (0%)]	Loss: 0.702355
+| Global Round : 0 | Local Epoch : 0 | [100/420 (24%)]	Loss: 0.674033
+| Global Round : 0 | Local Epoch : 0 | [200/420 (48%)]	Loss: 0.696999
+| Global Round : 0 | Local Epoch : 0 | [300/420 (71%)]	Loss: 0.668851
+| Global Round : 0 | Local Epoch : 0 | [400/420 (95%)]	Loss: 0.614641
+| Global Round : 0 | Local Epoch : 1 | [0/420 (0%)]	Loss: 0.533740
+| Global Round : 0 | Local Epoch : 1 | [100/420 (24%)]	Loss: 0.782266
+| Global Round : 0 | Local Epoch : 1 | [200/420 (48%)]	Loss: 0.645293
+| Global Round : 0 | Local Epoch : 1 | [300/420 (71%)]	Loss: 0.610154
+| Global Round : 0 | Local Epoch : 1 | [400/420 (95%)]	Loss: 0.688484
+| Global Round : 0 | Local Epoch : 2 | [0/420 (0%)]	Loss: 0.631449
+| Global Round : 0 | Local Epoch : 2 | [100/420 (24%)]	Loss: 0.560508
+| Global Round : 0 | Local Epoch : 2 | [200/420 (48%)]	Loss: 0.544119
+| Global Round : 0 | Local Epoch : 2 | [300/420 (71%)]	Loss: 0.778982
+| Global Round : 0 | Local Epoch : 2 | [400/420 (95%)]	Loss: 0.708315
+| Global Round : 0 | Local Epoch : 3 | [0/420 (0%)]	Loss: 0.647791
+| Global Round : 0 | Local Epoch : 3 | [100/420 (24%)]	Loss: 0.645182
+| Global Round : 0 | Local Epoch : 3 | [200/420 (48%)]	Loss: 0.619964
+| Global Round : 0 | Local Epoch : 3 | [300/420 (71%)]	Loss: 0.539234
+| Global Round : 0 | Local Epoch : 3 | [400/420 (95%)]	Loss: 0.600177
+| Global Round : 0 | Local Epoch : 4 | [0/420 (0%)]	Loss: 0.443456
+| Global Round : 0 | Local Epoch : 4 | [100/420 (24%)]	Loss: 0.686114
+| Global Round : 0 | Local Epoch : 4 | [200/420 (48%)]	Loss: 0.588358
+| Global Round : 0 | Local Epoch : 4 | [300/420 (71%)]	Loss: 1.033306
+| Global Round : 0 | Local Epoch : 4 | [400/420 (95%)]	Loss: 0.572711
+| Global Round : 0 | Local Epoch : 5 | [0/420 (0%)]	Loss: 0.325141
+| Global Round : 0 | Local Epoch : 5 | [100/420 (24%)]	Loss: 0.323660
+| Global Round : 0 | Local Epoch : 5 | [200/420 (48%)]	Loss: 0.468649
+| Global Round : 0 | Local Epoch : 5 | [300/420 (71%)]	Loss: 0.518981
+| Global Round : 0 | Local Epoch : 5 | [400/420 (95%)]	Loss: 0.459385
+| Global Round : 0 | Local Epoch : 6 | [0/420 (0%)]	Loss: 0.482222
+| Global Round : 0 | Local Epoch : 6 | [100/420 (24%)]	Loss: 0.327960
+| Global Round : 0 | Local Epoch : 6 | [200/420 (48%)]	Loss: 0.496829
+| Global Round : 0 | Local Epoch : 6 | [300/420 (71%)]	Loss: 0.556959
+| Global Round : 0 | Local Epoch : 6 | [400/420 (95%)]	Loss: 0.543066
+| Global Round : 0 | Local Epoch : 7 | [0/420 (0%)]	Loss: 0.307053
+| Global Round : 0 | Local Epoch : 7 | [100/420 (24%)]	Loss: 0.475720
+| Global Round : 0 | Local Epoch : 7 | [200/420 (48%)]	Loss: 0.624297
+| Global Round : 0 | Local Epoch : 7 | [300/420 (71%)]	Loss: 0.403109
+| Global Round : 0 | Local Epoch : 7 | [400/420 (95%)]	Loss: 0.427311
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.25      1.00      0.40         1
+Positive Corona       1.00      0.25      0.40         4
+
+       accuracy                           0.40         5
+      macro avg       0.62      0.62      0.40         5
+   weighted avg       0.85      0.40      0.40         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         1
+Positive Corona       0.80      1.00      0.89         4
+
+       accuracy                           0.80         5
+      macro avg       0.40      0.50      0.44         5
+   weighted avg       0.64      0.80      0.71         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         3
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         2
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         3
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         2
+Positive Corona       0.50      0.67      0.57         3
+
+       accuracy                           0.40         5
+      macro avg       0.25      0.33      0.29         5
+   weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.67      1.00      0.80         2
+Positive Corona       1.00      0.67      0.80         3
+
+       accuracy                           0.80         5
+      macro avg       0.83      0.83      0.80         5
+   weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         3
+      macro avg       1.00      1.00      1.00         3
+   weighted avg       1.00      1.00      1.00         3
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.25      1.00      0.40         1
+Positive Lung Op       1.00      0.25      0.40         4
+
+        accuracy                           0.40         5
+       macro avg       0.62      0.62      0.40         5
+    weighted avg       0.85      0.40      0.40         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         1
+Positive Lung Op       0.80      1.00      0.89         4
+
+        accuracy                           0.80         5
+       macro avg       0.40      0.50      0.44         5
+    weighted avg       0.64      0.80      0.71         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         3
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         2
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         3
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         2
+Positive Lung Op       0.50      0.67      0.57         3
+
+        accuracy                           0.40         5
+       macro avg       0.25      0.33      0.29         5
+    weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.67      1.00      0.80         2
+Positive Lung Op       1.00      0.67      0.80         3
+
+        accuracy                           0.80         5
+       macro avg       0.83      0.83      0.80         5
+    weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         3
+       macro avg       1.00      1.00      1.00         3
+    weighted avg       1.00      1.00      1.00         3
+
+----------------------
+
+Training accuracy [0.8490566037735849]
+
+ | Global Training Round : 2 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 1 | Local Epoch : 0 | [0/420 (0%)]	Loss: 0.604104
+| Global Round : 1 | Local Epoch : 0 | [100/420 (24%)]	Loss: 0.383703
+| Global Round : 1 | Local Epoch : 0 | [200/420 (48%)]	Loss: 0.776970
+| Global Round : 1 | Local Epoch : 0 | [300/420 (71%)]	Loss: 0.603496
+| Global Round : 1 | Local Epoch : 0 | [400/420 (95%)]	Loss: 0.408712
+| Global Round : 1 | Local Epoch : 1 | [0/420 (0%)]	Loss: 0.692926
+| Global Round : 1 | Local Epoch : 1 | [100/420 (24%)]	Loss: 0.386788
+| Global Round : 1 | Local Epoch : 1 | [200/420 (48%)]	Loss: 0.310335
+| Global Round : 1 | Local Epoch : 1 | [300/420 (71%)]	Loss: 0.552541
+| Global Round : 1 | Local Epoch : 1 | [400/420 (95%)]	Loss: 0.462098
+| Global Round : 1 | Local Epoch : 2 | [0/420 (0%)]	Loss: 0.347319
+| Global Round : 1 | Local Epoch : 2 | [100/420 (24%)]	Loss: 0.663844
+| Global Round : 1 | Local Epoch : 2 | [200/420 (48%)]	Loss: 0.432249
+| Global Round : 1 | Local Epoch : 2 | [300/420 (71%)]	Loss: 0.269752
+| Global Round : 1 | Local Epoch : 2 | [400/420 (95%)]	Loss: 0.795681
+| Global Round : 1 | Local Epoch : 3 | [0/420 (0%)]	Loss: 0.433757
+| Global Round : 1 | Local Epoch : 3 | [100/420 (24%)]	Loss: 0.234454
+| Global Round : 1 | Local Epoch : 3 | [200/420 (48%)]	Loss: 0.153932
+| Global Round : 1 | Local Epoch : 3 | [300/420 (71%)]	Loss: 0.319719
+| Global Round : 1 | Local Epoch : 3 | [400/420 (95%)]	Loss: 0.259631
+| Global Round : 1 | Local Epoch : 4 | [0/420 (0%)]	Loss: 0.313784
+| Global Round : 1 | Local Epoch : 4 | [100/420 (24%)]	Loss: 0.546361
+| Global Round : 1 | Local Epoch : 4 | [200/420 (48%)]	Loss: 0.538259
+| Global Round : 1 | Local Epoch : 4 | [300/420 (71%)]	Loss: 0.467556
+| Global Round : 1 | Local Epoch : 4 | [400/420 (95%)]	Loss: 0.152028
+| Global Round : 1 | Local Epoch : 5 | [0/420 (0%)]	Loss: 0.420082
+| Global Round : 1 | Local Epoch : 5 | [100/420 (24%)]	Loss: 0.147654
+| Global Round : 1 | Local Epoch : 5 | [200/420 (48%)]	Loss: 0.206916
+| Global Round : 1 | Local Epoch : 5 | [300/420 (71%)]	Loss: 0.189921
+| Global Round : 1 | Local Epoch : 5 | [400/420 (95%)]	Loss: 0.367129
+| Global Round : 1 | Local Epoch : 6 | [0/420 (0%)]	Loss: 0.430465
+| Global Round : 1 | Local Epoch : 6 | [100/420 (24%)]	Loss: 0.224272
+| Global Round : 1 | Local Epoch : 6 | [200/420 (48%)]	Loss: 0.487828
+| Global Round : 1 | Local Epoch : 6 | [300/420 (71%)]	Loss: 0.403405
+| Global Round : 1 | Local Epoch : 6 | [400/420 (95%)]	Loss: 0.447866
+| Global Round : 1 | Local Epoch : 7 | [0/420 (0%)]	Loss: 0.184049
+| Global Round : 1 | Local Epoch : 7 | [100/420 (24%)]	Loss: 0.486450
+| Global Round : 1 | Local Epoch : 7 | [200/420 (48%)]	Loss: 0.165330
+| Global Round : 1 | Local Epoch : 7 | [300/420 (71%)]	Loss: 0.206395
+| Global Round : 1 | Local Epoch : 7 | [400/420 (95%)]	Loss: 0.347446
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.25      1.00      0.40         1
+Positive Corona       1.00      0.25      0.40         4
+
+       accuracy                           0.40         5
+      macro avg       0.62      0.62      0.40         5
+   weighted avg       0.85      0.40      0.40         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.50      0.67         2
+Positive Corona       0.75      1.00      0.86         3
+
+       accuracy                           0.80         5
+      macro avg       0.88      0.75      0.76         5
+   weighted avg       0.85      0.80      0.78         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         1
+Positive Corona       0.80      1.00      0.89         4
+
+       accuracy                           0.80         5
+      macro avg       0.40      0.50      0.44         5
+   weighted avg       0.64      0.80      0.71         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.67      0.80         3
+Positive Corona       0.67      1.00      0.80         2
+
+       accuracy                           0.80         5
+      macro avg       0.83      0.83      0.80         5
+   weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.67      1.00      0.80         2
+Positive Corona       1.00      0.67      0.80         3
+
+       accuracy                           0.80         5
+      macro avg       0.83      0.83      0.80         5
+   weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.67      0.80         3
+Positive Corona       0.67      1.00      0.80         2
+
+       accuracy                           0.80         5
+      macro avg       0.83      0.83      0.80         5
+   weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         2
+Positive Corona       0.50      0.67      0.57         3
+
+       accuracy                           0.40         5
+      macro avg       0.25      0.33      0.29         5
+   weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.67      1.00      0.80         2
+Positive Corona       1.00      0.67      0.80         3
+
+       accuracy                           0.80         5
+      macro avg       0.83      0.83      0.80         5
+   weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.67      0.80         3
+Positive Corona       0.00      0.00      0.00         0
+
+       accuracy                           0.67         3
+      macro avg       0.50      0.33      0.40         3
+   weighted avg       1.00      0.67      0.80         3
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.25      1.00      0.40         1
+Positive Lung Op       1.00      0.25      0.40         4
+
+        accuracy                           0.40         5
+       macro avg       0.62      0.62      0.40         5
+    weighted avg       0.85      0.40      0.40         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.50      0.67         2
+Positive Lung Op       0.75      1.00      0.86         3
+
+        accuracy                           0.80         5
+       macro avg       0.88      0.75      0.76         5
+    weighted avg       0.85      0.80      0.78         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         1
+Positive Lung Op       0.80      1.00      0.89         4
+
+        accuracy                           0.80         5
+       macro avg       0.40      0.50      0.44         5
+    weighted avg       0.64      0.80      0.71         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.67      0.80         3
+Positive Lung Op       0.67      1.00      0.80         2
+
+        accuracy                           0.80         5
+       macro avg       0.83      0.83      0.80         5
+    weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.67      1.00      0.80         2
+Positive Lung Op       1.00      0.67      0.80         3
+
+        accuracy                           0.80         5
+       macro avg       0.83      0.83      0.80         5
+    weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.67      0.80         3
+Positive Lung Op       0.67      1.00      0.80         2
+
+        accuracy                           0.80         5
+       macro avg       0.83      0.83      0.80         5
+    weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         2
+Positive Lung Op       0.50      0.67      0.57         3
+
+        accuracy                           0.40         5
+       macro avg       0.25      0.33      0.29         5
+    weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.67      1.00      0.80         2
+Positive Lung Op       1.00      0.67      0.80         3
+
+        accuracy                           0.80         5
+       macro avg       0.83      0.83      0.80         5
+    weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.67      0.80         3
+Positive Lung Op       0.00      0.00      0.00         0
+
+        accuracy                           0.67         3
+       macro avg       0.50      0.33      0.40         3
+    weighted avg       1.00      0.67      0.80         3
+
+----------------------
+
+Training accuracy [0.8490566037735849, 0.7547169811320755]
+ 
+Avg Training Stats after 2 global rounds:
+Training Loss : 0.46179916193553555
+Train Accuracy: 75.47% 
+
+
+ | Global Training Round : 3 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 2 | Local Epoch : 0 | [0/420 (0%)]	Loss: 0.225011
+| Global Round : 2 | Local Epoch : 0 | [100/420 (24%)]	Loss: 0.350024
+| Global Round : 2 | Local Epoch : 0 | [200/420 (48%)]	Loss: 0.292365
+| Global Round : 2 | Local Epoch : 0 | [300/420 (71%)]	Loss: 0.570837
+| Global Round : 2 | Local Epoch : 0 | [400/420 (95%)]	Loss: 0.018456
+| Global Round : 2 | Local Epoch : 1 | [0/420 (0%)]	Loss: 0.065554
+| Global Round : 2 | Local Epoch : 1 | [100/420 (24%)]	Loss: 0.239300
+| Global Round : 2 | Local Epoch : 1 | [200/420 (48%)]	Loss: 0.316971
+| Global Round : 2 | Local Epoch : 1 | [300/420 (71%)]	Loss: 0.202394
+| Global Round : 2 | Local Epoch : 1 | [400/420 (95%)]	Loss: 0.203993
+| Global Round : 2 | Local Epoch : 2 | [0/420 (0%)]	Loss: 0.290628
+| Global Round : 2 | Local Epoch : 2 | [100/420 (24%)]	Loss: 0.101042
+| Global Round : 2 | Local Epoch : 2 | [200/420 (48%)]	Loss: 0.355686
+| Global Round : 2 | Local Epoch : 2 | [300/420 (71%)]	Loss: 0.171421
+| Global Round : 2 | Local Epoch : 2 | [400/420 (95%)]	Loss: 0.142950
+| Global Round : 2 | Local Epoch : 3 | [0/420 (0%)]	Loss: 0.129138
+| Global Round : 2 | Local Epoch : 3 | [100/420 (24%)]	Loss: 0.118486
+| Global Round : 2 | Local Epoch : 3 | [200/420 (48%)]	Loss: 0.278898
+| Global Round : 2 | Local Epoch : 3 | [300/420 (71%)]	Loss: 0.110286
+| Global Round : 2 | Local Epoch : 3 | [400/420 (95%)]	Loss: 0.107637
+| Global Round : 2 | Local Epoch : 4 | [0/420 (0%)]	Loss: 0.115501
+| Global Round : 2 | Local Epoch : 4 | [100/420 (24%)]	Loss: 0.099520
+| Global Round : 2 | Local Epoch : 4 | [200/420 (48%)]	Loss: 0.333594
+| Global Round : 2 | Local Epoch : 4 | [300/420 (71%)]	Loss: 0.260681
+| Global Round : 2 | Local Epoch : 4 | [400/420 (95%)]	Loss: 0.143198
+| Global Round : 2 | Local Epoch : 5 | [0/420 (0%)]	Loss: 0.060161
+| Global Round : 2 | Local Epoch : 5 | [100/420 (24%)]	Loss: 0.069772
+| Global Round : 2 | Local Epoch : 5 | [200/420 (48%)]	Loss: 0.037401
+| Global Round : 2 | Local Epoch : 5 | [300/420 (71%)]	Loss: 0.160366
+| Global Round : 2 | Local Epoch : 5 | [400/420 (95%)]	Loss: 0.069599
+| Global Round : 2 | Local Epoch : 6 | [0/420 (0%)]	Loss: 0.045814
+| Global Round : 2 | Local Epoch : 6 | [100/420 (24%)]	Loss: 0.035955
+| Global Round : 2 | Local Epoch : 6 | [200/420 (48%)]	Loss: 0.054417
+| Global Round : 2 | Local Epoch : 6 | [300/420 (71%)]	Loss: 0.007413
+| Global Round : 2 | Local Epoch : 6 | [400/420 (95%)]	Loss: 0.206575
+| Global Round : 2 | Local Epoch : 7 | [0/420 (0%)]	Loss: 0.128347
+| Global Round : 2 | Local Epoch : 7 | [100/420 (24%)]	Loss: 0.080664
+| Global Round : 2 | Local Epoch : 7 | [200/420 (48%)]	Loss: 0.161924
+| Global Round : 2 | Local Epoch : 7 | [300/420 (71%)]	Loss: 0.067377
+| Global Round : 2 | Local Epoch : 7 | [400/420 (95%)]	Loss: 0.074892
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.50      1.00      0.67         2
+Positive Corona       1.00      0.33      0.50         3
+
+       accuracy                           0.60         5
+      macro avg       0.75      0.67      0.58         5
+   weighted avg       0.80      0.60      0.57         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         0
+Positive Corona       1.00      1.00      1.00         5
+
+      micro avg       1.00      1.00      1.00         5
+      macro avg       0.50      0.50      0.50         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.50      1.00      0.67         1
+Positive Corona       1.00      0.75      0.86         4
+
+       accuracy                           0.80         5
+      macro avg       0.75      0.88      0.76         5
+   weighted avg       0.90      0.80      0.82         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.67      1.00      0.80         2
+Positive Corona       1.00      0.67      0.80         3
+
+       accuracy                           0.80         5
+      macro avg       0.83      0.83      0.80         5
+   weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         0
+Positive Corona       1.00      0.60      0.75         5
+
+       accuracy                           0.60         5
+      macro avg       0.50      0.30      0.37         5
+   weighted avg       1.00      0.60      0.75         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         2
+Positive Corona       0.50      0.67      0.57         3
+
+       accuracy                           0.40         5
+      macro avg       0.25      0.33      0.29         5
+   weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.67      1.00      0.80         2
+Positive Corona       1.00      0.67      0.80         3
+
+       accuracy                           0.80         5
+      macro avg       0.83      0.83      0.80         5
+   weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         3
+      macro avg       1.00      1.00      1.00         3
+   weighted avg       1.00      1.00      1.00         3
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.50      1.00      0.67         2
+Positive Lung Op       1.00      0.33      0.50         3
+
+        accuracy                           0.60         5
+       macro avg       0.75      0.67      0.58         5
+    weighted avg       0.80      0.60      0.57         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         0
+Positive Lung Op       1.00      1.00      1.00         5
+
+       micro avg       1.00      1.00      1.00         5
+       macro avg       0.50      0.50      0.50         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.50      1.00      0.67         1
+Positive Lung Op       1.00      0.75      0.86         4
+
+        accuracy                           0.80         5
+       macro avg       0.75      0.88      0.76         5
+    weighted avg       0.90      0.80      0.82         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.67      1.00      0.80         2
+Positive Lung Op       1.00      0.67      0.80         3
+
+        accuracy                           0.80         5
+       macro avg       0.83      0.83      0.80         5
+    weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         0
+Positive Lung Op       1.00      0.60      0.75         5
+
+        accuracy                           0.60         5
+       macro avg       0.50      0.30      0.37         5
+    weighted avg       1.00      0.60      0.75         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         2
+Positive Lung Op       0.50      0.67      0.57         3
+
+        accuracy                           0.40         5
+       macro avg       0.25      0.33      0.29         5
+    weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.67      1.00      0.80         2
+Positive Lung Op       1.00      0.67      0.80         3
+
+        accuracy                           0.80         5
+       macro avg       0.83      0.83      0.80         5
+    weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         3
+       macro avg       1.00      1.00      1.00         3
+    weighted avg       1.00      1.00      1.00         3
+
+----------------------
+
+Training accuracy [0.8490566037735849, 0.7547169811320755, 0.8113207547169812]
+
+ | Global Training Round : 4 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 3 | Local Epoch : 0 | [0/420 (0%)]	Loss: 0.164784
+| Global Round : 3 | Local Epoch : 0 | [100/420 (24%)]	Loss: 0.167195
+| Global Round : 3 | Local Epoch : 0 | [200/420 (48%)]	Loss: 0.078233
+| Global Round : 3 | Local Epoch : 0 | [300/420 (71%)]	Loss: 0.183360
+| Global Round : 3 | Local Epoch : 0 | [400/420 (95%)]	Loss: 0.205239
+| Global Round : 3 | Local Epoch : 1 | [0/420 (0%)]	Loss: 0.224570
+| Global Round : 3 | Local Epoch : 1 | [100/420 (24%)]	Loss: 0.059631
+| Global Round : 3 | Local Epoch : 1 | [200/420 (48%)]	Loss: 0.045977
+| Global Round : 3 | Local Epoch : 1 | [300/420 (71%)]	Loss: 0.016438
+| Global Round : 3 | Local Epoch : 1 | [400/420 (95%)]	Loss: 0.036936
+| Global Round : 3 | Local Epoch : 2 | [0/420 (0%)]	Loss: 0.044194
+| Global Round : 3 | Local Epoch : 2 | [100/420 (24%)]	Loss: 0.023220
+| Global Round : 3 | Local Epoch : 2 | [200/420 (48%)]	Loss: 0.040313
+| Global Round : 3 | Local Epoch : 2 | [300/420 (71%)]	Loss: 0.038733
+| Global Round : 3 | Local Epoch : 2 | [400/420 (95%)]	Loss: 0.017809
+| Global Round : 3 | Local Epoch : 3 | [0/420 (0%)]	Loss: 0.306743
+| Global Round : 3 | Local Epoch : 3 | [100/420 (24%)]	Loss: 0.116464
+| Global Round : 3 | Local Epoch : 3 | [200/420 (48%)]	Loss: 0.003164
+| Global Round : 3 | Local Epoch : 3 | [300/420 (71%)]	Loss: 0.167718
+| Global Round : 3 | Local Epoch : 3 | [400/420 (95%)]	Loss: 0.182597
+| Global Round : 3 | Local Epoch : 4 | [0/420 (0%)]	Loss: 0.239605
+| Global Round : 3 | Local Epoch : 4 | [100/420 (24%)]	Loss: 0.046948
+| Global Round : 3 | Local Epoch : 4 | [200/420 (48%)]	Loss: 0.016643
+| Global Round : 3 | Local Epoch : 4 | [300/420 (71%)]	Loss: 0.005884
+| Global Round : 3 | Local Epoch : 4 | [400/420 (95%)]	Loss: 0.052969
+| Global Round : 3 | Local Epoch : 5 | [0/420 (0%)]	Loss: 0.115520
+| Global Round : 3 | Local Epoch : 5 | [100/420 (24%)]	Loss: 0.354884
+| Global Round : 3 | Local Epoch : 5 | [200/420 (48%)]	Loss: 0.202555
+| Global Round : 3 | Local Epoch : 5 | [300/420 (71%)]	Loss: 0.054627
+| Global Round : 3 | Local Epoch : 5 | [400/420 (95%)]	Loss: 0.015605
+| Global Round : 3 | Local Epoch : 6 | [0/420 (0%)]	Loss: 0.013062
+| Global Round : 3 | Local Epoch : 6 | [100/420 (24%)]	Loss: 0.013530
+| Global Round : 3 | Local Epoch : 6 | [200/420 (48%)]	Loss: 0.061247
+| Global Round : 3 | Local Epoch : 6 | [300/420 (71%)]	Loss: 0.062867
+| Global Round : 3 | Local Epoch : 6 | [400/420 (95%)]	Loss: 0.030113
+| Global Round : 3 | Local Epoch : 7 | [0/420 (0%)]	Loss: 0.444379
+| Global Round : 3 | Local Epoch : 7 | [100/420 (24%)]	Loss: 0.037293
+| Global Round : 3 | Local Epoch : 7 | [200/420 (48%)]	Loss: 0.108797
+| Global Round : 3 | Local Epoch : 7 | [300/420 (71%)]	Loss: 0.005455
+| Global Round : 3 | Local Epoch : 7 | [400/420 (95%)]	Loss: 0.050132
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.50      1.00      0.67         2
+Positive Corona       1.00      0.33      0.50         3
+
+       accuracy                           0.60         5
+      macro avg       0.75      0.67      0.58         5
+   weighted avg       0.80      0.60      0.57         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.50      0.67         2
+Positive Corona       0.75      1.00      0.86         3
+
+       accuracy                           0.80         5
+      macro avg       0.88      0.75      0.76         5
+   weighted avg       0.85      0.80      0.78         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         1
+Positive Corona       0.80      1.00      0.89         4
+
+       accuracy                           0.80         5
+      macro avg       0.40      0.50      0.44         5
+   weighted avg       0.64      0.80      0.71         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.50      1.00      0.67         1
+Positive Corona       1.00      0.75      0.86         4
+
+       accuracy                           0.80         5
+      macro avg       0.75      0.88      0.76         5
+   weighted avg       0.90      0.80      0.82         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.67      1.00      0.80         2
+Positive Corona       1.00      0.67      0.80         3
+
+       accuracy                           0.80         5
+      macro avg       0.83      0.83      0.80         5
+   weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.50      1.00      0.67         1
+Positive Corona       1.00      0.75      0.86         4
+
+       accuracy                           0.80         5
+      macro avg       0.75      0.88      0.76         5
+   weighted avg       0.90      0.80      0.82         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         2
+Positive Corona       0.50      0.67      0.57         3
+
+       accuracy                           0.40         5
+      macro avg       0.25      0.33      0.29         5
+   weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.67      1.00      0.80         2
+Positive Corona       1.00      0.67      0.80         3
+
+       accuracy                           0.80         5
+      macro avg       0.83      0.83      0.80         5
+   weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.67      0.80         3
+Positive Corona       0.00      0.00      0.00         0
+
+       accuracy                           0.67         3
+      macro avg       0.50      0.33      0.40         3
+   weighted avg       1.00      0.67      0.80         3
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.50      1.00      0.67         2
+Positive Lung Op       1.00      0.33      0.50         3
+
+        accuracy                           0.60         5
+       macro avg       0.75      0.67      0.58         5
+    weighted avg       0.80      0.60      0.57         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.50      0.67         2
+Positive Lung Op       0.75      1.00      0.86         3
+
+        accuracy                           0.80         5
+       macro avg       0.88      0.75      0.76         5
+    weighted avg       0.85      0.80      0.78         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         1
+Positive Lung Op       0.80      1.00      0.89         4
+
+        accuracy                           0.80         5
+       macro avg       0.40      0.50      0.44         5
+    weighted avg       0.64      0.80      0.71         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.50      1.00      0.67         1
+Positive Lung Op       1.00      0.75      0.86         4
+
+        accuracy                           0.80         5
+       macro avg       0.75      0.88      0.76         5
+    weighted avg       0.90      0.80      0.82         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.67      1.00      0.80         2
+Positive Lung Op       1.00      0.67      0.80         3
+
+        accuracy                           0.80         5
+       macro avg       0.83      0.83      0.80         5
+    weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.50      1.00      0.67         1
+Positive Lung Op       1.00      0.75      0.86         4
+
+        accuracy                           0.80         5
+       macro avg       0.75      0.88      0.76         5
+    weighted avg       0.90      0.80      0.82         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         2
+Positive Lung Op       0.50      0.67      0.57         3
+
+        accuracy                           0.40         5
+       macro avg       0.25      0.33      0.29         5
+    weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.67      1.00      0.80         2
+Positive Lung Op       1.00      0.67      0.80         3
+
+        accuracy                           0.80         5
+       macro avg       0.83      0.83      0.80         5
+    weighted avg       0.87      0.80      0.80         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.67      0.80         3
+Positive Lung Op       0.00      0.00      0.00         0
+
+        accuracy                           0.67         3
+       macro avg       0.50      0.33      0.40         3
+    weighted avg       1.00      0.67      0.80         3
+
+----------------------
+
+Training accuracy [0.8490566037735849, 0.7547169811320755, 0.8113207547169812, 0.7735849056603774]
+ 
+Avg Training Stats after 4 global rounds:
+Training Loss : 0.30370102603583726
+Train Accuracy: 77.36% 
+
+
+ | Global Training Round : 5 |
+
+----------------
+user chosen 2
+----------------
+----------------
+| Global Round : 4 | Local Epoch : 0 | [0/330 (0%)]	Loss: 3.725883
+| Global Round : 4 | Local Epoch : 0 | [100/330 (30%)]	Loss: 0.424631
+| Global Round : 4 | Local Epoch : 0 | [200/330 (61%)]	Loss: 0.540932
+| Global Round : 4 | Local Epoch : 0 | [300/330 (91%)]	Loss: 0.870202
+| Global Round : 4 | Local Epoch : 1 | [0/330 (0%)]	Loss: 2.344298
+| Global Round : 4 | Local Epoch : 1 | [100/330 (30%)]	Loss: 0.608057
+| Global Round : 4 | Local Epoch : 1 | [200/330 (61%)]	Loss: 0.787054
+| Global Round : 4 | Local Epoch : 1 | [300/330 (91%)]	Loss: 0.252040
+| Global Round : 4 | Local Epoch : 2 | [0/330 (0%)]	Loss: 0.151871
+| Global Round : 4 | Local Epoch : 2 | [100/330 (30%)]	Loss: 0.461481
+| Global Round : 4 | Local Epoch : 2 | [200/330 (61%)]	Loss: 0.639794
+| Global Round : 4 | Local Epoch : 2 | [300/330 (91%)]	Loss: 0.150292
+| Global Round : 4 | Local Epoch : 3 | [0/330 (0%)]	Loss: 0.210335
+| Global Round : 4 | Local Epoch : 3 | [100/330 (30%)]	Loss: 0.457759
+| Global Round : 4 | Local Epoch : 3 | [200/330 (61%)]	Loss: 0.248820
+| Global Round : 4 | Local Epoch : 3 | [300/330 (91%)]	Loss: 0.125740
+| Global Round : 4 | Local Epoch : 4 | [0/330 (0%)]	Loss: 0.094892
+| Global Round : 4 | Local Epoch : 4 | [100/330 (30%)]	Loss: 0.292912
+| Global Round : 4 | Local Epoch : 4 | [200/330 (61%)]	Loss: 0.159666
+| Global Round : 4 | Local Epoch : 4 | [300/330 (91%)]	Loss: 0.344294
+| Global Round : 4 | Local Epoch : 5 | [0/330 (0%)]	Loss: 0.147096
+| Global Round : 4 | Local Epoch : 5 | [100/330 (30%)]	Loss: 0.303250
+| Global Round : 4 | Local Epoch : 5 | [200/330 (61%)]	Loss: 0.168775
+| Global Round : 4 | Local Epoch : 5 | [300/330 (91%)]	Loss: 0.213846
+| Global Round : 4 | Local Epoch : 6 | [0/330 (0%)]	Loss: 0.417581
+| Global Round : 4 | Local Epoch : 6 | [100/330 (30%)]	Loss: 0.146320
+| Global Round : 4 | Local Epoch : 6 | [200/330 (61%)]	Loss: 0.109950
+| Global Round : 4 | Local Epoch : 6 | [300/330 (91%)]	Loss: 0.103430
+| Global Round : 4 | Local Epoch : 7 | [0/330 (0%)]	Loss: 0.085335
+| Global Round : 4 | Local Epoch : 7 | [100/330 (30%)]	Loss: 0.098576
+| Global Round : 4 | Local Epoch : 7 | [200/330 (61%)]	Loss: 0.226978
+| Global Round : 4 | Local Epoch : 7 | [300/330 (91%)]	Loss: 0.543450
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         2
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         2
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         2
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         0
+Positive Corona       1.00      0.50      0.67         4
+
+       accuracy                           0.50         4
+      macro avg       0.50      0.25      0.33         4
+   weighted avg       1.00      0.50      0.67         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.50      0.67         2
+Positive Corona       0.67      1.00      0.80         2
+
+       accuracy                           0.75         4
+      macro avg       0.83      0.75      0.73         4
+   weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.67      1.00      0.80         2
+Positive Corona       1.00      0.50      0.67         2
+
+       accuracy                           0.75         4
+      macro avg       0.83      0.75      0.73         4
+   weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.50      0.67         2
+Positive Corona       0.67      1.00      0.80         2
+
+       accuracy                           0.75         4
+      macro avg       0.83      0.75      0.73         4
+   weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.67      1.00      0.80         2
+Positive Corona       1.00      0.50      0.67         2
+
+       accuracy                           0.75         4
+      macro avg       0.83      0.75      0.73         4
+   weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         2
+      macro avg       1.00      1.00      1.00         2
+   weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         2
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         2
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         2
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         0
+Positive Lung Op       1.00      0.50      0.67         4
+
+        accuracy                           0.50         4
+       macro avg       0.50      0.25      0.33         4
+    weighted avg       1.00      0.50      0.67         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.50      0.67         2
+Positive Lung Op       0.67      1.00      0.80         2
+
+        accuracy                           0.75         4
+       macro avg       0.83      0.75      0.73         4
+    weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.67      1.00      0.80         2
+Positive Lung Op       1.00      0.50      0.67         2
+
+        accuracy                           0.75         4
+       macro avg       0.83      0.75      0.73         4
+    weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.50      0.67         2
+Positive Lung Op       0.67      1.00      0.80         2
+
+        accuracy                           0.75         4
+       macro avg       0.83      0.75      0.73         4
+    weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.67      1.00      0.80         2
+Positive Lung Op       1.00      0.50      0.67         2
+
+        accuracy                           0.75         4
+       macro avg       0.83      0.75      0.73         4
+    weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         2
+       macro avg       1.00      1.00      1.00         2
+    weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+Training accuracy [0.8490566037735849, 0.7547169811320755, 0.8113207547169812, 0.7735849056603774, 0.8571428571428571]
+
+ | Global Training Round : 6 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 5 | Local Epoch : 0 | [0/420 (0%)]	Loss: 0.263510
+| Global Round : 5 | Local Epoch : 0 | [100/420 (24%)]	Loss: 0.044978
+| Global Round : 5 | Local Epoch : 0 | [200/420 (48%)]	Loss: 0.331202
+| Global Round : 5 | Local Epoch : 0 | [300/420 (71%)]	Loss: 0.117754
+| Global Round : 5 | Local Epoch : 0 | [400/420 (95%)]	Loss: 0.056757
+| Global Round : 5 | Local Epoch : 1 | [0/420 (0%)]	Loss: 0.028757
+| Global Round : 5 | Local Epoch : 1 | [100/420 (24%)]	Loss: 0.293933
+| Global Round : 5 | Local Epoch : 1 | [200/420 (48%)]	Loss: 0.051176
+| Global Round : 5 | Local Epoch : 1 | [300/420 (71%)]	Loss: 0.056691
+| Global Round : 5 | Local Epoch : 1 | [400/420 (95%)]	Loss: 0.206308
+| Global Round : 5 | Local Epoch : 2 | [0/420 (0%)]	Loss: 0.035263
+| Global Round : 5 | Local Epoch : 2 | [100/420 (24%)]	Loss: 0.059263
+| Global Round : 5 | Local Epoch : 2 | [200/420 (48%)]	Loss: 0.459911
+| Global Round : 5 | Local Epoch : 2 | [300/420 (71%)]	Loss: 0.177064
+| Global Round : 5 | Local Epoch : 2 | [400/420 (95%)]	Loss: 0.043626
+| Global Round : 5 | Local Epoch : 3 | [0/420 (0%)]	Loss: 0.033502
+| Global Round : 5 | Local Epoch : 3 | [100/420 (24%)]	Loss: 0.150284
+| Global Round : 5 | Local Epoch : 3 | [200/420 (48%)]	Loss: 0.062616
+| Global Round : 5 | Local Epoch : 3 | [300/420 (71%)]	Loss: 0.084569
+| Global Round : 5 | Local Epoch : 3 | [400/420 (95%)]	Loss: 0.459182
+| Global Round : 5 | Local Epoch : 4 | [0/420 (0%)]	Loss: 0.015896
+| Global Round : 5 | Local Epoch : 4 | [100/420 (24%)]	Loss: 0.060624
+| Global Round : 5 | Local Epoch : 4 | [200/420 (48%)]	Loss: 0.029390
+| Global Round : 5 | Local Epoch : 4 | [300/420 (71%)]	Loss: 0.123844
+| Global Round : 5 | Local Epoch : 4 | [400/420 (95%)]	Loss: 0.042234
+| Global Round : 5 | Local Epoch : 5 | [0/420 (0%)]	Loss: 0.028692
+| Global Round : 5 | Local Epoch : 5 | [100/420 (24%)]	Loss: 0.024105
+| Global Round : 5 | Local Epoch : 5 | [200/420 (48%)]	Loss: 0.303990
+| Global Round : 5 | Local Epoch : 5 | [300/420 (71%)]	Loss: 0.124892
+| Global Round : 5 | Local Epoch : 5 | [400/420 (95%)]	Loss: 0.299796
+| Global Round : 5 | Local Epoch : 6 | [0/420 (0%)]	Loss: 0.006864
+| Global Round : 5 | Local Epoch : 6 | [100/420 (24%)]	Loss: 0.005054
+| Global Round : 5 | Local Epoch : 6 | [200/420 (48%)]	Loss: 0.020936
+| Global Round : 5 | Local Epoch : 6 | [300/420 (71%)]	Loss: 0.016455
+| Global Round : 5 | Local Epoch : 6 | [400/420 (95%)]	Loss: 0.018013
+| Global Round : 5 | Local Epoch : 7 | [0/420 (0%)]	Loss: 0.009266
+| Global Round : 5 | Local Epoch : 7 | [100/420 (24%)]	Loss: 0.026141
+| Global Round : 5 | Local Epoch : 7 | [200/420 (48%)]	Loss: 0.044800
+| Global Round : 5 | Local Epoch : 7 | [300/420 (71%)]	Loss: 0.203981
+| Global Round : 5 | Local Epoch : 7 | [400/420 (95%)]	Loss: 0.016756
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.75      1.00      0.86         3
+Positive Corona       1.00      0.50      0.67         2
+
+       accuracy                           0.80         5
+      macro avg       0.88      0.75      0.76         5
+   weighted avg       0.85      0.80      0.78         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.50      0.67         2
+Positive Corona       0.75      1.00      0.86         3
+
+       accuracy                           0.80         5
+      macro avg       0.88      0.75      0.76         5
+   weighted avg       0.85      0.80      0.78         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         1
+Positive Corona       0.80      1.00      0.89         4
+
+       accuracy                           0.80         5
+      macro avg       0.40      0.50      0.44         5
+   weighted avg       0.64      0.80      0.71         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         3
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.33      1.00      0.50         1
+Positive Corona       1.00      0.50      0.67         4
+
+       accuracy                           0.60         5
+      macro avg       0.67      0.75      0.58         5
+   weighted avg       0.87      0.60      0.63         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         3
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         2
+Positive Corona       0.50      0.67      0.57         3
+
+       accuracy                           0.40         5
+      macro avg       0.25      0.33      0.29         5
+   weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         2
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         3
+      macro avg       1.00      1.00      1.00         3
+   weighted avg       1.00      1.00      1.00         3
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.75      1.00      0.86         3
+Positive Lung Op       1.00      0.50      0.67         2
+
+        accuracy                           0.80         5
+       macro avg       0.88      0.75      0.76         5
+    weighted avg       0.85      0.80      0.78         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.50      0.67         2
+Positive Lung Op       0.75      1.00      0.86         3
+
+        accuracy                           0.80         5
+       macro avg       0.88      0.75      0.76         5
+    weighted avg       0.85      0.80      0.78         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         1
+Positive Lung Op       0.80      1.00      0.89         4
+
+        accuracy                           0.80         5
+       macro avg       0.40      0.50      0.44         5
+    weighted avg       0.64      0.80      0.71         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         3
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.33      1.00      0.50         1
+Positive Lung Op       1.00      0.50      0.67         4
+
+        accuracy                           0.60         5
+       macro avg       0.67      0.75      0.58         5
+    weighted avg       0.87      0.60      0.63         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         3
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         2
+Positive Lung Op       0.50      0.67      0.57         3
+
+        accuracy                           0.40         5
+       macro avg       0.25      0.33      0.29         5
+    weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         2
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         3
+       macro avg       1.00      1.00      1.00         3
+    weighted avg       1.00      1.00      1.00         3
+
+----------------------
+
+Training accuracy [0.8490566037735849, 0.7547169811320755, 0.8113207547169812, 0.7735849056603774, 0.8571428571428571, 0.8490566037735849]
+ 
+Avg Training Stats after 6 global rounds:
+Training Loss : 0.28071873868955727
+Train Accuracy: 84.91% 
+
+
+ | Global Training Round : 7 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 6 | Local Epoch : 0 | [0/420 (0%)]	Loss: 0.008411
+| Global Round : 6 | Local Epoch : 0 | [100/420 (24%)]	Loss: 0.087448
+| Global Round : 6 | Local Epoch : 0 | [200/420 (48%)]	Loss: 0.077058
+| Global Round : 6 | Local Epoch : 0 | [300/420 (71%)]	Loss: 0.000087
+| Global Round : 6 | Local Epoch : 0 | [400/420 (95%)]	Loss: 0.002176
+| Global Round : 6 | Local Epoch : 1 | [0/420 (0%)]	Loss: 0.002600
+| Global Round : 6 | Local Epoch : 1 | [100/420 (24%)]	Loss: 0.009324
+| Global Round : 6 | Local Epoch : 1 | [200/420 (48%)]	Loss: 0.018136
+| Global Round : 6 | Local Epoch : 1 | [300/420 (71%)]	Loss: 0.060496
+| Global Round : 6 | Local Epoch : 1 | [400/420 (95%)]	Loss: 0.205345
+| Global Round : 6 | Local Epoch : 2 | [0/420 (0%)]	Loss: 0.061556
+| Global Round : 6 | Local Epoch : 2 | [100/420 (24%)]	Loss: 0.009832
+| Global Round : 6 | Local Epoch : 2 | [200/420 (48%)]	Loss: 0.108830
+| Global Round : 6 | Local Epoch : 2 | [300/420 (71%)]	Loss: 0.025073
+| Global Round : 6 | Local Epoch : 2 | [400/420 (95%)]	Loss: 0.002143
+| Global Round : 6 | Local Epoch : 3 | [0/420 (0%)]	Loss: 0.003173
+| Global Round : 6 | Local Epoch : 3 | [100/420 (24%)]	Loss: 0.054176
+| Global Round : 6 | Local Epoch : 3 | [200/420 (48%)]	Loss: 0.007396
+| Global Round : 6 | Local Epoch : 3 | [300/420 (71%)]	Loss: 0.059189
+| Global Round : 6 | Local Epoch : 3 | [400/420 (95%)]	Loss: 0.002497
+| Global Round : 6 | Local Epoch : 4 | [0/420 (0%)]	Loss: 0.101597
+| Global Round : 6 | Local Epoch : 4 | [100/420 (24%)]	Loss: 0.308545
+| Global Round : 6 | Local Epoch : 4 | [200/420 (48%)]	Loss: 0.012521
+| Global Round : 6 | Local Epoch : 4 | [300/420 (71%)]	Loss: 0.012884
+| Global Round : 6 | Local Epoch : 4 | [400/420 (95%)]	Loss: 0.019047
+| Global Round : 6 | Local Epoch : 5 | [0/420 (0%)]	Loss: 0.018757
+| Global Round : 6 | Local Epoch : 5 | [100/420 (24%)]	Loss: 0.018736
+| Global Round : 6 | Local Epoch : 5 | [200/420 (48%)]	Loss: 0.008608
+| Global Round : 6 | Local Epoch : 5 | [300/420 (71%)]	Loss: 0.030884
+| Global Round : 6 | Local Epoch : 5 | [400/420 (95%)]	Loss: 0.045744
+| Global Round : 6 | Local Epoch : 6 | [0/420 (0%)]	Loss: 0.047243
+| Global Round : 6 | Local Epoch : 6 | [100/420 (24%)]	Loss: 0.016830
+| Global Round : 6 | Local Epoch : 6 | [200/420 (48%)]	Loss: 0.262472
+| Global Round : 6 | Local Epoch : 6 | [300/420 (71%)]	Loss: 0.003360
+| Global Round : 6 | Local Epoch : 6 | [400/420 (95%)]	Loss: 0.022347
+| Global Round : 6 | Local Epoch : 7 | [0/420 (0%)]	Loss: 0.009229
+| Global Round : 6 | Local Epoch : 7 | [100/420 (24%)]	Loss: 0.056220
+| Global Round : 6 | Local Epoch : 7 | [200/420 (48%)]	Loss: 0.068692
+| Global Round : 6 | Local Epoch : 7 | [300/420 (71%)]	Loss: 0.005632
+| Global Round : 6 | Local Epoch : 7 | [400/420 (95%)]	Loss: 0.000672
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.25      1.00      0.40         1
+Positive Corona       1.00      0.25      0.40         4
+
+       accuracy                           0.40         5
+      macro avg       0.62      0.62      0.40         5
+   weighted avg       0.85      0.40      0.40         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.50      0.67         2
+Positive Corona       0.75      1.00      0.86         3
+
+       accuracy                           0.80         5
+      macro avg       0.88      0.75      0.76         5
+   weighted avg       0.85      0.80      0.78         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         0
+Positive Corona       1.00      1.00      1.00         5
+
+      micro avg       1.00      1.00      1.00         5
+      macro avg       0.50      0.50      0.50         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.50      1.00      0.67         1
+Positive Corona       1.00      0.75      0.86         4
+
+       accuracy                           0.80         5
+      macro avg       0.75      0.88      0.76         5
+   weighted avg       0.90      0.80      0.82         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.33      0.50      0.40         2
+Positive Corona       0.50      0.33      0.40         3
+
+       accuracy                           0.40         5
+      macro avg       0.42      0.42      0.40         5
+   weighted avg       0.43      0.40      0.40         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         3
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         2
+Positive Corona       0.50      0.67      0.57         3
+
+       accuracy                           0.40         5
+      macro avg       0.25      0.33      0.29         5
+   weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         2
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         3
+      macro avg       1.00      1.00      1.00         3
+   weighted avg       1.00      1.00      1.00         3
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.25      1.00      0.40         1
+Positive Lung Op       1.00      0.25      0.40         4
+
+        accuracy                           0.40         5
+       macro avg       0.62      0.62      0.40         5
+    weighted avg       0.85      0.40      0.40         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.50      0.67         2
+Positive Lung Op       0.75      1.00      0.86         3
+
+        accuracy                           0.80         5
+       macro avg       0.88      0.75      0.76         5
+    weighted avg       0.85      0.80      0.78         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         0
+Positive Lung Op       1.00      1.00      1.00         5
+
+       micro avg       1.00      1.00      1.00         5
+       macro avg       0.50      0.50      0.50         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.50      1.00      0.67         1
+Positive Lung Op       1.00      0.75      0.86         4
+
+        accuracy                           0.80         5
+       macro avg       0.75      0.88      0.76         5
+    weighted avg       0.90      0.80      0.82         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.33      0.50      0.40         2
+Positive Lung Op       0.50      0.33      0.40         3
+
+        accuracy                           0.40         5
+       macro avg       0.42      0.42      0.40         5
+    weighted avg       0.43      0.40      0.40         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         3
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         2
+Positive Lung Op       0.50      0.67      0.57         3
+
+        accuracy                           0.40         5
+       macro avg       0.25      0.33      0.29         5
+    weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         2
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         3
+       macro avg       1.00      1.00      1.00         3
+    weighted avg       1.00      1.00      1.00         3
+
+----------------------
+
+Training accuracy [0.8490566037735849, 0.7547169811320755, 0.8113207547169812, 0.7735849056603774, 0.8571428571428571, 0.8490566037735849, 0.7924528301886793]
+
+ | Global Training Round : 8 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 7 | Local Epoch : 0 | [0/420 (0%)]	Loss: 0.001794
+| Global Round : 7 | Local Epoch : 0 | [100/420 (24%)]	Loss: 0.010375
+| Global Round : 7 | Local Epoch : 0 | [200/420 (48%)]	Loss: 0.002559
+| Global Round : 7 | Local Epoch : 0 | [300/420 (71%)]	Loss: 0.012456
+| Global Round : 7 | Local Epoch : 0 | [400/420 (95%)]	Loss: 0.004259
+| Global Round : 7 | Local Epoch : 1 | [0/420 (0%)]	Loss: 0.179298
+| Global Round : 7 | Local Epoch : 1 | [100/420 (24%)]	Loss: 0.000082
+| Global Round : 7 | Local Epoch : 1 | [200/420 (48%)]	Loss: 0.092321
+| Global Round : 7 | Local Epoch : 1 | [300/420 (71%)]	Loss: 0.012853
+| Global Round : 7 | Local Epoch : 1 | [400/420 (95%)]	Loss: 0.496207
+| Global Round : 7 | Local Epoch : 2 | [0/420 (0%)]	Loss: 0.010627
+| Global Round : 7 | Local Epoch : 2 | [100/420 (24%)]	Loss: 0.209871
+| Global Round : 7 | Local Epoch : 2 | [200/420 (48%)]	Loss: 0.000180
+| Global Round : 7 | Local Epoch : 2 | [300/420 (71%)]	Loss: 0.188585
+| Global Round : 7 | Local Epoch : 2 | [400/420 (95%)]	Loss: 0.085253
+| Global Round : 7 | Local Epoch : 3 | [0/420 (0%)]	Loss: 0.020600
+| Global Round : 7 | Local Epoch : 3 | [100/420 (24%)]	Loss: 0.017986
+| Global Round : 7 | Local Epoch : 3 | [200/420 (48%)]	Loss: 0.000049
+| Global Round : 7 | Local Epoch : 3 | [300/420 (71%)]	Loss: 0.033218
+| Global Round : 7 | Local Epoch : 3 | [400/420 (95%)]	Loss: 0.047171
+| Global Round : 7 | Local Epoch : 4 | [0/420 (0%)]	Loss: 0.035165
+| Global Round : 7 | Local Epoch : 4 | [100/420 (24%)]	Loss: 0.011298
+| Global Round : 7 | Local Epoch : 4 | [200/420 (48%)]	Loss: 0.034515
+| Global Round : 7 | Local Epoch : 4 | [300/420 (71%)]	Loss: 0.070113
+| Global Round : 7 | Local Epoch : 4 | [400/420 (95%)]	Loss: 0.066074
+| Global Round : 7 | Local Epoch : 5 | [0/420 (0%)]	Loss: 0.040596
+| Global Round : 7 | Local Epoch : 5 | [100/420 (24%)]	Loss: 0.022030
+| Global Round : 7 | Local Epoch : 5 | [200/420 (48%)]	Loss: 0.075000
+| Global Round : 7 | Local Epoch : 5 | [300/420 (71%)]	Loss: 0.023356
+| Global Round : 7 | Local Epoch : 5 | [400/420 (95%)]	Loss: 0.016782
+| Global Round : 7 | Local Epoch : 6 | [0/420 (0%)]	Loss: 0.418650
+| Global Round : 7 | Local Epoch : 6 | [100/420 (24%)]	Loss: 0.017068
+| Global Round : 7 | Local Epoch : 6 | [200/420 (48%)]	Loss: 0.011055
+| Global Round : 7 | Local Epoch : 6 | [300/420 (71%)]	Loss: 0.001474
+| Global Round : 7 | Local Epoch : 6 | [400/420 (95%)]	Loss: 0.042750
+| Global Round : 7 | Local Epoch : 7 | [0/420 (0%)]	Loss: 0.123964
+| Global Round : 7 | Local Epoch : 7 | [100/420 (24%)]	Loss: 0.005773
+| Global Round : 7 | Local Epoch : 7 | [200/420 (48%)]	Loss: 0.000634
+| Global Round : 7 | Local Epoch : 7 | [300/420 (71%)]	Loss: 0.219805
+| Global Round : 7 | Local Epoch : 7 | [400/420 (95%)]	Loss: 0.061585
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.25      1.00      0.40         1
+Positive Corona       1.00      0.25      0.40         4
+
+       accuracy                           0.40         5
+      macro avg       0.62      0.62      0.40         5
+   weighted avg       0.85      0.40      0.40         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         1
+Positive Corona       0.80      1.00      0.89         4
+
+       accuracy                           0.80         5
+      macro avg       0.40      0.50      0.44         5
+   weighted avg       0.64      0.80      0.71         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.50      1.00      0.67         1
+Positive Corona       1.00      0.75      0.86         4
+
+       accuracy                           0.80         5
+      macro avg       0.75      0.88      0.76         5
+   weighted avg       0.90      0.80      0.82         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.33      1.00      0.50         1
+Positive Corona       1.00      0.50      0.67         4
+
+       accuracy                           0.60         5
+      macro avg       0.67      0.75      0.58         5
+   weighted avg       0.87      0.60      0.63         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         3
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         2
+Positive Corona       0.50      0.67      0.57         3
+
+       accuracy                           0.40         5
+      macro avg       0.25      0.33      0.29         5
+   weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         2
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         4
+
+       accuracy                           1.00         5
+      macro avg       1.00      1.00      1.00         5
+   weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         3
+      macro avg       1.00      1.00      1.00         3
+   weighted avg       1.00      1.00      1.00         3
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.25      1.00      0.40         1
+Positive Lung Op       1.00      0.25      0.40         4
+
+        accuracy                           0.40         5
+       macro avg       0.62      0.62      0.40         5
+    weighted avg       0.85      0.40      0.40         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         1
+Positive Lung Op       0.80      1.00      0.89         4
+
+        accuracy                           0.80         5
+       macro avg       0.40      0.50      0.44         5
+    weighted avg       0.64      0.80      0.71         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.50      1.00      0.67         1
+Positive Lung Op       1.00      0.75      0.86         4
+
+        accuracy                           0.80         5
+       macro avg       0.75      0.88      0.76         5
+    weighted avg       0.90      0.80      0.82         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.33      1.00      0.50         1
+Positive Lung Op       1.00      0.50      0.67         4
+
+        accuracy                           0.60         5
+       macro avg       0.67      0.75      0.58         5
+    weighted avg       0.87      0.60      0.63         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         3
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         2
+Positive Lung Op       0.50      0.67      0.57         3
+
+        accuracy                           0.40         5
+       macro avg       0.25      0.33      0.29         5
+    weighted avg       0.30      0.40      0.34         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         2
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         4
+
+        accuracy                           1.00         5
+       macro avg       1.00      1.00      1.00         5
+    weighted avg       1.00      1.00      1.00         5
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         3
+       macro avg       1.00      1.00      1.00         3
+    weighted avg       1.00      1.00      1.00         3
+
+----------------------
+
+Training accuracy [0.8490566037735849, 0.7547169811320755, 0.8113207547169812, 0.7735849056603774, 0.8571428571428571, 0.8490566037735849, 0.7924528301886793, 0.8113207547169812]
+ 
+Avg Training Stats after 8 global rounds:
+Training Loss : 0.22562339420698505
+Train Accuracy: 81.13% 
+
+
+ | Global Training Round : 9 |
+
+----------------
+user chosen 2
+----------------
+----------------
+| Global Round : 8 | Local Epoch : 0 | [0/330 (0%)]	Loss: 0.031797
+| Global Round : 8 | Local Epoch : 0 | [100/330 (30%)]	Loss: 0.482394
+| Global Round : 8 | Local Epoch : 0 | [200/330 (61%)]	Loss: 0.363856
+| Global Round : 8 | Local Epoch : 0 | [300/330 (91%)]	Loss: 0.264560
+| Global Round : 8 | Local Epoch : 1 | [0/330 (0%)]	Loss: 0.116439
+| Global Round : 8 | Local Epoch : 1 | [100/330 (30%)]	Loss: 0.120578
+| Global Round : 8 | Local Epoch : 1 | [200/330 (61%)]	Loss: 0.384244
+| Global Round : 8 | Local Epoch : 1 | [300/330 (91%)]	Loss: 0.145429
+| Global Round : 8 | Local Epoch : 2 | [0/330 (0%)]	Loss: 0.115468
+| Global Round : 8 | Local Epoch : 2 | [100/330 (30%)]	Loss: 0.078159
+| Global Round : 8 | Local Epoch : 2 | [200/330 (61%)]	Loss: 0.031450
+| Global Round : 8 | Local Epoch : 2 | [300/330 (91%)]	Loss: 0.075030
+| Global Round : 8 | Local Epoch : 3 | [0/330 (0%)]	Loss: 0.124952
+| Global Round : 8 | Local Epoch : 3 | [100/330 (30%)]	Loss: 0.210085
+| Global Round : 8 | Local Epoch : 3 | [200/330 (61%)]	Loss: 0.030472
+| Global Round : 8 | Local Epoch : 3 | [300/330 (91%)]	Loss: 0.017692
+| Global Round : 8 | Local Epoch : 4 | [0/330 (0%)]	Loss: 0.161204
+| Global Round : 8 | Local Epoch : 4 | [100/330 (30%)]	Loss: 0.144275
+| Global Round : 8 | Local Epoch : 4 | [200/330 (61%)]	Loss: 0.006410
+| Global Round : 8 | Local Epoch : 4 | [300/330 (91%)]	Loss: 0.122603
+| Global Round : 8 | Local Epoch : 5 | [0/330 (0%)]	Loss: 0.217879
+| Global Round : 8 | Local Epoch : 5 | [100/330 (30%)]	Loss: 0.111648
+| Global Round : 8 | Local Epoch : 5 | [200/330 (61%)]	Loss: 0.064146
+| Global Round : 8 | Local Epoch : 5 | [300/330 (91%)]	Loss: 0.016128
+| Global Round : 8 | Local Epoch : 6 | [0/330 (0%)]	Loss: 0.019737
+| Global Round : 8 | Local Epoch : 6 | [100/330 (30%)]	Loss: 0.057192
+| Global Round : 8 | Local Epoch : 6 | [200/330 (61%)]	Loss: 0.003558
+| Global Round : 8 | Local Epoch : 6 | [300/330 (91%)]	Loss: 0.164672
+| Global Round : 8 | Local Epoch : 7 | [0/330 (0%)]	Loss: 0.177190
+| Global Round : 8 | Local Epoch : 7 | [100/330 (30%)]	Loss: 0.174681
+| Global Round : 8 | Local Epoch : 7 | [200/330 (61%)]	Loss: 0.420705
+| Global Round : 8 | Local Epoch : 7 | [300/330 (91%)]	Loss: 0.013299
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.67      0.80         3
+Positive Corona       0.50      1.00      0.67         1
+
+       accuracy                           0.75         4
+      macro avg       0.75      0.83      0.73         4
+   weighted avg       0.88      0.75      0.77         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         2
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.67      0.80         3
+Positive Corona       0.50      1.00      0.67         1
+
+       accuracy                           0.75         4
+      macro avg       0.75      0.83      0.73         4
+   weighted avg       0.88      0.75      0.77         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         0
+Positive Corona       1.00      0.50      0.67         4
+
+       accuracy                           0.50         4
+      macro avg       0.50      0.25      0.33         4
+   weighted avg       1.00      0.50      0.67         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.50      0.67         2
+Positive Corona       0.67      1.00      0.80         2
+
+       accuracy                           0.75         4
+      macro avg       0.83      0.75      0.73         4
+   weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.50      0.67         2
+Positive Corona       0.67      1.00      0.80         2
+
+       accuracy                           0.75         4
+      macro avg       0.83      0.75      0.73         4
+   weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.67      1.00      0.80         2
+Positive Corona       1.00      0.50      0.67         2
+
+       accuracy                           0.75         4
+      macro avg       0.83      0.75      0.73         4
+   weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         2
+      macro avg       1.00      1.00      1.00         2
+   weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.67      0.80         3
+Positive Lung Op       0.50      1.00      0.67         1
+
+        accuracy                           0.75         4
+       macro avg       0.75      0.83      0.73         4
+    weighted avg       0.88      0.75      0.77         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         2
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.67      0.80         3
+Positive Lung Op       0.50      1.00      0.67         1
+
+        accuracy                           0.75         4
+       macro avg       0.75      0.83      0.73         4
+    weighted avg       0.88      0.75      0.77         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         0
+Positive Lung Op       1.00      0.50      0.67         4
+
+        accuracy                           0.50         4
+       macro avg       0.50      0.25      0.33         4
+    weighted avg       1.00      0.50      0.67         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.50      0.67         2
+Positive Lung Op       0.67      1.00      0.80         2
+
+        accuracy                           0.75         4
+       macro avg       0.83      0.75      0.73         4
+    weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.50      0.67         2
+Positive Lung Op       0.67      1.00      0.80         2
+
+        accuracy                           0.75         4
+       macro avg       0.83      0.75      0.73         4
+    weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.67      1.00      0.80         2
+Positive Lung Op       1.00      0.50      0.67         2
+
+        accuracy                           0.75         4
+       macro avg       0.83      0.75      0.73         4
+    weighted avg       0.83      0.75      0.73         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         2
+       macro avg       1.00      1.00      1.00         2
+    weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+Training accuracy [0.8490566037735849, 0.7547169811320755, 0.8113207547169812, 0.7735849056603774, 0.8571428571428571, 0.8490566037735849, 0.7924528301886793, 0.8113207547169812, 0.8333333333333334]
+
+ | Global Training Round : 10 |
+
+----------------
+user chosen 2
+----------------
+----------------
+| Global Round : 9 | Local Epoch : 0 | [0/330 (0%)]	Loss: 0.105375
+| Global Round : 9 | Local Epoch : 0 | [100/330 (30%)]	Loss: 0.009565
+| Global Round : 9 | Local Epoch : 0 | [200/330 (61%)]	Loss: 0.108994
+| Global Round : 9 | Local Epoch : 0 | [300/330 (91%)]	Loss: 0.082807
+| Global Round : 9 | Local Epoch : 1 | [0/330 (0%)]	Loss: 0.060003
+| Global Round : 9 | Local Epoch : 1 | [100/330 (30%)]	Loss: 0.032059
+| Global Round : 9 | Local Epoch : 1 | [200/330 (61%)]	Loss: 0.131368
+| Global Round : 9 | Local Epoch : 1 | [300/330 (91%)]	Loss: 0.171425
+| Global Round : 9 | Local Epoch : 2 | [0/330 (0%)]	Loss: 0.007820
+| Global Round : 9 | Local Epoch : 2 | [100/330 (30%)]	Loss: 0.103876
+| Global Round : 9 | Local Epoch : 2 | [200/330 (61%)]	Loss: 0.015796
+| Global Round : 9 | Local Epoch : 2 | [300/330 (91%)]	Loss: 0.225074
+| Global Round : 9 | Local Epoch : 3 | [0/330 (0%)]	Loss: 0.016089
+| Global Round : 9 | Local Epoch : 3 | [100/330 (30%)]	Loss: 0.074834
+| Global Round : 9 | Local Epoch : 3 | [200/330 (61%)]	Loss: 0.156541
+| Global Round : 9 | Local Epoch : 3 | [300/330 (91%)]	Loss: 0.003127
+| Global Round : 9 | Local Epoch : 4 | [0/330 (0%)]	Loss: 0.031314
+| Global Round : 9 | Local Epoch : 4 | [100/330 (30%)]	Loss: 0.007820
+| Global Round : 9 | Local Epoch : 4 | [200/330 (61%)]	Loss: 0.328860
+| Global Round : 9 | Local Epoch : 4 | [300/330 (91%)]	Loss: 0.021117
+| Global Round : 9 | Local Epoch : 5 | [0/330 (0%)]	Loss: 0.029302
+| Global Round : 9 | Local Epoch : 5 | [100/330 (30%)]	Loss: 0.024455
+| Global Round : 9 | Local Epoch : 5 | [200/330 (61%)]	Loss: 0.083558
+| Global Round : 9 | Local Epoch : 5 | [300/330 (91%)]	Loss: 0.023809
+| Global Round : 9 | Local Epoch : 6 | [0/330 (0%)]	Loss: 0.055344
+| Global Round : 9 | Local Epoch : 6 | [100/330 (30%)]	Loss: 0.026373
+| Global Round : 9 | Local Epoch : 6 | [200/330 (61%)]	Loss: 0.063515
+| Global Round : 9 | Local Epoch : 6 | [300/330 (91%)]	Loss: 0.000212
+| Global Round : 9 | Local Epoch : 7 | [0/330 (0%)]	Loss: 0.018830
+| Global Round : 9 | Local Epoch : 7 | [100/330 (30%)]	Loss: 0.009195
+| Global Round : 9 | Local Epoch : 7 | [200/330 (61%)]	Loss: 0.003695
+| Global Round : 9 | Local Epoch : 7 | [300/330 (91%)]	Loss: 0.001832
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         2
+Positive Corona       1.00      1.00      1.00         2
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.67      0.80         3
+Positive Corona       0.50      1.00      0.67         1
+
+       accuracy                           0.75         4
+      macro avg       0.75      0.83      0.73         4
+   weighted avg       0.88      0.75      0.77         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.67      0.80         3
+Positive Corona       0.50      1.00      0.67         1
+
+       accuracy                           0.75         4
+      macro avg       0.75      0.83      0.73         4
+   weighted avg       0.88      0.75      0.77         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.00      0.00      0.00         0
+Positive Corona       1.00      0.50      0.67         4
+
+       accuracy                           0.50         4
+      macro avg       0.50      0.25      0.33         4
+   weighted avg       1.00      0.50      0.67         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         3
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      0.33      0.50         3
+Positive Corona       0.33      1.00      0.50         1
+
+       accuracy                           0.50         4
+      macro avg       0.67      0.67      0.50         4
+   weighted avg       0.83      0.50      0.50         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         3
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         4
+      macro avg       1.00      1.00      1.00         4
+   weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         1
+Positive Corona       1.00      1.00      1.00         1
+
+       accuracy                           1.00         2
+      macro avg       1.00      1.00      1.00         2
+   weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         2
+Positive Lung Op       1.00      1.00      1.00         2
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.67      0.80         3
+Positive Lung Op       0.50      1.00      0.67         1
+
+        accuracy                           0.75         4
+       macro avg       0.75      0.83      0.73         4
+    weighted avg       0.88      0.75      0.77         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.67      0.80         3
+Positive Lung Op       0.50      1.00      0.67         1
+
+        accuracy                           0.75         4
+       macro avg       0.75      0.83      0.73         4
+    weighted avg       0.88      0.75      0.77         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.00      0.00      0.00         0
+Positive Lung Op       1.00      0.50      0.67         4
+
+        accuracy                           0.50         4
+       macro avg       0.50      0.25      0.33         4
+    weighted avg       1.00      0.50      0.67         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         3
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      0.33      0.50         3
+Positive Lung Op       0.33      1.00      0.50         1
+
+        accuracy                           0.50         4
+       macro avg       0.67      0.67      0.50         4
+    weighted avg       0.83      0.50      0.50         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         3
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         4
+       macro avg       1.00      1.00      1.00         4
+    weighted avg       1.00      1.00      1.00         4
+
+----------------------
+
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       1.00      1.00      1.00         1
+Positive Lung Op       1.00      1.00      1.00         1
+
+        accuracy                           1.00         2
+       macro avg       1.00      1.00      1.00         2
+    weighted avg       1.00      1.00      1.00         2
+
+----------------------
+
+Training accuracy [0.8490566037735849, 0.7547169811320755, 0.8113207547169812, 0.7735849056603774, 0.8571428571428571, 0.8490566037735849, 0.7924528301886793, 0.8113207547169812, 0.8333333333333334, 0.8571428571428571]
+ 
+Avg Training Stats after 10 global rounds:
+Training Loss : 0.2056329914913758
+Train Accuracy: 85.71% 
+
+########################
+
+Client 1 Test Statistics
+
+==========================
+
+For client 1 original classes :  ['Negative Corona', 'Positive Corona']
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.98      0.86      0.92        57
+Positive Corona       0.88      0.98      0.93        59
+
+       accuracy                           0.92       116
+      macro avg       0.93      0.92      0.92       116
+   weighted avg       0.93      0.92      0.92       116
+
+----------------------
+
+==========================
+
+Testing client 1 on client 2 original classes :  ['Negative Lung Op', 'Positive Lung Op']
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.89      0.74      0.81        65
+Positive Lung Op       0.74      0.89      0.81        54
+
+        accuracy                           0.81       119
+       macro avg       0.81      0.81      0.81       119
+    weighted avg       0.82      0.81      0.81       119
+
+----------------------
+
+########################
+
+Client 2 Test Statistics
+
+==========================
+
+For client 2 original classes :  ['Negative Lung Op', 'Positive Lung Op']
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.89      0.74      0.81        65
+Positive Lung Op       0.74      0.89      0.81        54
+
+        accuracy                           0.81       119
+       macro avg       0.81      0.81      0.81       119
+    weighted avg       0.82      0.81      0.81       119
+
+----------------------
+
+==========================
+
+Testing client 2 on client 1 original classes :  ['Normal', 'Mild']
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.98      0.86      0.92        57
+        Mild       0.88      0.98      0.93        59
+
+    accuracy                           0.92       116
+   macro avg       0.93      0.92      0.92       116
+weighted avg       0.93      0.92      0.92       116
+
+----------------------
+
+Test accuracy on client 1 0.9224137931034483
+Test accuracy on client 2 0.8067226890756303
+========================================
+
+========================================
+
+Test on original client distribution for client 1 : 92.24%
+Test on client 2 distribution for client 1 : 80.67%
+Test on original client distribution for client 2 : 80.67%
+Test on client 1 distribution for client 2 : 92.24%

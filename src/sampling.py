@@ -7,9 +7,9 @@ import numpy as np
 from torchvision import datasets, transforms
 
 
-def mnist_iid(dataset1, dataset2):
+def COVID_iid(dataset1, dataset2):
     """
-    Sample I.I.D. client data from MNIST dataset
+    Sample I.I.D. client data from COVID dataset
     :param dataset:
     :param num_users:
     :return: dict of image index
@@ -41,9 +41,9 @@ def mnist_iid(dataset1, dataset2):
 
 
 
-def mnist_noniid(dataset, num_users):
+def COVID_noniid(dataset, num_users):
     """
-    Sample non-I.I.D client data from MNIST dataset
+    Sample non-I.I.D client data from COVID dataset
     :param dataset:
     :param num_users:
     :return:
@@ -69,9 +69,9 @@ def mnist_noniid(dataset, num_users):
                 (dict_users[i], idxs[rand*num_imgs:(rand+1)*num_imgs]), axis=0)
     return dict_users
 
-def mnist_noniid_unequal(dataset, num_users):
+def COVID_noniid_unequal(dataset, num_users):
     """
-    Sample non-I.I.D client data from MNIST dataset s.t clients
+    Sample non-I.I.D client data from COVID dataset s.t clients
     have unequal amount of data
     :param dataset:
     :param num_users:
@@ -203,7 +203,7 @@ def cifar_noniid(dataset, num_users):
 
 def ham10000_iid(dataset1, dataset2):
     """
-    Sample I.I.D. client data from MNIST dataset
+    Sample I.I.D. client data from COVID dataset
     :param dataset:
     :param num_users:
     :return: dict of image index
@@ -234,7 +234,7 @@ def ham10000_iid(dataset1, dataset2):
 
 def ham10000_noniid(dataset, num_users):
     """
-    Sample non-I.I.D client data from MNIST dataset
+    Sample non-I.I.D client data from COVID dataset
     :param dataset:
     :param num_users:
     :return:
@@ -262,7 +262,7 @@ def ham10000_noniid(dataset, num_users):
 
 def ham10000_noniid_unequal(dataset, num_users):
     """
-    Sample non-I.I.D client data from MNIST dataset s.t clients
+    Sample non-I.I.D client data from COVID dataset s.t clients
     have unequal amount of data
     :param dataset:
     :param num_users:
@@ -351,7 +351,7 @@ def ham10000_noniid_unequal(dataset, num_users):
 
 def aptos_iid(dataset1, dataset2):
     """
-    Sample I.I.D. client data from MNIST dataset
+    Sample I.I.D. client data from COVID dataset
     :param dataset:
     :param num_users:
     :return: dict of image index
@@ -382,7 +382,7 @@ def aptos_iid(dataset1, dataset2):
 
 def aptos_noniid(dataset, num_users):
     """
-    Sample non-I.I.D client data from MNIST dataset
+    Sample non-I.I.D client data from COVID dataset
     :param dataset:
     :param num_users:
     :return:
@@ -410,7 +410,7 @@ def aptos_noniid(dataset, num_users):
 
 def aptos_noniid_unequal(dataset, num_users):
     """
-    Sample non-I.I.D client data from MNIST dataset s.t clients
+    Sample non-I.I.D client data from COVID dataset s.t clients
     have unequal amount of data
     :param dataset:
     :param num_users:

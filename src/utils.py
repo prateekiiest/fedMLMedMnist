@@ -4,14 +4,14 @@
 import copy
 import torch
 from torchvision import datasets, transforms
-from dataset import MyDataset, getDataClient, getDataClientSubset, getDataClient_HAM10000, getDataClientSubset_HAM10000
+from dataset import MyDataset, getDataClient, getDataClientSubset
+from dataset import getDataClient_HAM10000, getDataClientSubset_HAM10000
 from dataset import getDataClient_Aptos, getDataClientSubset_Aptos
-from sampling import mnist_iid, mnist_noniid, mnist_noniid_unequal
+from sampling import COVID_iid, COVID_noniid, COVID_noniid_unequal
 from sampling import cifar_iid, cifar_noniid
 from sampling import ham10000_iid, ham10000_noniid, ham10000_noniid_unequal
 from sampling import aptos_iid, aptos_noniid, aptos_noniid_unequal
-
-
+from dataset import getDataClientSubModlib, getDataClientSubModlib_Aptos
 
 
 def get_dataset(args):
@@ -20,15 +20,15 @@ def get_dataset(args):
     each of those users.
     """
 
-    if args.dataset == 'mnist':
+    if args.dataset == 'COVID':
 
-        if(args.subset == True):
-            train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClientSubset(0.5)
+        if(args.subset == "True"):
+            # train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClientSubset(0.5)
 
-            if(args.random==True):
+            if(args.random=="True"):
                 train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClientSubset(0.1)
             else:
-                train_client1_raw, train_client2_raw, test_client1_raw,test_client2_raw = getDataClientSubModlib()
+                train_client1_raw, train_client2_raw, test_client1_raw,test_client2_raw = getDataClientSubModlib(args)
         else:
             train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClient()
 
@@ -39,20 +39,20 @@ def get_dataset(args):
 
         # sample training data amongst users
         if args.iid:
-            # Sample IID user data from Mnist
-            user_groups = mnist_iid(train_client1_dataset,train_client2_dataset)
+            # Sample IID user data from COVID
+            user_groups = COVID_iid(train_client1_dataset,train_client2_dataset)
         else:
-            # Sample Non-IID user data from Mnist
+            # Sample Non-IID user data from COVID
             if args.unequal:
                 # Chose uneuqal splits for every user TODO: to be changed later
-                user_groups = mnist_noniid_unequal(train_client2_dataset, args.num_users)
+                user_groups = COVID_noniid_unequal(train_client2_dataset, args.num_users)
             else:
                 # Chose euqal splits for every user TODO: to be changed later
-                user_groups = mnist_noniid(train_client2_dataset, args.num_users)
+                user_groups = COVID_noniid(train_client2_dataset, args.num_users)
 
     elif args.dataset == 'ham10000':
 
-        if(args.subset == True):
+        if(args.subset == "True"):
             train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClientSubset_HAM10000(0.5)
 
         else:
@@ -65,10 +65,10 @@ def get_dataset(args):
 
         # sample training data amongst users
         if args.iid:
-            # Sample IID user data from Mnist
+            # Sample IID user data from COVID
             user_groups = ham10000_iid(train_client1_dataset,train_client2_dataset)
         else:
-            # Sample Non-IID user data from Mnist
+            # Sample Non-IID user data from COVID
             if args.unequal:
                 # Chose uneuqal splits for every user TODO: to be changed later
                 user_groups = ham10000_noniid_unequal(train_client2_dataset, args.num_users)
@@ -77,13 +77,16 @@ def get_dataset(args):
                 user_groups = ham10000_noniid(train_client2_dataset, args.num_users)
 
     elif args.dataset == 'aptos':
-    
-        if(args.subset == True):
-            train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClientSubset_Aptos(0.5)
+        if(args.subset == "True"):
+            # train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClientSubset_Aptos(0.5)
+            if(args.random == "True"):
+                train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClientSubset_Aptos(0.1)
+            else:
+                train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClientSubModlib_Aptos(args)
 
         else:
             train_client1_raw, train_client2_raw , test_client1_raw,test_client2_raw = getDataClient_Aptos()
-
+        
         train_client1_dataset = MyDataset(train_client1_raw)
         train_client2_dataset = MyDataset(train_client2_raw)
         test_client1_dataset = MyDataset(test_client1_raw)
@@ -91,10 +94,10 @@ def get_dataset(args):
 
         # sample training data amongst users
         if args.iid:
-            # Sample IID user data from Mnist
+            # Sample IID user data from COVID
             user_groups = aptos_iid(train_client1_dataset,train_client2_dataset)
         else:
-            # Sample Non-IID user data from Mnist
+            # Sample Non-IID user data from COVID
             if args.unequal:
                 # Chose uneuqal splits for every user TODO: to be changed later
                 user_groups = aptos_noniid_unequal(train_client2_dataset, args.num_users)

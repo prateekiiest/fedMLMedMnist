@@ -1,0 +1,115 @@
+Training accuracy [0.9122807017543859, 0.8596491228070176, 0.9069767441860465, 0.9302325581395349, 0.9298245614035088, 0.9649122807017544, 0.9534883720930233, 0.9649122807017544]
+ 
+Avg Training Stats after 8 global rounds:
+Training Loss : 0.25395548830427056
+Train Accuracy: 96.49% 
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [02:00<00:00, 15.07s/it]
+########################
+
+Client 1 Test Statistics
+
+==========================
+
+For client 1 original classes :  ['Negative Corona', 'Positive Corona']
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       0.89      0.94      0.91        63
+Positive Corona       0.94      0.89      0.91        65
+
+       accuracy                           0.91       128
+      macro avg       0.91      0.91      0.91       128
+   weighted avg       0.92      0.91      0.91       128
+
+----------------------
+
+----------------------
+
+                 precision    recall  f1-score   support
+
+Negative Corona       1.00      1.00      1.00         7
+Positive Corona       1.00      1.00      1.00         5
+
+       accuracy                           1.00        12
+      macro avg       1.00      1.00      1.00        12
+   weighted avg       1.00      1.00      1.00        12
+
+----------------------
+
+==========================
+
+Testing client 1 on client 2 original classes :  ['Negative Lung Op', 'Positive Lung Op']
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.92      0.90      0.91        68
+Positive Lung Op       0.82      0.87      0.85        38
+
+        accuracy                           0.89       106
+       macro avg       0.87      0.88      0.88       106
+    weighted avg       0.89      0.89      0.89       106
+
+----------------------
+
+########################
+
+Client 2 Test Statistics
+
+==========================
+
+For client 2 original classes :  ['Negative Lung Op', 'Positive Lung Op']
+----------------------
+
+                  precision    recall  f1-score   support
+
+Negative Lung Op       0.92      0.90      0.91        68
+Positive Lung Op       0.82      0.87      0.85        38
+
+        accuracy                           0.89       106
+       macro avg       0.87      0.88      0.88       106
+    weighted avg       0.89      0.89      0.89       106
+
+----------------------
+
+==========================
+
+Testing client 2 on client 1 original classes :  ['Normal', 'Mild']
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       0.89      0.94      0.91        63
+        Mild       0.94      0.89      0.91        65
+
+    accuracy                           0.91       128
+   macro avg       0.91      0.91      0.91       128
+weighted avg       0.92      0.91      0.91       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00         7
+        Mild       1.00      1.00      1.00         5
+
+    accuracy                           1.00        12
+   macro avg       1.00      1.00      1.00        12
+weighted avg       1.00      1.00      1.00        12
+
+----------------------
+
+Test accuracy on client 1 0.9214285714285714
+Test accuracy on client 2 0.8867924528301887
+========================================
+
+========================================
+
+Test on original client distribution for client 1 : 92.14%
+Test on client 2 distribution for client 1 : 88.68%
+Test on original client distribution for client 2 : 88.68%
+Test on client 1 distribution for client 2 : 92.14%

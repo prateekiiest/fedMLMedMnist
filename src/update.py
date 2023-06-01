@@ -21,7 +21,8 @@ class DatasetSplit(Dataset):
 
     def __getitem__(self, item):
         image, label = self.dataset[self.idxs[item]]
-        return torch.tensor(image), torch.tensor(label)
+        # return torch.tensor(image), torch.tensor(label)
+        return image.clone().detach(), label.clone().detach()
 
 
 class LocalUpdate(object):
@@ -31,7 +32,8 @@ class LocalUpdate(object):
         self.trainloader, self.validloader, self.testloader = self.train_val_test(
             dataset, list(idxs))
         self.device = 'mps' if args.gpu else 'cpu'
-        self.userId = userId
+        self.userId = int(userId)
+
         # Default criterion set to NLL loss function
         self.criterion = nn.CrossEntropyLoss().to(self.device)
 
@@ -74,11 +76,21 @@ class LocalUpdate(object):
                 model.zero_grad()
                 log_probs = model(images)
                 labels = labels.long()
-                if(self.userId == 1):
-                    labels[labels==2]= 1
-                else:
-                    labels[labels==1]= 0
-                    labels[labels==3]= 1
+                # print("user Id", self.userId, "labels ", labels)
+                # print('Labels: ', labels, 'User: ', self.userId)
+                if self.args.dataset == "COVID":
+                    if(self.userId == 1):
+                        labels[labels==1]= 1
+                        labels[labels==3]= 0
+                    else:
+                        labels[labels==0]= 1
+                        labels[labels==2]= 0
+                elif self.args.dataset == "aptos":
+                    if self.userId == 2:
+                        labels[labels==3]= 1
+                        labels[labels==2]= 0
+
+
                 loss = self.criterion(log_probs, labels)
                 loss.backward()
                 optimizer.step()
@@ -105,14 +117,14 @@ class LocalUpdate(object):
         loss, total, correct = 0.0, 0.0, 0.0
         target_names = []
         if(userId==2):
-            if(args.dataset=="mnist"):
+            if(args.dataset=="COVID"):
                 target_names = ["Negative Lung Op","Positive Lung Op"]
             elif(args.dataset=="ham10000"):
                 target_names = ["Negative nv", "Positive nv"]
             else: #aptos
                 target_names = ["Normal", "Severe"]
         else:
-            if(args.dataset=="mnist"):
+            if(args.dataset=="COVID"):
                 target_names = ["Negative Corona","Positive Corona"]
             elif(args.dataset=="ham10000"):
                 target_names = ["Negative mel", "Positive mel"]
@@ -126,14 +138,18 @@ class LocalUpdate(object):
             # Inference
             outputs = model(images)
             labels= labels.long()
-            if(3 in labels):
-
-                labels[labels==1]= 0
-                labels[labels==3]= 1
-                
-            elif(2 in labels):
-
-                labels[labels==2]= 1
+            # print("User id", self.userId, "  labels : ", labels)
+            if args.dataset == "COVID":
+                if(self.userId == 1):
+                    labels[labels==1]= 1
+                    labels[labels==3]= 0
+                else:
+                    labels[labels==0]= 1
+                    labels[labels==2]= 0
+            elif self.args.dataset == "aptos":
+                if self.userId == 2:
+                    labels[labels==3]= 1
+                    labels[labels==2]= 0
 
             
             batch_loss = self.criterion(outputs, labels)
@@ -146,7 +162,8 @@ class LocalUpdate(object):
             y_true = labels
             y_pred_d = y_pred.cpu().detach().numpy()
             y_true_d = y_true.cpu().detach().numpy()
-            rep = classification_report(y_pred_d, y_true_d, target_names=target_names)
+
+            rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1] )
             print("----------------------\n")
             print(rep)
             print("----------------------\n")
@@ -156,7 +173,6 @@ class LocalUpdate(object):
         accuracy = correct/total
         return accuracy, loss
 
-
 def test_inference(args, model, test_dataset1, test_dataset2):
     """ Returns the test accuracy and loss.
     """
@@ -165,13 +181,13 @@ def test_inference(args, model, test_dataset1, test_dataset2):
 
     device = 'mps' if args.gpu else 'cpu'
     criterion = nn.NLLLoss().to(device)
-    acc1, acc_on_other1 = inf_test(model, test_dataset1, test_dataset2, device, criterion, "client1")
+    acc1, acc_on_other1 = inf_test(model, args, test_dataset1, test_dataset2, device, criterion, "client1")
 
     model.eval()
 
     device = 'mps' if args.gpu else 'cpu'
     criterion = nn.NLLLoss().to(device)
-    acc2, acc_on_other2 = inf_test( model, test_dataset1, test_dataset2,device, criterion, "client2")
+    acc2, acc_on_other2 = inf_test( model, args, test_dataset1, test_dataset2,device, criterion, "client2")
 
     print("Test accuracy on client 1", acc1)
     print("Test accuracy on client 2", acc2)
@@ -186,7 +202,7 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
         print("########################\n")
 
         print("Client 1 Test Statistics\n")
-        if(args.dataset=="mnist"):
+        if(args.dataset=="COVID"):
             target_names = ["Negative Corona","Positive Corona"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative mel", "Positive mel"]
@@ -207,7 +223,11 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             # Inference
             outputs = model(images)
             labels=labels.long()
-            labels[labels==2]= 1
+            # print("User id", self.userId, "labels ", labels)
+            if(args.dataset=="COVID"):
+                labels[labels==3] = 0
+                labels[labels==1] = 1
+            
             batch_loss = criterion(outputs, labels)
             loss += batch_loss.item()
 
@@ -218,7 +238,8 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             y_true = labels
             y_pred_d = y_pred.cpu().detach().numpy()
             y_true_d = y_true.cpu().detach().numpy()
-            rep = classification_report(y_pred_d, y_true_d, target_names=target_names)
+          
+            rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
             print(rep)
             print("----------------------\n")
@@ -227,7 +248,7 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
         accuracy_client1_original = correct/total
         
         
-        if(args.dataset=="mnist"):
+        if(args.dataset=="COVID"):
             target_names = ["Negative Lung Op","Positive Lung Op"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative nv", "Positive nv"]
@@ -250,8 +271,15 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             # Inference
             outputs = model(images)
             labels=labels.long()
-            labels[labels==1]= 0
-            labels[labels==3]= 1           
+            # print("User id", self.userId, "labels ", labels)
+
+            if args.dataset == "COVID":
+                labels[labels==0]= 1
+                labels[labels==2]= 0
+            elif args.dataset == "aptos":
+                labels[labels==3]= 1
+                labels[labels==2]= 0
+        
             batch_loss = criterion(outputs, labels)
             loss += batch_loss.item()
 
@@ -262,7 +290,11 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             y_true = labels
             y_pred_d = y_pred.cpu().detach().numpy()
             y_true_d = y_true.cpu().detach().numpy()
-            rep = classification_report(y_pred_d, y_true_d, target_names=target_names)
+            # print("========================")
+            # print("Prediction :",y_pred_d)
+            # print("True :",y_true_d)
+            # print("========================")
+            rep = classification_report(y_pred_d, y_true_d, target_names=target_names, labels=[0,1])
             print("----------------------\n")
             print(rep)
             print("----------------------\n")
@@ -283,7 +315,7 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
         
         print("Client 2 Test Statistics\n")
 
-        if(args.dataset=="mnist"):
+        if(args.dataset=="COVID"):
             target_names = ["Negative Lung Op","Positive Lung Op"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative nv", "Positive nv"]
@@ -306,8 +338,17 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             # Inference
             outputs = model(images)
             labels=labels.long()
-            labels[labels==1]= 0
-            labels[labels==3]= 1
+            # print("User id", self.userId, "labels ", labels)
+
+            if args.dataset == "COVID":
+                labels[labels==0]= 1
+                labels[labels==2]= 0
+            elif args.dataset == "aptos":
+                labels[labels==3]= 1
+                labels[labels==2]= 0
+
+            # elif args.dataset == "aptos":
+            #     labels[labels==3]= 1
             batch_loss = criterion(outputs, labels)
             loss += batch_loss.item()
 
@@ -318,7 +359,11 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             y_true = labels
             y_pred_d = y_pred.cpu().detach().numpy()
             y_true_d = y_true.cpu().detach().numpy()
-            rep = classification_report(y_pred_d, y_true_d, target_names=target_names)
+            # print("========================")
+            # print("Prediction :",y_pred_d)
+            # print("True :",y_true_d)
+            # print("========================")
+            rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
             print(rep)
             print("----------------------\n")
@@ -346,7 +391,13 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             # Inference
             outputs = model(images)
             labels=labels.long()
-            labels[labels==2]= 1
+            # print("User id", self.userId, "labels ", labels)
+
+            if args.dataset == "COVID":
+                labels[labels==3] = 0
+                labels[labels==1] = 1
+            
+
             batch_loss = criterion(outputs, labels)
             loss += batch_loss.item()
 
@@ -357,7 +408,11 @@ def inf_test(model, args, test_dataset1, test_dataset2, device, criterion, clien
             y_true = labels
             y_pred_d = y_pred.cpu().detach().numpy()
             y_true_d = y_true.cpu().detach().numpy()
-            rep = classification_report(y_pred_d, y_true_d, target_names=target_names)
+            # print("========================")
+            # print("Prediction :",y_pred_d)
+            # print("True :",y_true_d)
+            # print("========================")
+            rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
             print(rep)
             print("----------------------\n")
@@ -375,7 +430,7 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
 
         print("Client 1 Test Statistics\n")
 
-        if(args.dataset=="mnist"):
+        if(args.dataset=="COVID"):
             target_names = ["Negative Corona","Positive Corona"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative mel", "Positive mel"]
@@ -397,7 +452,11 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             # Inference
             outputs = model(images)
             labels=labels.long()
-            labels[labels==2]= 1
+            # print("User id", self.userId, "labels ", labels)
+            if args.dataset == "COVID":
+                labels[labels==3] = 0
+                labels[labels==1] = 1
+            
             batch_loss = criterion(outputs, labels)
             loss += batch_loss.item()
 
@@ -408,19 +467,17 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             y_true = labels
             y_pred_d = y_pred.detach().numpy()
             y_true_d = y_true.detach().numpy()
-            rep = classification_report(y_pred_d, y_true_d, target_names=target_names)
+            #print("========================")
+            #print("Prediction :",y_pred_d)
+            #print("True :",y_true_d)
+            #print("========================")
+            rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
             print(rep)
             print("----------------------\n")
             correct += torch.sum(torch.eq(pred_labels, labels)).item()
             total += len(labels)
         accuracy_client1_original = correct/total
-
-
-        
-        
-        
-
 
         # target_names = ["Negative Lung Op","Positive Lung Op"]
         target_names = ["Normal", "Severe"]
@@ -439,19 +496,31 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             # Inference
             outputs = model(images)
             labels=labels.long()
-            labels[labels==1]= 0
-            labels[labels==3]= 1           
+
+            if args.dataset == "COVID":
+                labels[labels==0]= 1
+                labels[labels==2]= 0
+
+            elif args.dataset == "aptos":
+                labels[labels==3]= 1
+                labels[labels==2]= 0
+
             batch_loss = criterion(outputs, labels)
             loss += batch_loss.item()
 
             # Prediction
             _, pred_labels = torch.max(outputs, 1)
             pred_labels = pred_labels.view(-1)
-            y_pred =  pred_labels
+            y_pred = pred_labels
             y_true = labels
+           
             y_pred_d = y_pred.detach().numpy()
             y_true_d = y_true.detach().numpy()
-            rep = classification_report(y_pred_d, y_true_d, target_names=target_names)
+            # print("========================")
+            # print("Prediction :",y_pred_d)
+            # print("True :",y_true_d)
+            # print("========================")
+            rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
             print(rep)
             print("----------------------\n")
@@ -468,7 +537,7 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
         
         print("Client 2 Test Statistics\n")
 
-        if(args.dataset=="mnist"):
+        if(args.dataset=="COVID"):
             target_names = ["Negative Lung Op","Positive Lung Op"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative nv", "Positive nv"]
@@ -491,8 +560,14 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             # Inference
             outputs = model(images)
             labels=labels.long()
-            labels[labels==1]= 0
-            labels[labels==3]= 1
+
+            if args.dataset == "COVID":
+                labels[labels==0]= 1
+                labels[labels==2]= 0
+            elif args.dataset == "aptos":
+                labels[labels==3]= 1
+                labels[labels==2]= 0
+
             batch_loss = criterion(outputs, labels)
             loss += batch_loss.item()
 
@@ -503,7 +578,8 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             y_true = labels
             y_pred_d = y_pred.detach().numpy()
             y_true_d = y_true.detach().numpy()
-            rep = classification_report(y_pred_d, y_true_d, target_names=target_names)
+       
+            rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
             print(rep)
             print("----------------------\n")
@@ -513,7 +589,7 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
     
     
 
-        if(args.dataset=="mnist"):
+        if(args.dataset=="COVID"):
             target_names = ["Negative Corona","Positive Corona"]
         elif(args.dataset=="ham10000"):
             target_names = ["Negative mel", "Positive mel"]
@@ -536,7 +612,13 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             # Inference
             outputs = model(images)
             labels=labels.long()
-            labels[labels==2]= 1
+
+            if args.dataset == "COVID":
+                labels[labels==3] = 0
+                labels[labels==1] = 1
+            # elif args.dataset == "aptos":
+            #     labels[labels==2]= 1
+
             batch_loss = criterion(outputs, labels)
             loss += batch_loss.item()
 
@@ -547,7 +629,11 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             y_true = labels
             y_pred_d = y_pred.detach().numpy()
             y_true_d = y_true.detach().numpy()
-            rep = classification_report(y_pred_d, y_true_d, target_names=target_names)
+            # print("========================")
+            # print("Prediction :",y_pred_d)
+            # print("True :",y_true_d)
+            # print("========================")
+            rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
             print(rep)
             print("----------------------\n")
@@ -559,12 +645,6 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
     
     
     
-    
-    
-    
-    
-    
-
 
 def test_inference_base2(args, model, test_dataset1, test_dataset2):
     """ Returns the test accuracy and loss.
@@ -575,10 +655,10 @@ def test_inference_base2(args, model, test_dataset1, test_dataset2):
     device = 'cpu' if args.gpu else 'cpu'
     criterion = nn.NLLLoss().to(device)
     acc1, acc_on_other1 = inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion, "client1")
-
+    
     device = 'cpu' if args.gpu else 'cpu'
     criterion = nn.NLLLoss().to(device)
-    acc2, acc_on_other2 = inf_test_base2( model, args, test_dataset1, test_dataset2,device, criterion, "client2")
+    acc2, acc_on_other2 = inf_test_base2(model, args, test_dataset1, test_dataset2,device, criterion, "client2")
 
     accuracy = max(acc1, acc2)
     return acc1, acc_on_other1,acc2, acc_on_other2

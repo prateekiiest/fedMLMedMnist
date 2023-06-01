@@ -23,8 +23,10 @@ def args_parser():
                         help='learning rate')
     parser.add_argument('--momentum', type=float, default=0.5,
                         help='SGD momentum (default: 0.5)')
-    parser.add_argument('--random', type=bool, default=False, help='random')
-    parser.add_argument('--subset', type=bool, default=False, help='use subset')
+    parser.add_argument('--random', type=str, default="False", help='random')
+    parser.add_argument('--subset', type=str, default="False", help='use subset')
+    parser.add_argument('--subset_size', type=int, default=1000, help='subset size')
+    parser.add_argument('--algo', type=str, default='logdet', help='algorithm')
 
     # model arguments
     parser.add_argument('--model', type=str, default='mlp', help='model name')
@@ -45,11 +47,11 @@ def args_parser():
                         strided convolutions")
 
     # other arguments
-    parser.add_argument('--dataset', type=str, default='mnist', help="name \
+    parser.add_argument('--dataset', type=str, default='COVID', help="name \
                         of dataset")
     parser.add_argument('--num_classes', type=int, default=3, help="number \
                         of classes")
-    parser.add_argument('--gpu', default=True, help="To use cuda, set \
+    parser.add_argument('--gpu', default="True", help="To use cuda, set \
                         to a specific GPU ID. Default set to use CPU.")
     parser.add_argument('--optimizer', type=str, default='sgd', help="type \
                         of optimizer")

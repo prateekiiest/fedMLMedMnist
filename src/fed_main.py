@@ -11,7 +11,7 @@ import torch
 from tensorboardX import SummaryWriter
 from options import args_parser
 from update import LocalUpdate, test_inference
-from models import MLP, CNNDermaMnist, CNNMnist, CNNAptos
+from models import MLP, CNNDermaMnist, CNNCOVID, CNNAptos
 from utils import get_dataset, average_weights, exp_details
 
 if __name__ == '__main__':
@@ -31,7 +31,7 @@ if __name__ == '__main__':
     target_name_client1 = []
     target_name_client2 = []
 
-    if(args.dataset == 'mnist'):
+    if(args.dataset == 'COVID'):
         target_name_client1 = ["Negative Corona","Positive Corona"]
         target_name_client2 = ["Negative Lung Op","Positive Lung Op"]
 
@@ -56,8 +56,8 @@ if __name__ == '__main__':
 
     if args.model == 'cnn':
         # Convolutional neural netork
-        if args.dataset == 'mnist':
-            global_model = CNNMnist(args=args)
+        if args.dataset == 'COVID':
+            global_model = CNNCOVID(args=args)
         elif args.dataset == 'ham10000':
             global_model = CNNDermaMnist(args=args)
         elif args.dataset == 'aptos':
@@ -90,8 +90,13 @@ if __name__ == '__main__':
         m = max(int(args.frac * args.num_users), 1)
 
         idxs_users = np.random.choice(range(1,3),1, replace=False)
-
+        print("----------------")
+        
         for idx in idxs_users:
+            print("user chosen", idx)
+            print("----------------")
+            print("----------------")
+
             local_model = LocalUpdate(args=args,userId = idx, dataset=train_dataset[idx],
                                       idxs=user_groups[idx], logger=logger)
             w, loss = local_model.update_weights(
@@ -112,7 +117,7 @@ if __name__ == '__main__':
         list_acc, list_loss = [], []
         global_model.eval()
         for userId in range(1,3):
-            acc, loss = local_model.inference(args, userId = userId,model=global_model)
+            acc, loss = local_model.inference(args, userId = userId, model=global_model)
             list_acc.append(acc)
             list_loss.append(loss)
         train_accuracy.append(sum(list_acc)/len(list_acc))

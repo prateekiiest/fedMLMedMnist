@@ -12,7 +12,7 @@ from sklearn.metrics import classification_report
 from utils import get_dataset
 from options import args_parser
 from update import test_inference, test_inference_base2
-from models import MLP, CNNDermaMnist, CNNMnist, CNNAptos
+from models import MLP, CNNDermaMnist, CNNCOVID, CNNAptos
 
 if __name__ == '__main__':
     args = args_parser()
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     target_name_client1 = []
     target_name_client2 = []
 
-    if(args.dataset == 'mnist'):
+    if(args.dataset == 'COVID'):
         target_name_client1 = ["Negative Corona","Positive Corona"]
         target_name_client2 = ["Negative Lung Op","Positive Lung Op"]
 
@@ -49,8 +49,8 @@ if __name__ == '__main__':
     # BUILD MODEL
     if args.model == 'cnn':
         # Convolutional neural netork
-        if args.dataset == 'mnist':
-            global_model = CNNMnist(args=args)
+        if args.dataset == 'COVID':
+            global_model = CNNCOVID(args=args)
         elif args.dataset == 'ham10000':
             global_model = CNNDermaMnist(args=args)
             #TODO: Add support for different datasets
