@@ -1,0 +1,3861 @@
+
+Experimental details:
+    Model     : cnn
+    Optimizer : sgd
+    Learning  : 0.01
+    Global Rounds   : 10
+
+    Federated parameters:
+   IID
+    Number of users  : 2
+    Local Batch size   : 10
+    Local Epochs       : 8
+
+CNNOCTmnist(
+  (conv1): Conv2d(1, 10, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(10, 20, kernel_size=(5, 5), stride=(1, 1))
+  (conv2_drop): Dropout2d(p=0.5, inplace=False)
+  (fc1): Linear(in_features=100820, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=2, bias=True)
+)
+
+ | Global Training Round : 1 |
+
+----------------
+user chosen 2
+----------------
+----------------
+| Global Round : 0 | Local Epoch : 0 | [0/561 (0%)]	Loss: 0.680114
+| Global Round : 0 | Local Epoch : 0 | [100/561 (18%)]	Loss: 0.653792
+| Global Round : 0 | Local Epoch : 0 | [200/561 (35%)]	Loss: 0.668969
+| Global Round : 0 | Local Epoch : 0 | [300/561 (53%)]	Loss: 0.731185
+| Global Round : 0 | Local Epoch : 0 | [400/561 (70%)]	Loss: 0.689192
+| Global Round : 0 | Local Epoch : 0 | [500/561 (88%)]	Loss: 0.699653
+| Global Round : 0 | Local Epoch : 1 | [0/561 (0%)]	Loss: 0.680452
+| Global Round : 0 | Local Epoch : 1 | [100/561 (18%)]	Loss: 0.691233
+| Global Round : 0 | Local Epoch : 1 | [200/561 (35%)]	Loss: 0.699893
+| Global Round : 0 | Local Epoch : 1 | [300/561 (53%)]	Loss: 0.685204
+| Global Round : 0 | Local Epoch : 1 | [400/561 (70%)]	Loss: 0.705312
+| Global Round : 0 | Local Epoch : 1 | [500/561 (88%)]	Loss: 0.727665
+| Global Round : 0 | Local Epoch : 2 | [0/561 (0%)]	Loss: 0.697163
+| Global Round : 0 | Local Epoch : 2 | [100/561 (18%)]	Loss: 0.712231
+| Global Round : 0 | Local Epoch : 2 | [200/561 (35%)]	Loss: 0.682607
+| Global Round : 0 | Local Epoch : 2 | [300/561 (53%)]	Loss: 0.701667
+| Global Round : 0 | Local Epoch : 2 | [400/561 (70%)]	Loss: 0.661011
+| Global Round : 0 | Local Epoch : 2 | [500/561 (88%)]	Loss: 0.639541
+| Global Round : 0 | Local Epoch : 3 | [0/561 (0%)]	Loss: 1.019690
+| Global Round : 0 | Local Epoch : 3 | [100/561 (18%)]	Loss: 0.676723
+| Global Round : 0 | Local Epoch : 3 | [200/561 (35%)]	Loss: 0.679590
+| Global Round : 0 | Local Epoch : 3 | [300/561 (53%)]	Loss: 0.608540
+| Global Round : 0 | Local Epoch : 3 | [400/561 (70%)]	Loss: 0.679258
+| Global Round : 0 | Local Epoch : 3 | [500/561 (88%)]	Loss: 0.727742
+| Global Round : 0 | Local Epoch : 4 | [0/561 (0%)]	Loss: 0.700137
+| Global Round : 0 | Local Epoch : 4 | [100/561 (18%)]	Loss: 0.746713
+| Global Round : 0 | Local Epoch : 4 | [200/561 (35%)]	Loss: 0.615040
+| Global Round : 0 | Local Epoch : 4 | [300/561 (53%)]	Loss: 0.657814
+| Global Round : 0 | Local Epoch : 4 | [400/561 (70%)]	Loss: 0.768572
+| Global Round : 0 | Local Epoch : 4 | [500/561 (88%)]	Loss: 0.765582
+| Global Round : 0 | Local Epoch : 5 | [0/561 (0%)]	Loss: 0.700818
+| Global Round : 0 | Local Epoch : 5 | [100/561 (18%)]	Loss: 0.647291
+| Global Round : 0 | Local Epoch : 5 | [200/561 (35%)]	Loss: 0.591275
+| Global Round : 0 | Local Epoch : 5 | [300/561 (53%)]	Loss: 0.937484
+| Global Round : 0 | Local Epoch : 5 | [400/561 (70%)]	Loss: 0.582652
+| Global Round : 0 | Local Epoch : 5 | [500/561 (88%)]	Loss: 0.841117
+| Global Round : 0 | Local Epoch : 6 | [0/561 (0%)]	Loss: 0.521055
+| Global Round : 0 | Local Epoch : 6 | [100/561 (18%)]	Loss: 0.640524
+| Global Round : 0 | Local Epoch : 6 | [200/561 (35%)]	Loss: 0.675630
+| Global Round : 0 | Local Epoch : 6 | [300/561 (53%)]	Loss: 0.638216
+| Global Round : 0 | Local Epoch : 6 | [400/561 (70%)]	Loss: 0.622510
+| Global Round : 0 | Local Epoch : 6 | [500/561 (88%)]	Loss: 0.779268
+| Global Round : 0 | Local Epoch : 7 | [0/561 (0%)]	Loss: 0.701924
+| Global Round : 0 | Local Epoch : 7 | [100/561 (18%)]	Loss: 0.634700
+| Global Round : 0 | Local Epoch : 7 | [200/561 (35%)]	Loss: 0.548779
+| Global Round : 0 | Local Epoch : 7 | [300/561 (53%)]	Loss: 0.704985
+| Global Round : 0 | Local Epoch : 7 | [400/561 (70%)]	Loss: 0.581173
+| Global Round : 0 | Local Epoch : 7 | [500/561 (88%)]	Loss: 0.658410
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.57      0.73         7
+         DME       0.00      0.00      0.00         0
+
+    accuracy                           0.57         7
+   macro avg       0.50      0.29      0.36         7
+weighted avg       1.00      0.57      0.73         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+         DME       0.33      0.50      0.40         2
+
+    accuracy                           0.57         7
+   macro avg       0.54      0.55      0.53         7
+weighted avg       0.63      0.57      0.59         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.67      0.67      0.67         3
+         DME       0.75      0.75      0.75         4
+
+    accuracy                           0.71         7
+   macro avg       0.71      0.71      0.71         7
+weighted avg       0.71      0.71      0.71         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.80      0.80      0.80         5
+         DME       0.50      0.50      0.50         2
+
+    accuracy                           0.71         7
+   macro avg       0.65      0.65      0.65         7
+weighted avg       0.71      0.71      0.71         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         3
+         DME       0.60      0.75      0.67         4
+
+    accuracy                           0.57         7
+   macro avg       0.55      0.54      0.53         7
+weighted avg       0.56      0.57      0.55         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.33      0.33      0.33         3
+         DME       0.50      0.50      0.50         4
+
+    accuracy                           0.43         7
+   macro avg       0.42      0.42      0.42         7
+weighted avg       0.43      0.43      0.43         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.40      0.44         5
+         DME       0.00      0.00      0.00         2
+
+    accuracy                           0.29         7
+   macro avg       0.25      0.20      0.22         7
+weighted avg       0.36      0.29      0.32         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.17      0.29         6
+         DME       0.17      1.00      0.29         1
+
+    accuracy                           0.29         7
+   macro avg       0.58      0.58      0.29         7
+weighted avg       0.88      0.29      0.29         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         4
+         DME       0.33      0.33      0.33         3
+
+    accuracy                           0.43         7
+   macro avg       0.42      0.42      0.42         7
+weighted avg       0.43      0.43      0.43         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.25      0.40         4
+         DME       0.50      1.00      0.67         3
+
+    accuracy                           0.57         7
+   macro avg       0.75      0.62      0.53         7
+weighted avg       0.79      0.57      0.51         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      1.00      1.00         1
+         DME       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.57      0.73         7
+      DRUSEN       0.00      0.00      0.00         0
+
+    accuracy                           0.57         7
+   macro avg       0.50      0.29      0.36         7
+weighted avg       1.00      0.57      0.73         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+      DRUSEN       0.33      0.50      0.40         2
+
+    accuracy                           0.57         7
+   macro avg       0.54      0.55      0.53         7
+weighted avg       0.63      0.57      0.59         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.67      0.67      0.67         3
+      DRUSEN       0.75      0.75      0.75         4
+
+    accuracy                           0.71         7
+   macro avg       0.71      0.71      0.71         7
+weighted avg       0.71      0.71      0.71         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.80      0.80      0.80         5
+      DRUSEN       0.50      0.50      0.50         2
+
+    accuracy                           0.71         7
+   macro avg       0.65      0.65      0.65         7
+weighted avg       0.71      0.71      0.71         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         3
+      DRUSEN       0.60      0.75      0.67         4
+
+    accuracy                           0.57         7
+   macro avg       0.55      0.54      0.53         7
+weighted avg       0.56      0.57      0.55         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.33      0.33      0.33         3
+      DRUSEN       0.50      0.50      0.50         4
+
+    accuracy                           0.43         7
+   macro avg       0.42      0.42      0.42         7
+weighted avg       0.43      0.43      0.43         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.40      0.44         5
+      DRUSEN       0.00      0.00      0.00         2
+
+    accuracy                           0.29         7
+   macro avg       0.25      0.20      0.22         7
+weighted avg       0.36      0.29      0.32         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.17      0.29         6
+      DRUSEN       0.17      1.00      0.29         1
+
+    accuracy                           0.29         7
+   macro avg       0.58      0.58      0.29         7
+weighted avg       0.88      0.29      0.29         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         4
+      DRUSEN       0.33      0.33      0.33         3
+
+    accuracy                           0.43         7
+   macro avg       0.42      0.42      0.42         7
+weighted avg       0.43      0.43      0.43         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.25      0.40         4
+      DRUSEN       0.50      1.00      0.67         3
+
+    accuracy                           0.57         7
+   macro avg       0.75      0.62      0.53         7
+weighted avg       0.79      0.57      0.51         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      1.00      1.00         1
+      DRUSEN       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+Training accuracy [0.5211267605633803]
+
+ | Global Training Round : 2 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 1 | Local Epoch : 0 | [0/1273 (0%)]	Loss: 0.633936
+| Global Round : 1 | Local Epoch : 0 | [100/1273 (8%)]	Loss: 0.410049
+| Global Round : 1 | Local Epoch : 0 | [200/1273 (16%)]	Loss: 0.661110
+| Global Round : 1 | Local Epoch : 0 | [300/1273 (23%)]	Loss: 0.496097
+| Global Round : 1 | Local Epoch : 0 | [400/1273 (31%)]	Loss: 0.709645
+| Global Round : 1 | Local Epoch : 0 | [500/1273 (39%)]	Loss: 0.787523
+| Global Round : 1 | Local Epoch : 0 | [600/1273 (47%)]	Loss: 0.545250
+| Global Round : 1 | Local Epoch : 0 | [700/1273 (55%)]	Loss: 0.692222
+| Global Round : 1 | Local Epoch : 0 | [800/1273 (62%)]	Loss: 0.708664
+| Global Round : 1 | Local Epoch : 0 | [900/1273 (70%)]	Loss: 0.377757
+| Global Round : 1 | Local Epoch : 0 | [1000/1273 (78%)]	Loss: 0.522633
+| Global Round : 1 | Local Epoch : 0 | [1100/1273 (86%)]	Loss: 0.710629
+| Global Round : 1 | Local Epoch : 0 | [1200/1273 (94%)]	Loss: 0.457993
+| Global Round : 1 | Local Epoch : 1 | [0/1273 (0%)]	Loss: 0.446770
+| Global Round : 1 | Local Epoch : 1 | [100/1273 (8%)]	Loss: 0.617865
+| Global Round : 1 | Local Epoch : 1 | [200/1273 (16%)]	Loss: 0.509998
+| Global Round : 1 | Local Epoch : 1 | [300/1273 (23%)]	Loss: 0.557964
+| Global Round : 1 | Local Epoch : 1 | [400/1273 (31%)]	Loss: 0.250251
+| Global Round : 1 | Local Epoch : 1 | [500/1273 (39%)]	Loss: 0.674694
+| Global Round : 1 | Local Epoch : 1 | [600/1273 (47%)]	Loss: 0.403588
+| Global Round : 1 | Local Epoch : 1 | [700/1273 (55%)]	Loss: 0.432606
+| Global Round : 1 | Local Epoch : 1 | [800/1273 (62%)]	Loss: 0.458536
+| Global Round : 1 | Local Epoch : 1 | [900/1273 (70%)]	Loss: 0.705241
+| Global Round : 1 | Local Epoch : 1 | [1000/1273 (78%)]	Loss: 0.583597
+| Global Round : 1 | Local Epoch : 1 | [1100/1273 (86%)]	Loss: 0.498081
+| Global Round : 1 | Local Epoch : 1 | [1200/1273 (94%)]	Loss: 0.482953
+| Global Round : 1 | Local Epoch : 2 | [0/1273 (0%)]	Loss: 0.439926
+| Global Round : 1 | Local Epoch : 2 | [100/1273 (8%)]	Loss: 0.120138
+| Global Round : 1 | Local Epoch : 2 | [200/1273 (16%)]	Loss: 0.312735
+| Global Round : 1 | Local Epoch : 2 | [300/1273 (23%)]	Loss: 0.679692
+| Global Round : 1 | Local Epoch : 2 | [400/1273 (31%)]	Loss: 0.469718
+| Global Round : 1 | Local Epoch : 2 | [500/1273 (39%)]	Loss: 0.123004
+| Global Round : 1 | Local Epoch : 2 | [600/1273 (47%)]	Loss: 0.546440
+| Global Round : 1 | Local Epoch : 2 | [700/1273 (55%)]	Loss: 0.244478
+| Global Round : 1 | Local Epoch : 2 | [800/1273 (62%)]	Loss: 0.276339
+| Global Round : 1 | Local Epoch : 2 | [900/1273 (70%)]	Loss: 0.595550
+| Global Round : 1 | Local Epoch : 2 | [1000/1273 (78%)]	Loss: 0.435494
+| Global Round : 1 | Local Epoch : 2 | [1100/1273 (86%)]	Loss: 0.475307
+| Global Round : 1 | Local Epoch : 2 | [1200/1273 (94%)]	Loss: 0.990249
+| Global Round : 1 | Local Epoch : 3 | [0/1273 (0%)]	Loss: 0.414400
+| Global Round : 1 | Local Epoch : 3 | [100/1273 (8%)]	Loss: 0.432661
+| Global Round : 1 | Local Epoch : 3 | [200/1273 (16%)]	Loss: 0.555561
+| Global Round : 1 | Local Epoch : 3 | [300/1273 (23%)]	Loss: 0.515299
+| Global Round : 1 | Local Epoch : 3 | [400/1273 (31%)]	Loss: 0.431461
+| Global Round : 1 | Local Epoch : 3 | [500/1273 (39%)]	Loss: 0.523884
+| Global Round : 1 | Local Epoch : 3 | [600/1273 (47%)]	Loss: 0.288755
+| Global Round : 1 | Local Epoch : 3 | [700/1273 (55%)]	Loss: 0.370580
+| Global Round : 1 | Local Epoch : 3 | [800/1273 (62%)]	Loss: 0.309687
+| Global Round : 1 | Local Epoch : 3 | [900/1273 (70%)]	Loss: 0.865080
+| Global Round : 1 | Local Epoch : 3 | [1000/1273 (78%)]	Loss: 0.430247
+| Global Round : 1 | Local Epoch : 3 | [1100/1273 (86%)]	Loss: 0.386825
+| Global Round : 1 | Local Epoch : 3 | [1200/1273 (94%)]	Loss: 0.383341
+| Global Round : 1 | Local Epoch : 4 | [0/1273 (0%)]	Loss: 0.366241
+| Global Round : 1 | Local Epoch : 4 | [100/1273 (8%)]	Loss: 0.211457
+| Global Round : 1 | Local Epoch : 4 | [200/1273 (16%)]	Loss: 0.454189
+| Global Round : 1 | Local Epoch : 4 | [300/1273 (23%)]	Loss: 0.332923
+| Global Round : 1 | Local Epoch : 4 | [400/1273 (31%)]	Loss: 0.627997
+| Global Round : 1 | Local Epoch : 4 | [500/1273 (39%)]	Loss: 0.194659
+| Global Round : 1 | Local Epoch : 4 | [600/1273 (47%)]	Loss: 0.456562
+| Global Round : 1 | Local Epoch : 4 | [700/1273 (55%)]	Loss: 0.358872
+| Global Round : 1 | Local Epoch : 4 | [800/1273 (62%)]	Loss: 0.490308
+| Global Round : 1 | Local Epoch : 4 | [900/1273 (70%)]	Loss: 0.487607
+| Global Round : 1 | Local Epoch : 4 | [1000/1273 (78%)]	Loss: 0.251986
+| Global Round : 1 | Local Epoch : 4 | [1100/1273 (86%)]	Loss: 0.715216
+| Global Round : 1 | Local Epoch : 4 | [1200/1273 (94%)]	Loss: 0.629621
+| Global Round : 1 | Local Epoch : 5 | [0/1273 (0%)]	Loss: 0.625846
+| Global Round : 1 | Local Epoch : 5 | [100/1273 (8%)]	Loss: 0.511149
+| Global Round : 1 | Local Epoch : 5 | [200/1273 (16%)]	Loss: 0.248569
+| Global Round : 1 | Local Epoch : 5 | [300/1273 (23%)]	Loss: 0.563017
+| Global Round : 1 | Local Epoch : 5 | [400/1273 (31%)]	Loss: 0.232424
+| Global Round : 1 | Local Epoch : 5 | [500/1273 (39%)]	Loss: 0.430410
+| Global Round : 1 | Local Epoch : 5 | [600/1273 (47%)]	Loss: 0.332420
+| Global Round : 1 | Local Epoch : 5 | [700/1273 (55%)]	Loss: 0.148549
+| Global Round : 1 | Local Epoch : 5 | [800/1273 (62%)]	Loss: 0.304592
+| Global Round : 1 | Local Epoch : 5 | [900/1273 (70%)]	Loss: 0.157339
+| Global Round : 1 | Local Epoch : 5 | [1000/1273 (78%)]	Loss: 0.195191
+| Global Round : 1 | Local Epoch : 5 | [1100/1273 (86%)]	Loss: 0.379063
+| Global Round : 1 | Local Epoch : 5 | [1200/1273 (94%)]	Loss: 0.740452
+| Global Round : 1 | Local Epoch : 6 | [0/1273 (0%)]	Loss: 0.165746
+| Global Round : 1 | Local Epoch : 6 | [100/1273 (8%)]	Loss: 0.149887
+| Global Round : 1 | Local Epoch : 6 | [200/1273 (16%)]	Loss: 0.287189
+| Global Round : 1 | Local Epoch : 6 | [300/1273 (23%)]	Loss: 0.280732
+| Global Round : 1 | Local Epoch : 6 | [400/1273 (31%)]	Loss: 0.156930
+| Global Round : 1 | Local Epoch : 6 | [500/1273 (39%)]	Loss: 0.443638
+| Global Round : 1 | Local Epoch : 6 | [600/1273 (47%)]	Loss: 0.335370
+| Global Round : 1 | Local Epoch : 6 | [700/1273 (55%)]	Loss: 0.287059
+| Global Round : 1 | Local Epoch : 6 | [800/1273 (62%)]	Loss: 0.146741
+| Global Round : 1 | Local Epoch : 6 | [900/1273 (70%)]	Loss: 0.313719
+| Global Round : 1 | Local Epoch : 6 | [1000/1273 (78%)]	Loss: 0.387063
+| Global Round : 1 | Local Epoch : 6 | [1100/1273 (86%)]	Loss: 0.572656
+| Global Round : 1 | Local Epoch : 6 | [1200/1273 (94%)]	Loss: 0.269124
+| Global Round : 1 | Local Epoch : 7 | [0/1273 (0%)]	Loss: 0.213827
+| Global Round : 1 | Local Epoch : 7 | [100/1273 (8%)]	Loss: 0.203861
+| Global Round : 1 | Local Epoch : 7 | [200/1273 (16%)]	Loss: 0.349259
+| Global Round : 1 | Local Epoch : 7 | [300/1273 (23%)]	Loss: 0.252202
+| Global Round : 1 | Local Epoch : 7 | [400/1273 (31%)]	Loss: 0.290518
+| Global Round : 1 | Local Epoch : 7 | [500/1273 (39%)]	Loss: 0.330516
+| Global Round : 1 | Local Epoch : 7 | [600/1273 (47%)]	Loss: 0.365558
+| Global Round : 1 | Local Epoch : 7 | [700/1273 (55%)]	Loss: 0.088304
+| Global Round : 1 | Local Epoch : 7 | [800/1273 (62%)]	Loss: 0.149418
+| Global Round : 1 | Local Epoch : 7 | [900/1273 (70%)]	Loss: 0.133021
+| Global Round : 1 | Local Epoch : 7 | [1000/1273 (78%)]	Loss: 0.497859
+| Global Round : 1 | Local Epoch : 7 | [1100/1273 (86%)]	Loss: 0.321691
+| Global Round : 1 | Local Epoch : 7 | [1200/1273 (94%)]	Loss: 0.095402
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         3
+         DME       0.86      0.92      0.89        13
+
+    accuracy                           0.81        16
+   macro avg       0.68      0.63      0.64        16
+weighted avg       0.79      0.81      0.80        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         1
+         DME       0.94      1.00      0.97        15
+
+    accuracy                           0.94        16
+   macro avg       0.47      0.50      0.48        16
+weighted avg       0.88      0.94      0.91        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+         DME       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         3
+         DME       0.77      0.77      0.77        13
+
+    accuracy                           0.62        16
+   macro avg       0.38      0.38      0.38        16
+weighted avg       0.62      0.62      0.62        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.75      0.75         4
+         DME       0.92      0.92      0.92        12
+
+    accuracy                           0.88        16
+   macro avg       0.83      0.83      0.83        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.80      0.67      0.73         6
+         DME       0.82      0.90      0.86        10
+
+    accuracy                           0.81        16
+   macro avg       0.81      0.78      0.79        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.20      0.50      0.29         2
+         DME       0.91      0.71      0.80        14
+
+    accuracy                           0.69        16
+   macro avg       0.55      0.61      0.54        16
+weighted avg       0.82      0.69      0.74        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.67      0.50      0.57         4
+         DME       0.85      0.92      0.88        12
+
+    accuracy                           0.81        16
+   macro avg       0.76      0.71      0.73        16
+weighted avg       0.80      0.81      0.80        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.67      0.57         3
+         DME       0.92      0.85      0.88        13
+
+    accuracy                           0.81        16
+   macro avg       0.71      0.76      0.73        16
+weighted avg       0.84      0.81      0.82        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.25      0.33      0.29         3
+         DME       0.83      0.77      0.80        13
+
+    accuracy                           0.69        16
+   macro avg       0.54      0.55      0.54        16
+weighted avg       0.72      0.69      0.70        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         3
+      DRUSEN       0.86      0.92      0.89        13
+
+    accuracy                           0.81        16
+   macro avg       0.68      0.63      0.64        16
+weighted avg       0.79      0.81      0.80        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         1
+      DRUSEN       0.94      1.00      0.97        15
+
+    accuracy                           0.94        16
+   macro avg       0.47      0.50      0.48        16
+weighted avg       0.88      0.94      0.91        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+      DRUSEN       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         3
+      DRUSEN       0.77      0.77      0.77        13
+
+    accuracy                           0.62        16
+   macro avg       0.38      0.38      0.38        16
+weighted avg       0.62      0.62      0.62        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.75      0.75         4
+      DRUSEN       0.92      0.92      0.92        12
+
+    accuracy                           0.88        16
+   macro avg       0.83      0.83      0.83        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.80      0.67      0.73         6
+      DRUSEN       0.82      0.90      0.86        10
+
+    accuracy                           0.81        16
+   macro avg       0.81      0.78      0.79        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.20      0.50      0.29         2
+      DRUSEN       0.91      0.71      0.80        14
+
+    accuracy                           0.69        16
+   macro avg       0.55      0.61      0.54        16
+weighted avg       0.82      0.69      0.74        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.67      0.50      0.57         4
+      DRUSEN       0.85      0.92      0.88        12
+
+    accuracy                           0.81        16
+   macro avg       0.76      0.71      0.73        16
+weighted avg       0.80      0.81      0.80        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.67      0.57         3
+      DRUSEN       0.92      0.85      0.88        13
+
+    accuracy                           0.81        16
+   macro avg       0.71      0.76      0.73        16
+weighted avg       0.84      0.81      0.82        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.25      0.33      0.29         3
+      DRUSEN       0.83      0.77      0.80        13
+
+    accuracy                           0.69        16
+   macro avg       0.54      0.55      0.54        16
+weighted avg       0.72      0.69      0.70        16
+
+----------------------
+
+Training accuracy [0.5211267605633803, 0.79375]
+ 
+Avg Training Stats after 2 global rounds:
+Training Loss : 0.5454092343974671
+Train Accuracy: 79.38% 
+
+
+ | Global Training Round : 3 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 2 | Local Epoch : 0 | [0/1273 (0%)]	Loss: 0.184355
+| Global Round : 2 | Local Epoch : 0 | [100/1273 (8%)]	Loss: 0.241461
+| Global Round : 2 | Local Epoch : 0 | [200/1273 (16%)]	Loss: 0.273779
+| Global Round : 2 | Local Epoch : 0 | [300/1273 (23%)]	Loss: 0.055654
+| Global Round : 2 | Local Epoch : 0 | [400/1273 (31%)]	Loss: 0.110407
+| Global Round : 2 | Local Epoch : 0 | [500/1273 (39%)]	Loss: 0.269158
+| Global Round : 2 | Local Epoch : 0 | [600/1273 (47%)]	Loss: 0.192620
+| Global Round : 2 | Local Epoch : 0 | [700/1273 (55%)]	Loss: 0.097227
+| Global Round : 2 | Local Epoch : 0 | [800/1273 (62%)]	Loss: 0.607591
+| Global Round : 2 | Local Epoch : 0 | [900/1273 (70%)]	Loss: 0.282197
+| Global Round : 2 | Local Epoch : 0 | [1000/1273 (78%)]	Loss: 0.312597
+| Global Round : 2 | Local Epoch : 0 | [1100/1273 (86%)]	Loss: 0.320493
+| Global Round : 2 | Local Epoch : 0 | [1200/1273 (94%)]	Loss: 0.219912
+| Global Round : 2 | Local Epoch : 1 | [0/1273 (0%)]	Loss: 0.092567
+| Global Round : 2 | Local Epoch : 1 | [100/1273 (8%)]	Loss: 0.227239
+| Global Round : 2 | Local Epoch : 1 | [200/1273 (16%)]	Loss: 0.114786
+| Global Round : 2 | Local Epoch : 1 | [300/1273 (23%)]	Loss: 0.303450
+| Global Round : 2 | Local Epoch : 1 | [400/1273 (31%)]	Loss: 0.444285
+| Global Round : 2 | Local Epoch : 1 | [500/1273 (39%)]	Loss: 0.160693
+| Global Round : 2 | Local Epoch : 1 | [600/1273 (47%)]	Loss: 0.198429
+| Global Round : 2 | Local Epoch : 1 | [700/1273 (55%)]	Loss: 0.356815
+| Global Round : 2 | Local Epoch : 1 | [800/1273 (62%)]	Loss: 0.088789
+| Global Round : 2 | Local Epoch : 1 | [900/1273 (70%)]	Loss: 0.283117
+| Global Round : 2 | Local Epoch : 1 | [1000/1273 (78%)]	Loss: 0.426368
+| Global Round : 2 | Local Epoch : 1 | [1100/1273 (86%)]	Loss: 0.224063
+| Global Round : 2 | Local Epoch : 1 | [1200/1273 (94%)]	Loss: 0.188229
+| Global Round : 2 | Local Epoch : 2 | [0/1273 (0%)]	Loss: 0.075574
+| Global Round : 2 | Local Epoch : 2 | [100/1273 (8%)]	Loss: 0.174770
+| Global Round : 2 | Local Epoch : 2 | [200/1273 (16%)]	Loss: 0.262380
+| Global Round : 2 | Local Epoch : 2 | [300/1273 (23%)]	Loss: 0.071516
+| Global Round : 2 | Local Epoch : 2 | [400/1273 (31%)]	Loss: 0.105670
+| Global Round : 2 | Local Epoch : 2 | [500/1273 (39%)]	Loss: 0.219792
+| Global Round : 2 | Local Epoch : 2 | [600/1273 (47%)]	Loss: 0.239052
+| Global Round : 2 | Local Epoch : 2 | [700/1273 (55%)]	Loss: 0.070938
+| Global Round : 2 | Local Epoch : 2 | [800/1273 (62%)]	Loss: 0.160473
+| Global Round : 2 | Local Epoch : 2 | [900/1273 (70%)]	Loss: 0.134145
+| Global Round : 2 | Local Epoch : 2 | [1000/1273 (78%)]	Loss: 0.293245
+| Global Round : 2 | Local Epoch : 2 | [1100/1273 (86%)]	Loss: 0.057270
+| Global Round : 2 | Local Epoch : 2 | [1200/1273 (94%)]	Loss: 0.077968
+| Global Round : 2 | Local Epoch : 3 | [0/1273 (0%)]	Loss: 0.088993
+| Global Round : 2 | Local Epoch : 3 | [100/1273 (8%)]	Loss: 0.033902
+| Global Round : 2 | Local Epoch : 3 | [200/1273 (16%)]	Loss: 0.051758
+| Global Round : 2 | Local Epoch : 3 | [300/1273 (23%)]	Loss: 0.162807
+| Global Round : 2 | Local Epoch : 3 | [400/1273 (31%)]	Loss: 0.416425
+| Global Round : 2 | Local Epoch : 3 | [500/1273 (39%)]	Loss: 0.099903
+| Global Round : 2 | Local Epoch : 3 | [600/1273 (47%)]	Loss: 0.097285
+| Global Round : 2 | Local Epoch : 3 | [700/1273 (55%)]	Loss: 0.453129
+| Global Round : 2 | Local Epoch : 3 | [800/1273 (62%)]	Loss: 0.084631
+| Global Round : 2 | Local Epoch : 3 | [900/1273 (70%)]	Loss: 0.210380
+| Global Round : 2 | Local Epoch : 3 | [1000/1273 (78%)]	Loss: 0.020473
+| Global Round : 2 | Local Epoch : 3 | [1100/1273 (86%)]	Loss: 0.032490
+| Global Round : 2 | Local Epoch : 3 | [1200/1273 (94%)]	Loss: 0.168048
+| Global Round : 2 | Local Epoch : 4 | [0/1273 (0%)]	Loss: 0.109821
+| Global Round : 2 | Local Epoch : 4 | [100/1273 (8%)]	Loss: 0.216017
+| Global Round : 2 | Local Epoch : 4 | [200/1273 (16%)]	Loss: 0.273808
+| Global Round : 2 | Local Epoch : 4 | [300/1273 (23%)]	Loss: 0.361215
+| Global Round : 2 | Local Epoch : 4 | [400/1273 (31%)]	Loss: 0.026680
+| Global Round : 2 | Local Epoch : 4 | [500/1273 (39%)]	Loss: 0.006142
+| Global Round : 2 | Local Epoch : 4 | [600/1273 (47%)]	Loss: 0.022494
+| Global Round : 2 | Local Epoch : 4 | [700/1273 (55%)]	Loss: 0.884708
+| Global Round : 2 | Local Epoch : 4 | [800/1273 (62%)]	Loss: 0.093148
+| Global Round : 2 | Local Epoch : 4 | [900/1273 (70%)]	Loss: 1.327199
+| Global Round : 2 | Local Epoch : 4 | [1000/1273 (78%)]	Loss: 0.040786
+| Global Round : 2 | Local Epoch : 4 | [1100/1273 (86%)]	Loss: 0.028669
+| Global Round : 2 | Local Epoch : 4 | [1200/1273 (94%)]	Loss: 0.118977
+| Global Round : 2 | Local Epoch : 5 | [0/1273 (0%)]	Loss: 0.089417
+| Global Round : 2 | Local Epoch : 5 | [100/1273 (8%)]	Loss: 0.031308
+| Global Round : 2 | Local Epoch : 5 | [200/1273 (16%)]	Loss: 0.119672
+| Global Round : 2 | Local Epoch : 5 | [300/1273 (23%)]	Loss: 0.074467
+| Global Round : 2 | Local Epoch : 5 | [400/1273 (31%)]	Loss: 0.137560
+| Global Round : 2 | Local Epoch : 5 | [500/1273 (39%)]	Loss: 0.042716
+| Global Round : 2 | Local Epoch : 5 | [600/1273 (47%)]	Loss: 1.328620
+| Global Round : 2 | Local Epoch : 5 | [700/1273 (55%)]	Loss: 0.211839
+| Global Round : 2 | Local Epoch : 5 | [800/1273 (62%)]	Loss: 0.312773
+| Global Round : 2 | Local Epoch : 5 | [900/1273 (70%)]	Loss: 0.102633
+| Global Round : 2 | Local Epoch : 5 | [1000/1273 (78%)]	Loss: 0.051636
+| Global Round : 2 | Local Epoch : 5 | [1100/1273 (86%)]	Loss: 0.004626
+| Global Round : 2 | Local Epoch : 5 | [1200/1273 (94%)]	Loss: 0.070341
+| Global Round : 2 | Local Epoch : 6 | [0/1273 (0%)]	Loss: 0.150845
+| Global Round : 2 | Local Epoch : 6 | [100/1273 (8%)]	Loss: 0.251489
+| Global Round : 2 | Local Epoch : 6 | [200/1273 (16%)]	Loss: 0.064418
+| Global Round : 2 | Local Epoch : 6 | [300/1273 (23%)]	Loss: 0.002386
+| Global Round : 2 | Local Epoch : 6 | [400/1273 (31%)]	Loss: 0.262032
+| Global Round : 2 | Local Epoch : 6 | [500/1273 (39%)]	Loss: 0.055749
+| Global Round : 2 | Local Epoch : 6 | [600/1273 (47%)]	Loss: 0.145449
+| Global Round : 2 | Local Epoch : 6 | [700/1273 (55%)]	Loss: 0.052355
+| Global Round : 2 | Local Epoch : 6 | [800/1273 (62%)]	Loss: 0.136255
+| Global Round : 2 | Local Epoch : 6 | [900/1273 (70%)]	Loss: 0.144729
+| Global Round : 2 | Local Epoch : 6 | [1000/1273 (78%)]	Loss: 0.967998
+| Global Round : 2 | Local Epoch : 6 | [1100/1273 (86%)]	Loss: 0.191919
+| Global Round : 2 | Local Epoch : 6 | [1200/1273 (94%)]	Loss: 0.052348
+| Global Round : 2 | Local Epoch : 7 | [0/1273 (0%)]	Loss: 0.036213
+| Global Round : 2 | Local Epoch : 7 | [100/1273 (8%)]	Loss: 0.141435
+| Global Round : 2 | Local Epoch : 7 | [200/1273 (16%)]	Loss: 0.022655
+| Global Round : 2 | Local Epoch : 7 | [300/1273 (23%)]	Loss: 0.021648
+| Global Round : 2 | Local Epoch : 7 | [400/1273 (31%)]	Loss: 0.176746
+| Global Round : 2 | Local Epoch : 7 | [500/1273 (39%)]	Loss: 0.052504
+| Global Round : 2 | Local Epoch : 7 | [600/1273 (47%)]	Loss: 0.071632
+| Global Round : 2 | Local Epoch : 7 | [700/1273 (55%)]	Loss: 0.120704
+| Global Round : 2 | Local Epoch : 7 | [800/1273 (62%)]	Loss: 0.011131
+| Global Round : 2 | Local Epoch : 7 | [900/1273 (70%)]	Loss: 0.039250
+| Global Round : 2 | Local Epoch : 7 | [1000/1273 (78%)]	Loss: 0.061557
+| Global Round : 2 | Local Epoch : 7 | [1100/1273 (86%)]	Loss: 0.231677
+| Global Round : 2 | Local Epoch : 7 | [1200/1273 (94%)]	Loss: 0.084195
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.33      0.50         6
+         DME       0.71      1.00      0.83        10
+
+    accuracy                           0.75        16
+   macro avg       0.86      0.67      0.67        16
+weighted avg       0.82      0.75      0.71        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         1
+         DME       0.94      1.00      0.97        15
+
+    accuracy                           0.94        16
+   macro avg       0.47      0.50      0.48        16
+weighted avg       0.88      0.94      0.91        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+         DME       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         3
+         DME       0.77      0.77      0.77        13
+
+    accuracy                           0.62        16
+   macro avg       0.38      0.38      0.38        16
+weighted avg       0.62      0.62      0.62        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.50      0.60         6
+         DME       0.75      0.90      0.82        10
+
+    accuracy                           0.75        16
+   macro avg       0.75      0.70      0.71        16
+weighted avg       0.75      0.75      0.74        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.80      0.67      0.73         6
+         DME       0.82      0.90      0.86        10
+
+    accuracy                           0.81        16
+   macro avg       0.81      0.78      0.79        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.40      0.50      0.44         4
+         DME       0.82      0.75      0.78        12
+
+    accuracy                           0.69        16
+   macro avg       0.61      0.62      0.61        16
+weighted avg       0.71      0.69      0.70        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.67      0.33      0.44         6
+         DME       0.69      0.90      0.78        10
+
+    accuracy                           0.69        16
+   macro avg       0.68      0.62      0.61        16
+weighted avg       0.68      0.69      0.66        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.43      0.55         7
+         DME       0.67      0.89      0.76         9
+
+    accuracy                           0.69        16
+   macro avg       0.71      0.66      0.65        16
+weighted avg       0.70      0.69      0.67        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.50      0.60         6
+         DME       0.75      0.90      0.82        10
+
+    accuracy                           0.75        16
+   macro avg       0.75      0.70      0.71        16
+weighted avg       0.75      0.75      0.74        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.33      0.50         6
+      DRUSEN       0.71      1.00      0.83        10
+
+    accuracy                           0.75        16
+   macro avg       0.86      0.67      0.67        16
+weighted avg       0.82      0.75      0.71        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         1
+      DRUSEN       0.94      1.00      0.97        15
+
+    accuracy                           0.94        16
+   macro avg       0.47      0.50      0.48        16
+weighted avg       0.88      0.94      0.91        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+      DRUSEN       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         3
+      DRUSEN       0.77      0.77      0.77        13
+
+    accuracy                           0.62        16
+   macro avg       0.38      0.38      0.38        16
+weighted avg       0.62      0.62      0.62        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.50      0.60         6
+      DRUSEN       0.75      0.90      0.82        10
+
+    accuracy                           0.75        16
+   macro avg       0.75      0.70      0.71        16
+weighted avg       0.75      0.75      0.74        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.80      0.67      0.73         6
+      DRUSEN       0.82      0.90      0.86        10
+
+    accuracy                           0.81        16
+   macro avg       0.81      0.78      0.79        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.40      0.50      0.44         4
+      DRUSEN       0.82      0.75      0.78        12
+
+    accuracy                           0.69        16
+   macro avg       0.61      0.62      0.61        16
+weighted avg       0.71      0.69      0.70        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.67      0.33      0.44         6
+      DRUSEN       0.69      0.90      0.78        10
+
+    accuracy                           0.69        16
+   macro avg       0.68      0.62      0.61        16
+weighted avg       0.68      0.69      0.66        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.43      0.55         7
+      DRUSEN       0.67      0.89      0.76         9
+
+    accuracy                           0.69        16
+   macro avg       0.71      0.66      0.65        16
+weighted avg       0.70      0.69      0.67        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.50      0.60         6
+      DRUSEN       0.75      0.90      0.82        10
+
+    accuracy                           0.75        16
+   macro avg       0.75      0.70      0.71        16
+weighted avg       0.75      0.75      0.74        16
+
+----------------------
+
+Training accuracy [0.5211267605633803, 0.79375, 0.75625]
+
+ | Global Training Round : 4 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 3 | Local Epoch : 0 | [0/1273 (0%)]	Loss: 0.179262
+| Global Round : 3 | Local Epoch : 0 | [100/1273 (8%)]	Loss: 0.012306
+| Global Round : 3 | Local Epoch : 0 | [200/1273 (16%)]	Loss: 0.030188
+| Global Round : 3 | Local Epoch : 0 | [300/1273 (23%)]	Loss: 0.098310
+| Global Round : 3 | Local Epoch : 0 | [400/1273 (31%)]	Loss: 1.017152
+| Global Round : 3 | Local Epoch : 0 | [500/1273 (39%)]	Loss: 0.025224
+| Global Round : 3 | Local Epoch : 0 | [600/1273 (47%)]	Loss: 0.065265
+| Global Round : 3 | Local Epoch : 0 | [700/1273 (55%)]	Loss: 0.126973
+| Global Round : 3 | Local Epoch : 0 | [800/1273 (62%)]	Loss: 0.103297
+| Global Round : 3 | Local Epoch : 0 | [900/1273 (70%)]	Loss: 0.472743
+| Global Round : 3 | Local Epoch : 0 | [1000/1273 (78%)]	Loss: 0.014517
+| Global Round : 3 | Local Epoch : 0 | [1100/1273 (86%)]	Loss: 0.014627
+| Global Round : 3 | Local Epoch : 0 | [1200/1273 (94%)]	Loss: 0.102473
+| Global Round : 3 | Local Epoch : 1 | [0/1273 (0%)]	Loss: 0.208497
+| Global Round : 3 | Local Epoch : 1 | [100/1273 (8%)]	Loss: 0.034115
+| Global Round : 3 | Local Epoch : 1 | [200/1273 (16%)]	Loss: 0.003393
+| Global Round : 3 | Local Epoch : 1 | [300/1273 (23%)]	Loss: 0.039016
+| Global Round : 3 | Local Epoch : 1 | [400/1273 (31%)]	Loss: 0.165545
+| Global Round : 3 | Local Epoch : 1 | [500/1273 (39%)]	Loss: 0.200476
+| Global Round : 3 | Local Epoch : 1 | [600/1273 (47%)]	Loss: 0.038005
+| Global Round : 3 | Local Epoch : 1 | [700/1273 (55%)]	Loss: 0.062146
+| Global Round : 3 | Local Epoch : 1 | [800/1273 (62%)]	Loss: 0.027273
+| Global Round : 3 | Local Epoch : 1 | [900/1273 (70%)]	Loss: 0.125483
+| Global Round : 3 | Local Epoch : 1 | [1000/1273 (78%)]	Loss: 0.000591
+| Global Round : 3 | Local Epoch : 1 | [1100/1273 (86%)]	Loss: 0.198991
+| Global Round : 3 | Local Epoch : 1 | [1200/1273 (94%)]	Loss: 0.011412
+| Global Round : 3 | Local Epoch : 2 | [0/1273 (0%)]	Loss: 0.102582
+| Global Round : 3 | Local Epoch : 2 | [100/1273 (8%)]	Loss: 0.059423
+| Global Round : 3 | Local Epoch : 2 | [200/1273 (16%)]	Loss: 0.034477
+| Global Round : 3 | Local Epoch : 2 | [300/1273 (23%)]	Loss: 0.004637
+| Global Round : 3 | Local Epoch : 2 | [400/1273 (31%)]	Loss: 0.218434
+| Global Round : 3 | Local Epoch : 2 | [500/1273 (39%)]	Loss: 0.032294
+| Global Round : 3 | Local Epoch : 2 | [600/1273 (47%)]	Loss: 0.179313
+| Global Round : 3 | Local Epoch : 2 | [700/1273 (55%)]	Loss: 0.189240
+| Global Round : 3 | Local Epoch : 2 | [800/1273 (62%)]	Loss: 0.008708
+| Global Round : 3 | Local Epoch : 2 | [900/1273 (70%)]	Loss: 0.306762
+| Global Round : 3 | Local Epoch : 2 | [1000/1273 (78%)]	Loss: 0.041754
+| Global Round : 3 | Local Epoch : 2 | [1100/1273 (86%)]	Loss: 0.021556
+| Global Round : 3 | Local Epoch : 2 | [1200/1273 (94%)]	Loss: 0.310754
+| Global Round : 3 | Local Epoch : 3 | [0/1273 (0%)]	Loss: 0.100131
+| Global Round : 3 | Local Epoch : 3 | [100/1273 (8%)]	Loss: 0.219135
+| Global Round : 3 | Local Epoch : 3 | [200/1273 (16%)]	Loss: 0.018031
+| Global Round : 3 | Local Epoch : 3 | [300/1273 (23%)]	Loss: 0.101289
+| Global Round : 3 | Local Epoch : 3 | [400/1273 (31%)]	Loss: 0.055917
+| Global Round : 3 | Local Epoch : 3 | [500/1273 (39%)]	Loss: 0.003722
+| Global Round : 3 | Local Epoch : 3 | [600/1273 (47%)]	Loss: 0.114204
+| Global Round : 3 | Local Epoch : 3 | [700/1273 (55%)]	Loss: 0.026218
+| Global Round : 3 | Local Epoch : 3 | [800/1273 (62%)]	Loss: 0.029926
+| Global Round : 3 | Local Epoch : 3 | [900/1273 (70%)]	Loss: 0.024543
+| Global Round : 3 | Local Epoch : 3 | [1000/1273 (78%)]	Loss: 0.050270
+| Global Round : 3 | Local Epoch : 3 | [1100/1273 (86%)]	Loss: 0.090668
+| Global Round : 3 | Local Epoch : 3 | [1200/1273 (94%)]	Loss: 0.001726
+| Global Round : 3 | Local Epoch : 4 | [0/1273 (0%)]	Loss: 0.061224
+| Global Round : 3 | Local Epoch : 4 | [100/1273 (8%)]	Loss: 0.018906
+| Global Round : 3 | Local Epoch : 4 | [200/1273 (16%)]	Loss: 0.067304
+| Global Round : 3 | Local Epoch : 4 | [300/1273 (23%)]	Loss: 0.009515
+| Global Round : 3 | Local Epoch : 4 | [400/1273 (31%)]	Loss: 0.089115
+| Global Round : 3 | Local Epoch : 4 | [500/1273 (39%)]	Loss: 0.124681
+| Global Round : 3 | Local Epoch : 4 | [600/1273 (47%)]	Loss: 0.155225
+| Global Round : 3 | Local Epoch : 4 | [700/1273 (55%)]	Loss: 0.010129
+| Global Round : 3 | Local Epoch : 4 | [800/1273 (62%)]	Loss: 0.014914
+| Global Round : 3 | Local Epoch : 4 | [900/1273 (70%)]	Loss: 0.036047
+| Global Round : 3 | Local Epoch : 4 | [1000/1273 (78%)]	Loss: 0.162060
+| Global Round : 3 | Local Epoch : 4 | [1100/1273 (86%)]	Loss: 0.013947
+| Global Round : 3 | Local Epoch : 4 | [1200/1273 (94%)]	Loss: 0.012062
+| Global Round : 3 | Local Epoch : 5 | [0/1273 (0%)]	Loss: 0.006757
+| Global Round : 3 | Local Epoch : 5 | [100/1273 (8%)]	Loss: 0.028257
+| Global Round : 3 | Local Epoch : 5 | [200/1273 (16%)]	Loss: 0.005120
+| Global Round : 3 | Local Epoch : 5 | [300/1273 (23%)]	Loss: 0.049407
+| Global Round : 3 | Local Epoch : 5 | [400/1273 (31%)]	Loss: 0.090574
+| Global Round : 3 | Local Epoch : 5 | [500/1273 (39%)]	Loss: 0.028829
+| Global Round : 3 | Local Epoch : 5 | [600/1273 (47%)]	Loss: 0.042248
+| Global Round : 3 | Local Epoch : 5 | [700/1273 (55%)]	Loss: 0.007369
+| Global Round : 3 | Local Epoch : 5 | [800/1273 (62%)]	Loss: 0.070060
+| Global Round : 3 | Local Epoch : 5 | [900/1273 (70%)]	Loss: 0.087180
+| Global Round : 3 | Local Epoch : 5 | [1000/1273 (78%)]	Loss: 0.023019
+| Global Round : 3 | Local Epoch : 5 | [1100/1273 (86%)]	Loss: 0.073839
+| Global Round : 3 | Local Epoch : 5 | [1200/1273 (94%)]	Loss: 0.137251
+| Global Round : 3 | Local Epoch : 6 | [0/1273 (0%)]	Loss: 0.097519
+| Global Round : 3 | Local Epoch : 6 | [100/1273 (8%)]	Loss: 0.067379
+| Global Round : 3 | Local Epoch : 6 | [200/1273 (16%)]	Loss: 0.026465
+| Global Round : 3 | Local Epoch : 6 | [300/1273 (23%)]	Loss: 0.007327
+| Global Round : 3 | Local Epoch : 6 | [400/1273 (31%)]	Loss: 0.032295
+| Global Round : 3 | Local Epoch : 6 | [500/1273 (39%)]	Loss: 0.041262
+| Global Round : 3 | Local Epoch : 6 | [600/1273 (47%)]	Loss: 0.079917
+| Global Round : 3 | Local Epoch : 6 | [700/1273 (55%)]	Loss: 0.116253
+| Global Round : 3 | Local Epoch : 6 | [800/1273 (62%)]	Loss: 0.006127
+| Global Round : 3 | Local Epoch : 6 | [900/1273 (70%)]	Loss: 0.123874
+| Global Round : 3 | Local Epoch : 6 | [1000/1273 (78%)]	Loss: 0.040219
+| Global Round : 3 | Local Epoch : 6 | [1100/1273 (86%)]	Loss: 0.101389
+| Global Round : 3 | Local Epoch : 6 | [1200/1273 (94%)]	Loss: 0.043531
+| Global Round : 3 | Local Epoch : 7 | [0/1273 (0%)]	Loss: 0.137861
+| Global Round : 3 | Local Epoch : 7 | [100/1273 (8%)]	Loss: 0.218282
+| Global Round : 3 | Local Epoch : 7 | [200/1273 (16%)]	Loss: 0.020385
+| Global Round : 3 | Local Epoch : 7 | [300/1273 (23%)]	Loss: 0.001311
+| Global Round : 3 | Local Epoch : 7 | [400/1273 (31%)]	Loss: 0.029854
+| Global Round : 3 | Local Epoch : 7 | [500/1273 (39%)]	Loss: 0.031473
+| Global Round : 3 | Local Epoch : 7 | [600/1273 (47%)]	Loss: 0.038843
+| Global Round : 3 | Local Epoch : 7 | [700/1273 (55%)]	Loss: 0.007875
+| Global Round : 3 | Local Epoch : 7 | [800/1273 (62%)]	Loss: 0.101816
+| Global Round : 3 | Local Epoch : 7 | [900/1273 (70%)]	Loss: 0.075671
+| Global Round : 3 | Local Epoch : 7 | [1000/1273 (78%)]	Loss: 0.001477
+| Global Round : 3 | Local Epoch : 7 | [1100/1273 (86%)]	Loss: 0.013664
+| Global Round : 3 | Local Epoch : 7 | [1200/1273 (94%)]	Loss: 0.001220
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+         DME       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         1
+         DME       0.94      1.00      0.97        15
+
+    accuracy                           0.94        16
+   macro avg       0.47      0.50      0.48        16
+weighted avg       0.88      0.94      0.91        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+         DME       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         4
+         DME       0.69      0.75      0.72        12
+
+    accuracy                           0.56        16
+   macro avg       0.35      0.38      0.36        16
+weighted avg       0.52      0.56      0.54        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+         DME       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.80      0.57      0.67         7
+         DME       0.73      0.89      0.80         9
+
+    accuracy                           0.75        16
+   macro avg       0.76      0.73      0.73        16
+weighted avg       0.76      0.75      0.74        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.40      0.67      0.50         3
+         DME       0.91      0.77      0.83        13
+
+    accuracy                           0.75        16
+   macro avg       0.65      0.72      0.67        16
+weighted avg       0.81      0.75      0.77        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.33      0.33      0.33         3
+         DME       0.85      0.85      0.85        13
+
+    accuracy                           0.75        16
+   macro avg       0.59      0.59      0.59        16
+weighted avg       0.75      0.75      0.75        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         6
+         DME       0.67      0.80      0.73        10
+
+    accuracy                           0.62        16
+   macro avg       0.58      0.57      0.56        16
+weighted avg       0.60      0.62      0.60        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.43      0.55         7
+         DME       0.67      0.89      0.76         9
+
+    accuracy                           0.69        16
+   macro avg       0.71      0.66      0.65        16
+weighted avg       0.70      0.69      0.67        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+      DRUSEN       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         1
+      DRUSEN       0.94      1.00      0.97        15
+
+    accuracy                           0.94        16
+   macro avg       0.47      0.50      0.48        16
+weighted avg       0.88      0.94      0.91        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+      DRUSEN       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         4
+      DRUSEN       0.69      0.75      0.72        12
+
+    accuracy                           0.56        16
+   macro avg       0.35      0.38      0.36        16
+weighted avg       0.52      0.56      0.54        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+      DRUSEN       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.80      0.57      0.67         7
+      DRUSEN       0.73      0.89      0.80         9
+
+    accuracy                           0.75        16
+   macro avg       0.76      0.73      0.73        16
+weighted avg       0.76      0.75      0.74        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.40      0.67      0.50         3
+      DRUSEN       0.91      0.77      0.83        13
+
+    accuracy                           0.75        16
+   macro avg       0.65      0.72      0.67        16
+weighted avg       0.81      0.75      0.77        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.33      0.33      0.33         3
+      DRUSEN       0.85      0.85      0.85        13
+
+    accuracy                           0.75        16
+   macro avg       0.59      0.59      0.59        16
+weighted avg       0.75      0.75      0.75        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         6
+      DRUSEN       0.67      0.80      0.73        10
+
+    accuracy                           0.62        16
+   macro avg       0.58      0.57      0.56        16
+weighted avg       0.60      0.62      0.60        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.43      0.55         7
+      DRUSEN       0.67      0.89      0.76         9
+
+    accuracy                           0.69        16
+   macro avg       0.71      0.66      0.65        16
+weighted avg       0.70      0.69      0.67        16
+
+----------------------
+
+Training accuracy [0.5211267605633803, 0.79375, 0.75625, 0.7625]
+ 
+Avg Training Stats after 4 global rounds:
+Training Loss : 0.3419232534421011
+Train Accuracy: 76.25% 
+
+
+ | Global Training Round : 5 |
+
+----------------
+user chosen 2
+----------------
+----------------
+| Global Round : 4 | Local Epoch : 0 | [0/561 (0%)]	Loss: 0.116365
+| Global Round : 4 | Local Epoch : 0 | [100/561 (18%)]	Loss: 0.562809
+| Global Round : 4 | Local Epoch : 0 | [200/561 (35%)]	Loss: 0.722440
+| Global Round : 4 | Local Epoch : 0 | [300/561 (53%)]	Loss: 0.246252
+| Global Round : 4 | Local Epoch : 0 | [400/561 (70%)]	Loss: 0.448317
+| Global Round : 4 | Local Epoch : 0 | [500/561 (88%)]	Loss: 0.573821
+| Global Round : 4 | Local Epoch : 1 | [0/561 (0%)]	Loss: 0.161246
+| Global Round : 4 | Local Epoch : 1 | [100/561 (18%)]	Loss: 0.272527
+| Global Round : 4 | Local Epoch : 1 | [200/561 (35%)]	Loss: 0.446636
+| Global Round : 4 | Local Epoch : 1 | [300/561 (53%)]	Loss: 0.313456
+| Global Round : 4 | Local Epoch : 1 | [400/561 (70%)]	Loss: 0.197865
+| Global Round : 4 | Local Epoch : 1 | [500/561 (88%)]	Loss: 0.329836
+| Global Round : 4 | Local Epoch : 2 | [0/561 (0%)]	Loss: 0.485558
+| Global Round : 4 | Local Epoch : 2 | [100/561 (18%)]	Loss: 0.706743
+| Global Round : 4 | Local Epoch : 2 | [200/561 (35%)]	Loss: 0.454486
+| Global Round : 4 | Local Epoch : 2 | [300/561 (53%)]	Loss: 0.439645
+| Global Round : 4 | Local Epoch : 2 | [400/561 (70%)]	Loss: 0.243856
+| Global Round : 4 | Local Epoch : 2 | [500/561 (88%)]	Loss: 0.585392
+| Global Round : 4 | Local Epoch : 3 | [0/561 (0%)]	Loss: 0.320062
+| Global Round : 4 | Local Epoch : 3 | [100/561 (18%)]	Loss: 0.092915
+| Global Round : 4 | Local Epoch : 3 | [200/561 (35%)]	Loss: 0.171498
+| Global Round : 4 | Local Epoch : 3 | [300/561 (53%)]	Loss: 0.185074
+| Global Round : 4 | Local Epoch : 3 | [400/561 (70%)]	Loss: 0.288644
+| Global Round : 4 | Local Epoch : 3 | [500/561 (88%)]	Loss: 0.168338
+| Global Round : 4 | Local Epoch : 4 | [0/561 (0%)]	Loss: 0.227719
+| Global Round : 4 | Local Epoch : 4 | [100/561 (18%)]	Loss: 0.303281
+| Global Round : 4 | Local Epoch : 4 | [200/561 (35%)]	Loss: 0.205023
+| Global Round : 4 | Local Epoch : 4 | [300/561 (53%)]	Loss: 0.107641
+| Global Round : 4 | Local Epoch : 4 | [400/561 (70%)]	Loss: 0.202887
+| Global Round : 4 | Local Epoch : 4 | [500/561 (88%)]	Loss: 0.324357
+| Global Round : 4 | Local Epoch : 5 | [0/561 (0%)]	Loss: 0.193478
+| Global Round : 4 | Local Epoch : 5 | [100/561 (18%)]	Loss: 0.153519
+| Global Round : 4 | Local Epoch : 5 | [200/561 (35%)]	Loss: 0.136777
+| Global Round : 4 | Local Epoch : 5 | [300/561 (53%)]	Loss: 0.062095
+| Global Round : 4 | Local Epoch : 5 | [400/561 (70%)]	Loss: 0.619994
+| Global Round : 4 | Local Epoch : 5 | [500/561 (88%)]	Loss: 0.254567
+| Global Round : 4 | Local Epoch : 6 | [0/561 (0%)]	Loss: 0.230058
+| Global Round : 4 | Local Epoch : 6 | [100/561 (18%)]	Loss: 0.589534
+| Global Round : 4 | Local Epoch : 6 | [200/561 (35%)]	Loss: 0.074244
+| Global Round : 4 | Local Epoch : 6 | [300/561 (53%)]	Loss: 0.095069
+| Global Round : 4 | Local Epoch : 6 | [400/561 (70%)]	Loss: 0.076670
+| Global Round : 4 | Local Epoch : 6 | [500/561 (88%)]	Loss: 0.041977
+| Global Round : 4 | Local Epoch : 7 | [0/561 (0%)]	Loss: 0.166247
+| Global Round : 4 | Local Epoch : 7 | [100/561 (18%)]	Loss: 0.043346
+| Global Round : 4 | Local Epoch : 7 | [200/561 (35%)]	Loss: 0.329973
+| Global Round : 4 | Local Epoch : 7 | [300/561 (53%)]	Loss: 0.321962
+| Global Round : 4 | Local Epoch : 7 | [400/561 (70%)]	Loss: 0.089135
+| Global Round : 4 | Local Epoch : 7 | [500/561 (88%)]	Loss: 0.139345
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.50      0.60         6
+         DME       0.00      0.00      0.00         1
+
+    accuracy                           0.43         7
+   macro avg       0.38      0.25      0.30         7
+weighted avg       0.64      0.43      0.51         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.75      0.75         4
+         DME       0.67      0.67      0.67         3
+
+    accuracy                           0.71         7
+   macro avg       0.71      0.71      0.71         7
+weighted avg       0.71      0.71      0.71         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.75      0.86         4
+         DME       0.75      1.00      0.86         3
+
+    accuracy                           0.86         7
+   macro avg       0.88      0.88      0.86         7
+weighted avg       0.89      0.86      0.86         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.83      0.91         6
+         DME       0.50      1.00      0.67         1
+
+    accuracy                           0.86         7
+   macro avg       0.75      0.92      0.79         7
+weighted avg       0.93      0.86      0.87         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.40      0.57         5
+         DME       0.40      1.00      0.57         2
+
+    accuracy                           0.57         7
+   macro avg       0.70      0.70      0.57         7
+weighted avg       0.83      0.57      0.57         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.60      0.75         5
+         DME       0.50      1.00      0.67         2
+
+    accuracy                           0.71         7
+   macro avg       0.75      0.80      0.71         7
+weighted avg       0.86      0.71      0.73         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.67      0.57         3
+         DME       0.67      0.50      0.57         4
+
+    accuracy                           0.57         7
+   macro avg       0.58      0.58      0.57         7
+weighted avg       0.60      0.57      0.57         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         2
+         DME       0.83      1.00      0.91         5
+
+    accuracy                           0.86         7
+   macro avg       0.92      0.75      0.79         7
+weighted avg       0.88      0.86      0.84         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.75      0.75         4
+         DME       0.67      0.67      0.67         3
+
+    accuracy                           0.71         7
+   macro avg       0.71      0.71      0.71         7
+weighted avg       0.71      0.71      0.71         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         2
+         DME       0.83      1.00      0.91         5
+
+    accuracy                           0.86         7
+   macro avg       0.92      0.75      0.79         7
+weighted avg       0.88      0.86      0.84         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      1.00      1.00         1
+         DME       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.50      0.60         6
+      DRUSEN       0.00      0.00      0.00         1
+
+    accuracy                           0.43         7
+   macro avg       0.38      0.25      0.30         7
+weighted avg       0.64      0.43      0.51         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.75      0.75         4
+      DRUSEN       0.67      0.67      0.67         3
+
+    accuracy                           0.71         7
+   macro avg       0.71      0.71      0.71         7
+weighted avg       0.71      0.71      0.71         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.75      0.86         4
+      DRUSEN       0.75      1.00      0.86         3
+
+    accuracy                           0.86         7
+   macro avg       0.88      0.88      0.86         7
+weighted avg       0.89      0.86      0.86         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.83      0.91         6
+      DRUSEN       0.50      1.00      0.67         1
+
+    accuracy                           0.86         7
+   macro avg       0.75      0.92      0.79         7
+weighted avg       0.93      0.86      0.87         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.40      0.57         5
+      DRUSEN       0.40      1.00      0.57         2
+
+    accuracy                           0.57         7
+   macro avg       0.70      0.70      0.57         7
+weighted avg       0.83      0.57      0.57         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.60      0.75         5
+      DRUSEN       0.50      1.00      0.67         2
+
+    accuracy                           0.71         7
+   macro avg       0.75      0.80      0.71         7
+weighted avg       0.86      0.71      0.73         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.67      0.57         3
+      DRUSEN       0.67      0.50      0.57         4
+
+    accuracy                           0.57         7
+   macro avg       0.58      0.58      0.57         7
+weighted avg       0.60      0.57      0.57         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         2
+      DRUSEN       0.83      1.00      0.91         5
+
+    accuracy                           0.86         7
+   macro avg       0.92      0.75      0.79         7
+weighted avg       0.88      0.86      0.84         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.75      0.75         4
+      DRUSEN       0.67      0.67      0.67         3
+
+    accuracy                           0.71         7
+   macro avg       0.71      0.71      0.71         7
+weighted avg       0.71      0.71      0.71         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         2
+      DRUSEN       0.83      1.00      0.91         5
+
+    accuracy                           0.86         7
+   macro avg       0.92      0.75      0.79         7
+weighted avg       0.88      0.86      0.84         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      1.00      1.00         1
+      DRUSEN       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+Training accuracy [0.5211267605633803, 0.79375, 0.75625, 0.7625, 0.7183098591549296]
+
+ | Global Training Round : 6 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 5 | Local Epoch : 0 | [0/1273 (0%)]	Loss: 0.161207
+| Global Round : 5 | Local Epoch : 0 | [100/1273 (8%)]	Loss: 0.067990
+| Global Round : 5 | Local Epoch : 0 | [200/1273 (16%)]	Loss: 0.224366
+| Global Round : 5 | Local Epoch : 0 | [300/1273 (23%)]	Loss: 0.041556
+| Global Round : 5 | Local Epoch : 0 | [400/1273 (31%)]	Loss: 0.115433
+| Global Round : 5 | Local Epoch : 0 | [500/1273 (39%)]	Loss: 0.179782
+| Global Round : 5 | Local Epoch : 0 | [600/1273 (47%)]	Loss: 0.117404
+| Global Round : 5 | Local Epoch : 0 | [700/1273 (55%)]	Loss: 0.023216
+| Global Round : 5 | Local Epoch : 0 | [800/1273 (62%)]	Loss: 0.060750
+| Global Round : 5 | Local Epoch : 0 | [900/1273 (70%)]	Loss: 0.050429
+| Global Round : 5 | Local Epoch : 0 | [1000/1273 (78%)]	Loss: 0.090143
+| Global Round : 5 | Local Epoch : 0 | [1100/1273 (86%)]	Loss: 0.010296
+| Global Round : 5 | Local Epoch : 0 | [1200/1273 (94%)]	Loss: 0.032521
+| Global Round : 5 | Local Epoch : 1 | [0/1273 (0%)]	Loss: 0.009153
+| Global Round : 5 | Local Epoch : 1 | [100/1273 (8%)]	Loss: 0.264704
+| Global Round : 5 | Local Epoch : 1 | [200/1273 (16%)]	Loss: 0.055448
+| Global Round : 5 | Local Epoch : 1 | [300/1273 (23%)]	Loss: 0.326243
+| Global Round : 5 | Local Epoch : 1 | [400/1273 (31%)]	Loss: 0.014756
+| Global Round : 5 | Local Epoch : 1 | [500/1273 (39%)]	Loss: 0.006115
+| Global Round : 5 | Local Epoch : 1 | [600/1273 (47%)]	Loss: 0.025281
+| Global Round : 5 | Local Epoch : 1 | [700/1273 (55%)]	Loss: 0.058410
+| Global Round : 5 | Local Epoch : 1 | [800/1273 (62%)]	Loss: 0.226557
+| Global Round : 5 | Local Epoch : 1 | [900/1273 (70%)]	Loss: 0.032020
+| Global Round : 5 | Local Epoch : 1 | [1000/1273 (78%)]	Loss: 0.004409
+| Global Round : 5 | Local Epoch : 1 | [1100/1273 (86%)]	Loss: 0.005629
+| Global Round : 5 | Local Epoch : 1 | [1200/1273 (94%)]	Loss: 0.010819
+| Global Round : 5 | Local Epoch : 2 | [0/1273 (0%)]	Loss: 0.089722
+| Global Round : 5 | Local Epoch : 2 | [100/1273 (8%)]	Loss: 0.073614
+| Global Round : 5 | Local Epoch : 2 | [200/1273 (16%)]	Loss: 0.052951
+| Global Round : 5 | Local Epoch : 2 | [300/1273 (23%)]	Loss: 0.015140
+| Global Round : 5 | Local Epoch : 2 | [400/1273 (31%)]	Loss: 0.135148
+| Global Round : 5 | Local Epoch : 2 | [500/1273 (39%)]	Loss: 0.003133
+| Global Round : 5 | Local Epoch : 2 | [600/1273 (47%)]	Loss: 0.044253
+| Global Round : 5 | Local Epoch : 2 | [700/1273 (55%)]	Loss: 0.001969
+| Global Round : 5 | Local Epoch : 2 | [800/1273 (62%)]	Loss: 0.368860
+| Global Round : 5 | Local Epoch : 2 | [900/1273 (70%)]	Loss: 0.107001
+| Global Round : 5 | Local Epoch : 2 | [1000/1273 (78%)]	Loss: 0.295031
+| Global Round : 5 | Local Epoch : 2 | [1100/1273 (86%)]	Loss: 0.245162
+| Global Round : 5 | Local Epoch : 2 | [1200/1273 (94%)]	Loss: 0.031378
+| Global Round : 5 | Local Epoch : 3 | [0/1273 (0%)]	Loss: 0.016212
+| Global Round : 5 | Local Epoch : 3 | [100/1273 (8%)]	Loss: 0.016054
+| Global Round : 5 | Local Epoch : 3 | [200/1273 (16%)]	Loss: 0.243806
+| Global Round : 5 | Local Epoch : 3 | [300/1273 (23%)]	Loss: 0.038564
+| Global Round : 5 | Local Epoch : 3 | [400/1273 (31%)]	Loss: 0.097462
+| Global Round : 5 | Local Epoch : 3 | [500/1273 (39%)]	Loss: 0.010841
+| Global Round : 5 | Local Epoch : 3 | [600/1273 (47%)]	Loss: 0.002972
+| Global Round : 5 | Local Epoch : 3 | [700/1273 (55%)]	Loss: 0.061697
+| Global Round : 5 | Local Epoch : 3 | [800/1273 (62%)]	Loss: 0.295235
+| Global Round : 5 | Local Epoch : 3 | [900/1273 (70%)]	Loss: 0.336703
+| Global Round : 5 | Local Epoch : 3 | [1000/1273 (78%)]	Loss: 0.260943
+| Global Round : 5 | Local Epoch : 3 | [1100/1273 (86%)]	Loss: 0.004128
+| Global Round : 5 | Local Epoch : 3 | [1200/1273 (94%)]	Loss: 0.040200
+| Global Round : 5 | Local Epoch : 4 | [0/1273 (0%)]	Loss: 0.083405
+| Global Round : 5 | Local Epoch : 4 | [100/1273 (8%)]	Loss: 0.000652
+| Global Round : 5 | Local Epoch : 4 | [200/1273 (16%)]	Loss: 0.030470
+| Global Round : 5 | Local Epoch : 4 | [300/1273 (23%)]	Loss: 0.100976
+| Global Round : 5 | Local Epoch : 4 | [400/1273 (31%)]	Loss: 0.013585
+| Global Round : 5 | Local Epoch : 4 | [500/1273 (39%)]	Loss: 0.016431
+| Global Round : 5 | Local Epoch : 4 | [600/1273 (47%)]	Loss: 0.026450
+| Global Round : 5 | Local Epoch : 4 | [700/1273 (55%)]	Loss: 0.037771
+| Global Round : 5 | Local Epoch : 4 | [800/1273 (62%)]	Loss: 0.008594
+| Global Round : 5 | Local Epoch : 4 | [900/1273 (70%)]	Loss: 0.098255
+| Global Round : 5 | Local Epoch : 4 | [1000/1273 (78%)]	Loss: 0.057914
+| Global Round : 5 | Local Epoch : 4 | [1100/1273 (86%)]	Loss: 0.008652
+| Global Round : 5 | Local Epoch : 4 | [1200/1273 (94%)]	Loss: 0.010527
+| Global Round : 5 | Local Epoch : 5 | [0/1273 (0%)]	Loss: 0.000501
+| Global Round : 5 | Local Epoch : 5 | [100/1273 (8%)]	Loss: 0.005983
+| Global Round : 5 | Local Epoch : 5 | [200/1273 (16%)]	Loss: 0.038400
+| Global Round : 5 | Local Epoch : 5 | [300/1273 (23%)]	Loss: 0.380713
+| Global Round : 5 | Local Epoch : 5 | [400/1273 (31%)]	Loss: 0.021012
+| Global Round : 5 | Local Epoch : 5 | [500/1273 (39%)]	Loss: 0.096197
+| Global Round : 5 | Local Epoch : 5 | [600/1273 (47%)]	Loss: 0.216374
+| Global Round : 5 | Local Epoch : 5 | [700/1273 (55%)]	Loss: 0.005576
+| Global Round : 5 | Local Epoch : 5 | [800/1273 (62%)]	Loss: 0.000708
+| Global Round : 5 | Local Epoch : 5 | [900/1273 (70%)]	Loss: 0.091885
+| Global Round : 5 | Local Epoch : 5 | [1000/1273 (78%)]	Loss: 0.036003
+| Global Round : 5 | Local Epoch : 5 | [1100/1273 (86%)]	Loss: 0.006076
+| Global Round : 5 | Local Epoch : 5 | [1200/1273 (94%)]	Loss: 0.015056
+| Global Round : 5 | Local Epoch : 6 | [0/1273 (0%)]	Loss: 0.010834
+| Global Round : 5 | Local Epoch : 6 | [100/1273 (8%)]	Loss: 0.191704
+| Global Round : 5 | Local Epoch : 6 | [200/1273 (16%)]	Loss: 0.003548
+| Global Round : 5 | Local Epoch : 6 | [300/1273 (23%)]	Loss: 0.004168
+| Global Round : 5 | Local Epoch : 6 | [400/1273 (31%)]	Loss: 0.176201
+| Global Round : 5 | Local Epoch : 6 | [500/1273 (39%)]	Loss: 0.024158
+| Global Round : 5 | Local Epoch : 6 | [600/1273 (47%)]	Loss: 0.007694
+| Global Round : 5 | Local Epoch : 6 | [700/1273 (55%)]	Loss: 0.042248
+| Global Round : 5 | Local Epoch : 6 | [800/1273 (62%)]	Loss: 0.011957
+| Global Round : 5 | Local Epoch : 6 | [900/1273 (70%)]	Loss: 0.008961
+| Global Round : 5 | Local Epoch : 6 | [1000/1273 (78%)]	Loss: 0.004580
+| Global Round : 5 | Local Epoch : 6 | [1100/1273 (86%)]	Loss: 0.004271
+| Global Round : 5 | Local Epoch : 6 | [1200/1273 (94%)]	Loss: 0.005173
+| Global Round : 5 | Local Epoch : 7 | [0/1273 (0%)]	Loss: 0.011704
+| Global Round : 5 | Local Epoch : 7 | [100/1273 (8%)]	Loss: 0.010062
+| Global Round : 5 | Local Epoch : 7 | [200/1273 (16%)]	Loss: 0.008154
+| Global Round : 5 | Local Epoch : 7 | [300/1273 (23%)]	Loss: 0.421024
+| Global Round : 5 | Local Epoch : 7 | [400/1273 (31%)]	Loss: 0.000952
+| Global Round : 5 | Local Epoch : 7 | [500/1273 (39%)]	Loss: 0.017334
+| Global Round : 5 | Local Epoch : 7 | [600/1273 (47%)]	Loss: 0.134628
+| Global Round : 5 | Local Epoch : 7 | [700/1273 (55%)]	Loss: 0.028822
+| Global Round : 5 | Local Epoch : 7 | [800/1273 (62%)]	Loss: 0.295232
+| Global Round : 5 | Local Epoch : 7 | [900/1273 (70%)]	Loss: 0.004420
+| Global Round : 5 | Local Epoch : 7 | [1000/1273 (78%)]	Loss: 0.173994
+| Global Round : 5 | Local Epoch : 7 | [1100/1273 (86%)]	Loss: 0.007691
+| Global Round : 5 | Local Epoch : 7 | [1200/1273 (94%)]	Loss: 0.039427
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         3
+         DME       0.86      0.92      0.89        13
+
+    accuracy                           0.81        16
+   macro avg       0.68      0.63      0.64        16
+weighted avg       0.79      0.81      0.80        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         0
+         DME       1.00      1.00      1.00        16
+
+   micro avg       1.00      1.00      1.00        16
+   macro avg       0.50      0.50      0.50        16
+weighted avg       1.00      1.00      1.00        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+         DME       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         3
+         DME       0.77      0.77      0.77        13
+
+    accuracy                           0.62        16
+   macro avg       0.38      0.38      0.38        16
+weighted avg       0.62      0.62      0.62        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+         DME       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.62      0.77         8
+         DME       0.73      1.00      0.84         8
+
+    accuracy                           0.81        16
+   macro avg       0.86      0.81      0.81        16
+weighted avg       0.86      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.40      0.50      0.44         4
+         DME       0.82      0.75      0.78        12
+
+    accuracy                           0.69        16
+   macro avg       0.61      0.62      0.61        16
+weighted avg       0.71      0.69      0.70        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         6
+         DME       0.77      1.00      0.87        10
+
+    accuracy                           0.81        16
+   macro avg       0.88      0.75      0.77        16
+weighted avg       0.86      0.81      0.79        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.40      0.44         5
+         DME       0.75      0.82      0.78        11
+
+    accuracy                           0.69        16
+   macro avg       0.62      0.61      0.61        16
+weighted avg       0.67      0.69      0.68        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+         DME       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         3
+      DRUSEN       0.86      0.92      0.89        13
+
+    accuracy                           0.81        16
+   macro avg       0.68      0.63      0.64        16
+weighted avg       0.79      0.81      0.80        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         0
+      DRUSEN       1.00      1.00      1.00        16
+
+   micro avg       1.00      1.00      1.00        16
+   macro avg       0.50      0.50      0.50        16
+weighted avg       1.00      1.00      1.00        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+      DRUSEN       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         3
+      DRUSEN       0.77      0.77      0.77        13
+
+    accuracy                           0.62        16
+   macro avg       0.38      0.38      0.38        16
+weighted avg       0.62      0.62      0.62        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+      DRUSEN       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.62      0.77         8
+      DRUSEN       0.73      1.00      0.84         8
+
+    accuracy                           0.81        16
+   macro avg       0.86      0.81      0.81        16
+weighted avg       0.86      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.40      0.50      0.44         4
+      DRUSEN       0.82      0.75      0.78        12
+
+    accuracy                           0.69        16
+   macro avg       0.61      0.62      0.61        16
+weighted avg       0.71      0.69      0.70        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         6
+      DRUSEN       0.77      1.00      0.87        10
+
+    accuracy                           0.81        16
+   macro avg       0.88      0.75      0.77        16
+weighted avg       0.86      0.81      0.79        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.40      0.44         5
+      DRUSEN       0.75      0.82      0.78        11
+
+    accuracy                           0.69        16
+   macro avg       0.62      0.61      0.61        16
+weighted avg       0.67      0.69      0.68        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+      DRUSEN       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+Training accuracy [0.5211267605633803, 0.79375, 0.75625, 0.7625, 0.7183098591549296, 0.79375]
+ 
+Avg Training Stats after 6 global rounds:
+Training Loss : 0.2905591685019355
+Train Accuracy: 79.38% 
+
+
+ | Global Training Round : 7 |
+
+----------------
+user chosen 2
+----------------
+----------------
+| Global Round : 6 | Local Epoch : 0 | [0/561 (0%)]	Loss: 0.051580
+| Global Round : 6 | Local Epoch : 0 | [100/561 (18%)]	Loss: 0.050956
+| Global Round : 6 | Local Epoch : 0 | [200/561 (35%)]	Loss: 0.053548
+| Global Round : 6 | Local Epoch : 0 | [300/561 (53%)]	Loss: 0.493274
+| Global Round : 6 | Local Epoch : 0 | [400/561 (70%)]	Loss: 0.216117
+| Global Round : 6 | Local Epoch : 0 | [500/561 (88%)]	Loss: 0.253088
+| Global Round : 6 | Local Epoch : 1 | [0/561 (0%)]	Loss: 0.058537
+| Global Round : 6 | Local Epoch : 1 | [100/561 (18%)]	Loss: 0.071726
+| Global Round : 6 | Local Epoch : 1 | [200/561 (35%)]	Loss: 0.186684
+| Global Round : 6 | Local Epoch : 1 | [300/561 (53%)]	Loss: 0.394832
+| Global Round : 6 | Local Epoch : 1 | [400/561 (70%)]	Loss: 0.501409
+| Global Round : 6 | Local Epoch : 1 | [500/561 (88%)]	Loss: 0.348130
+| Global Round : 6 | Local Epoch : 2 | [0/561 (0%)]	Loss: 0.044261
+| Global Round : 6 | Local Epoch : 2 | [100/561 (18%)]	Loss: 0.006906
+| Global Round : 6 | Local Epoch : 2 | [200/561 (35%)]	Loss: 0.236123
+| Global Round : 6 | Local Epoch : 2 | [300/561 (53%)]	Loss: 0.034405
+| Global Round : 6 | Local Epoch : 2 | [400/561 (70%)]	Loss: 0.448057
+| Global Round : 6 | Local Epoch : 2 | [500/561 (88%)]	Loss: 0.129331
+| Global Round : 6 | Local Epoch : 3 | [0/561 (0%)]	Loss: 0.132220
+| Global Round : 6 | Local Epoch : 3 | [100/561 (18%)]	Loss: 0.216707
+| Global Round : 6 | Local Epoch : 3 | [200/561 (35%)]	Loss: 0.012845
+| Global Round : 6 | Local Epoch : 3 | [300/561 (53%)]	Loss: 0.159735
+| Global Round : 6 | Local Epoch : 3 | [400/561 (70%)]	Loss: 0.066488
+| Global Round : 6 | Local Epoch : 3 | [500/561 (88%)]	Loss: 0.013624
+| Global Round : 6 | Local Epoch : 4 | [0/561 (0%)]	Loss: 0.068464
+| Global Round : 6 | Local Epoch : 4 | [100/561 (18%)]	Loss: 0.693157
+| Global Round : 6 | Local Epoch : 4 | [200/561 (35%)]	Loss: 0.017618
+| Global Round : 6 | Local Epoch : 4 | [300/561 (53%)]	Loss: 0.015522
+| Global Round : 6 | Local Epoch : 4 | [400/561 (70%)]	Loss: 0.907032
+| Global Round : 6 | Local Epoch : 4 | [500/561 (88%)]	Loss: 0.034678
+| Global Round : 6 | Local Epoch : 5 | [0/561 (0%)]	Loss: 0.059973
+| Global Round : 6 | Local Epoch : 5 | [100/561 (18%)]	Loss: 0.025464
+| Global Round : 6 | Local Epoch : 5 | [200/561 (35%)]	Loss: 0.050788
+| Global Round : 6 | Local Epoch : 5 | [300/561 (53%)]	Loss: 0.165845
+| Global Round : 6 | Local Epoch : 5 | [400/561 (70%)]	Loss: 0.035355
+| Global Round : 6 | Local Epoch : 5 | [500/561 (88%)]	Loss: 0.336682
+| Global Round : 6 | Local Epoch : 6 | [0/561 (0%)]	Loss: 0.003647
+| Global Round : 6 | Local Epoch : 6 | [100/561 (18%)]	Loss: 0.135720
+| Global Round : 6 | Local Epoch : 6 | [200/561 (35%)]	Loss: 0.026405
+| Global Round : 6 | Local Epoch : 6 | [300/561 (53%)]	Loss: 0.011177
+| Global Round : 6 | Local Epoch : 6 | [400/561 (70%)]	Loss: 0.335264
+| Global Round : 6 | Local Epoch : 6 | [500/561 (88%)]	Loss: 0.015121
+| Global Round : 6 | Local Epoch : 7 | [0/561 (0%)]	Loss: 0.005519
+| Global Round : 6 | Local Epoch : 7 | [100/561 (18%)]	Loss: 0.026658
+| Global Round : 6 | Local Epoch : 7 | [200/561 (35%)]	Loss: 0.076393
+| Global Round : 6 | Local Epoch : 7 | [300/561 (53%)]	Loss: 0.019942
+| Global Round : 6 | Local Epoch : 7 | [400/561 (70%)]	Loss: 0.088416
+| Global Round : 6 | Local Epoch : 7 | [500/561 (88%)]	Loss: 0.013447
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+         DME       0.33      0.50      0.40         2
+
+    accuracy                           0.57         7
+   macro avg       0.54      0.55      0.53         7
+weighted avg       0.63      0.57      0.59         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.80      0.89         5
+         DME       0.67      1.00      0.80         2
+
+    accuracy                           0.86         7
+   macro avg       0.83      0.90      0.84         7
+weighted avg       0.90      0.86      0.86         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      1.00      1.00         3
+         DME       1.00      1.00      1.00         4
+
+    accuracy                           1.00         7
+   macro avg       1.00      1.00      1.00         7
+weighted avg       1.00      1.00      1.00         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.83      0.91         6
+         DME       0.50      1.00      0.67         1
+
+    accuracy                           0.86         7
+   macro avg       0.75      0.92      0.79         7
+weighted avg       0.93      0.86      0.87         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.40      0.57         5
+         DME       0.40      1.00      0.57         2
+
+    accuracy                           0.57         7
+   macro avg       0.70      0.70      0.57         7
+weighted avg       0.83      0.57      0.57         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         6
+         DME       0.25      1.00      0.40         1
+
+    accuracy                           0.57         7
+   macro avg       0.62      0.75      0.53         7
+weighted avg       0.89      0.57      0.63         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.67      0.57         3
+         DME       0.67      0.50      0.57         4
+
+    accuracy                           0.57         7
+   macro avg       0.58      0.58      0.57         7
+weighted avg       0.60      0.57      0.57         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         2
+         DME       0.83      1.00      0.91         5
+
+    accuracy                           0.86         7
+   macro avg       0.92      0.75      0.79         7
+weighted avg       0.88      0.86      0.84         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+         DME       0.33      0.50      0.40         2
+
+    accuracy                           0.57         7
+   macro avg       0.54      0.55      0.53         7
+weighted avg       0.63      0.57      0.59         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         2
+         DME       0.83      1.00      0.91         5
+
+    accuracy                           0.86         7
+   macro avg       0.92      0.75      0.79         7
+weighted avg       0.88      0.86      0.84         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      1.00      1.00         1
+         DME       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+      DRUSEN       0.33      0.50      0.40         2
+
+    accuracy                           0.57         7
+   macro avg       0.54      0.55      0.53         7
+weighted avg       0.63      0.57      0.59         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.80      0.89         5
+      DRUSEN       0.67      1.00      0.80         2
+
+    accuracy                           0.86         7
+   macro avg       0.83      0.90      0.84         7
+weighted avg       0.90      0.86      0.86         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      1.00      1.00         3
+      DRUSEN       1.00      1.00      1.00         4
+
+    accuracy                           1.00         7
+   macro avg       1.00      1.00      1.00         7
+weighted avg       1.00      1.00      1.00         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.83      0.91         6
+      DRUSEN       0.50      1.00      0.67         1
+
+    accuracy                           0.86         7
+   macro avg       0.75      0.92      0.79         7
+weighted avg       0.93      0.86      0.87         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.40      0.57         5
+      DRUSEN       0.40      1.00      0.57         2
+
+    accuracy                           0.57         7
+   macro avg       0.70      0.70      0.57         7
+weighted avg       0.83      0.57      0.57         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         6
+      DRUSEN       0.25      1.00      0.40         1
+
+    accuracy                           0.57         7
+   macro avg       0.62      0.75      0.53         7
+weighted avg       0.89      0.57      0.63         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.67      0.57         3
+      DRUSEN       0.67      0.50      0.57         4
+
+    accuracy                           0.57         7
+   macro avg       0.58      0.58      0.57         7
+weighted avg       0.60      0.57      0.57         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         2
+      DRUSEN       0.83      1.00      0.91         5
+
+    accuracy                           0.86         7
+   macro avg       0.92      0.75      0.79         7
+weighted avg       0.88      0.86      0.84         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+      DRUSEN       0.33      0.50      0.40         2
+
+    accuracy                           0.57         7
+   macro avg       0.54      0.55      0.53         7
+weighted avg       0.63      0.57      0.59         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.50      0.67         2
+      DRUSEN       0.83      1.00      0.91         5
+
+    accuracy                           0.86         7
+   macro avg       0.92      0.75      0.79         7
+weighted avg       0.88      0.86      0.84         7
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      1.00      1.00         1
+      DRUSEN       0.00      0.00      0.00         0
+
+   micro avg       1.00      1.00      1.00         1
+   macro avg       0.50      0.50      0.50         1
+weighted avg       1.00      1.00      1.00         1
+
+----------------------
+
+Training accuracy [0.5211267605633803, 0.79375, 0.75625, 0.7625, 0.7183098591549296, 0.79375, 0.7323943661971831]
+
+ | Global Training Round : 8 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 7 | Local Epoch : 0 | [0/1273 (0%)]	Loss: 0.535510
+| Global Round : 7 | Local Epoch : 0 | [100/1273 (8%)]	Loss: 0.032382
+| Global Round : 7 | Local Epoch : 0 | [200/1273 (16%)]	Loss: 0.197656
+| Global Round : 7 | Local Epoch : 0 | [300/1273 (23%)]	Loss: 0.009433
+| Global Round : 7 | Local Epoch : 0 | [400/1273 (31%)]	Loss: 0.329840
+| Global Round : 7 | Local Epoch : 0 | [500/1273 (39%)]	Loss: 0.020312
+| Global Round : 7 | Local Epoch : 0 | [600/1273 (47%)]	Loss: 0.004293
+| Global Round : 7 | Local Epoch : 0 | [700/1273 (55%)]	Loss: 0.019159
+| Global Round : 7 | Local Epoch : 0 | [800/1273 (62%)]	Loss: 0.109168
+| Global Round : 7 | Local Epoch : 0 | [900/1273 (70%)]	Loss: 0.174570
+| Global Round : 7 | Local Epoch : 0 | [1000/1273 (78%)]	Loss: 0.038450
+| Global Round : 7 | Local Epoch : 0 | [1100/1273 (86%)]	Loss: 0.015083
+| Global Round : 7 | Local Epoch : 0 | [1200/1273 (94%)]	Loss: 0.024232
+| Global Round : 7 | Local Epoch : 1 | [0/1273 (0%)]	Loss: 0.004590
+| Global Round : 7 | Local Epoch : 1 | [100/1273 (8%)]	Loss: 0.002889
+| Global Round : 7 | Local Epoch : 1 | [200/1273 (16%)]	Loss: 0.031689
+| Global Round : 7 | Local Epoch : 1 | [300/1273 (23%)]	Loss: 0.037347
+| Global Round : 7 | Local Epoch : 1 | [400/1273 (31%)]	Loss: 0.038379
+| Global Round : 7 | Local Epoch : 1 | [500/1273 (39%)]	Loss: 0.115989
+| Global Round : 7 | Local Epoch : 1 | [600/1273 (47%)]	Loss: 0.090574
+| Global Round : 7 | Local Epoch : 1 | [700/1273 (55%)]	Loss: 0.001830
+| Global Round : 7 | Local Epoch : 1 | [800/1273 (62%)]	Loss: 0.215233
+| Global Round : 7 | Local Epoch : 1 | [900/1273 (70%)]	Loss: 0.018138
+| Global Round : 7 | Local Epoch : 1 | [1000/1273 (78%)]	Loss: 0.007097
+| Global Round : 7 | Local Epoch : 1 | [1100/1273 (86%)]	Loss: 0.409410
+| Global Round : 7 | Local Epoch : 1 | [1200/1273 (94%)]	Loss: 0.356770
+| Global Round : 7 | Local Epoch : 2 | [0/1273 (0%)]	Loss: 0.004272
+| Global Round : 7 | Local Epoch : 2 | [100/1273 (8%)]	Loss: 0.002163
+| Global Round : 7 | Local Epoch : 2 | [200/1273 (16%)]	Loss: 0.014024
+| Global Round : 7 | Local Epoch : 2 | [300/1273 (23%)]	Loss: 0.008475
+| Global Round : 7 | Local Epoch : 2 | [400/1273 (31%)]	Loss: 0.365731
+| Global Round : 7 | Local Epoch : 2 | [500/1273 (39%)]	Loss: 0.123849
+| Global Round : 7 | Local Epoch : 2 | [600/1273 (47%)]	Loss: 0.141126
+| Global Round : 7 | Local Epoch : 2 | [700/1273 (55%)]	Loss: 0.013423
+| Global Round : 7 | Local Epoch : 2 | [800/1273 (62%)]	Loss: 0.005193
+| Global Round : 7 | Local Epoch : 2 | [900/1273 (70%)]	Loss: 0.004692
+| Global Round : 7 | Local Epoch : 2 | [1000/1273 (78%)]	Loss: 0.009343
+| Global Round : 7 | Local Epoch : 2 | [1100/1273 (86%)]	Loss: 0.060711
+| Global Round : 7 | Local Epoch : 2 | [1200/1273 (94%)]	Loss: 0.052014
+| Global Round : 7 | Local Epoch : 3 | [0/1273 (0%)]	Loss: 0.016978
+| Global Round : 7 | Local Epoch : 3 | [100/1273 (8%)]	Loss: 0.012104
+| Global Round : 7 | Local Epoch : 3 | [200/1273 (16%)]	Loss: 0.016079
+| Global Round : 7 | Local Epoch : 3 | [300/1273 (23%)]	Loss: 0.002206
+| Global Round : 7 | Local Epoch : 3 | [400/1273 (31%)]	Loss: 0.076652
+| Global Round : 7 | Local Epoch : 3 | [500/1273 (39%)]	Loss: 0.041781
+| Global Round : 7 | Local Epoch : 3 | [600/1273 (47%)]	Loss: 0.000333
+| Global Round : 7 | Local Epoch : 3 | [700/1273 (55%)]	Loss: 0.001002
+| Global Round : 7 | Local Epoch : 3 | [800/1273 (62%)]	Loss: 0.141509
+| Global Round : 7 | Local Epoch : 3 | [900/1273 (70%)]	Loss: 0.001563
+| Global Round : 7 | Local Epoch : 3 | [1000/1273 (78%)]	Loss: 0.015490
+| Global Round : 7 | Local Epoch : 3 | [1100/1273 (86%)]	Loss: 0.027251
+| Global Round : 7 | Local Epoch : 3 | [1200/1273 (94%)]	Loss: 0.001746
+| Global Round : 7 | Local Epoch : 4 | [0/1273 (0%)]	Loss: 0.156119
+| Global Round : 7 | Local Epoch : 4 | [100/1273 (8%)]	Loss: 0.191071
+| Global Round : 7 | Local Epoch : 4 | [200/1273 (16%)]	Loss: 0.039367
+| Global Round : 7 | Local Epoch : 4 | [300/1273 (23%)]	Loss: 0.000227
+| Global Round : 7 | Local Epoch : 4 | [400/1273 (31%)]	Loss: 0.005070
+| Global Round : 7 | Local Epoch : 4 | [500/1273 (39%)]	Loss: 0.002352
+| Global Round : 7 | Local Epoch : 4 | [600/1273 (47%)]	Loss: 0.000612
+| Global Round : 7 | Local Epoch : 4 | [700/1273 (55%)]	Loss: 0.068509
+| Global Round : 7 | Local Epoch : 4 | [800/1273 (62%)]	Loss: 0.010292
+| Global Round : 7 | Local Epoch : 4 | [900/1273 (70%)]	Loss: 0.015249
+| Global Round : 7 | Local Epoch : 4 | [1000/1273 (78%)]	Loss: 0.000288
+| Global Round : 7 | Local Epoch : 4 | [1100/1273 (86%)]	Loss: 0.017703
+| Global Round : 7 | Local Epoch : 4 | [1200/1273 (94%)]	Loss: 0.006220
+| Global Round : 7 | Local Epoch : 5 | [0/1273 (0%)]	Loss: 0.029523
+| Global Round : 7 | Local Epoch : 5 | [100/1273 (8%)]	Loss: 0.015883
+| Global Round : 7 | Local Epoch : 5 | [200/1273 (16%)]	Loss: 0.010905
+| Global Round : 7 | Local Epoch : 5 | [300/1273 (23%)]	Loss: 0.008103
+| Global Round : 7 | Local Epoch : 5 | [400/1273 (31%)]	Loss: 0.074513
+| Global Round : 7 | Local Epoch : 5 | [500/1273 (39%)]	Loss: 0.007083
+| Global Round : 7 | Local Epoch : 5 | [600/1273 (47%)]	Loss: 0.060292
+| Global Round : 7 | Local Epoch : 5 | [700/1273 (55%)]	Loss: 0.000242
+| Global Round : 7 | Local Epoch : 5 | [800/1273 (62%)]	Loss: 0.004905
+| Global Round : 7 | Local Epoch : 5 | [900/1273 (70%)]	Loss: 0.002097
+| Global Round : 7 | Local Epoch : 5 | [1000/1273 (78%)]	Loss: 0.024940
+| Global Round : 7 | Local Epoch : 5 | [1100/1273 (86%)]	Loss: 0.648395
+| Global Round : 7 | Local Epoch : 5 | [1200/1273 (94%)]	Loss: 0.013436
+| Global Round : 7 | Local Epoch : 6 | [0/1273 (0%)]	Loss: 0.033283
+| Global Round : 7 | Local Epoch : 6 | [100/1273 (8%)]	Loss: 0.017745
+| Global Round : 7 | Local Epoch : 6 | [200/1273 (16%)]	Loss: 0.448042
+| Global Round : 7 | Local Epoch : 6 | [300/1273 (23%)]	Loss: 0.014239
+| Global Round : 7 | Local Epoch : 6 | [400/1273 (31%)]	Loss: 0.035977
+| Global Round : 7 | Local Epoch : 6 | [500/1273 (39%)]	Loss: 0.008674
+| Global Round : 7 | Local Epoch : 6 | [600/1273 (47%)]	Loss: 0.018135
+| Global Round : 7 | Local Epoch : 6 | [700/1273 (55%)]	Loss: 0.314696
+| Global Round : 7 | Local Epoch : 6 | [800/1273 (62%)]	Loss: 0.004717
+| Global Round : 7 | Local Epoch : 6 | [900/1273 (70%)]	Loss: 0.085744
+| Global Round : 7 | Local Epoch : 6 | [1000/1273 (78%)]	Loss: 0.114071
+| Global Round : 7 | Local Epoch : 6 | [1100/1273 (86%)]	Loss: 0.010907
+| Global Round : 7 | Local Epoch : 6 | [1200/1273 (94%)]	Loss: 0.010455
+| Global Round : 7 | Local Epoch : 7 | [0/1273 (0%)]	Loss: 0.161774
+| Global Round : 7 | Local Epoch : 7 | [100/1273 (8%)]	Loss: 0.121440
+| Global Round : 7 | Local Epoch : 7 | [200/1273 (16%)]	Loss: 0.011669
+| Global Round : 7 | Local Epoch : 7 | [300/1273 (23%)]	Loss: 0.004038
+| Global Round : 7 | Local Epoch : 7 | [400/1273 (31%)]	Loss: 0.033043
+| Global Round : 7 | Local Epoch : 7 | [500/1273 (39%)]	Loss: 0.015119
+| Global Round : 7 | Local Epoch : 7 | [600/1273 (47%)]	Loss: 0.031866
+| Global Round : 7 | Local Epoch : 7 | [700/1273 (55%)]	Loss: 0.006557
+| Global Round : 7 | Local Epoch : 7 | [800/1273 (62%)]	Loss: 0.002116
+| Global Round : 7 | Local Epoch : 7 | [900/1273 (70%)]	Loss: 0.008292
+| Global Round : 7 | Local Epoch : 7 | [1000/1273 (78%)]	Loss: 0.004433
+| Global Round : 7 | Local Epoch : 7 | [1100/1273 (86%)]	Loss: 0.000148
+| Global Round : 7 | Local Epoch : 7 | [1200/1273 (94%)]	Loss: 0.007828
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         3
+         DME       0.86      0.92      0.89        13
+
+    accuracy                           0.81        16
+   macro avg       0.68      0.63      0.64        16
+weighted avg       0.79      0.81      0.80        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         0
+         DME       1.00      1.00      1.00        16
+
+   micro avg       1.00      1.00      1.00        16
+   macro avg       0.50      0.50      0.50        16
+weighted avg       1.00      1.00      1.00        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+         DME       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.33      0.25      0.29         4
+         DME       0.77      0.83      0.80        12
+
+    accuracy                           0.69        16
+   macro avg       0.55      0.54      0.54        16
+weighted avg       0.66      0.69      0.67        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.75      0.75         4
+         DME       0.92      0.92      0.92        12
+
+    accuracy                           0.88        16
+   macro avg       0.83      0.83      0.83        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.71      0.83         7
+         DME       0.82      1.00      0.90         9
+
+    accuracy                           0.88        16
+   macro avg       0.91      0.86      0.87        16
+weighted avg       0.90      0.88      0.87        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.60      1.00      0.75         3
+         DME       1.00      0.85      0.92        13
+
+    accuracy                           0.88        16
+   macro avg       0.80      0.92      0.83        16
+weighted avg       0.93      0.88      0.89        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.60      0.75         5
+         DME       0.85      1.00      0.92        11
+
+    accuracy                           0.88        16
+   macro avg       0.92      0.80      0.83        16
+weighted avg       0.89      0.88      0.86        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+         DME       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         4
+         DME       0.83      0.83      0.83        12
+
+    accuracy                           0.75        16
+   macro avg       0.67      0.67      0.67        16
+weighted avg       0.75      0.75      0.75        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         3
+      DRUSEN       0.86      0.92      0.89        13
+
+    accuracy                           0.81        16
+   macro avg       0.68      0.63      0.64        16
+weighted avg       0.79      0.81      0.80        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         0
+      DRUSEN       1.00      1.00      1.00        16
+
+   micro avg       1.00      1.00      1.00        16
+   macro avg       0.50      0.50      0.50        16
+weighted avg       1.00      1.00      1.00        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+      DRUSEN       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.33      0.25      0.29         4
+      DRUSEN       0.77      0.83      0.80        12
+
+    accuracy                           0.69        16
+   macro avg       0.55      0.54      0.54        16
+weighted avg       0.66      0.69      0.67        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.75      0.75         4
+      DRUSEN       0.92      0.92      0.92        12
+
+    accuracy                           0.88        16
+   macro avg       0.83      0.83      0.83        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.71      0.83         7
+      DRUSEN       0.82      1.00      0.90         9
+
+    accuracy                           0.88        16
+   macro avg       0.91      0.86      0.87        16
+weighted avg       0.90      0.88      0.87        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.60      1.00      0.75         3
+      DRUSEN       1.00      0.85      0.92        13
+
+    accuracy                           0.88        16
+   macro avg       0.80      0.92      0.83        16
+weighted avg       0.93      0.88      0.89        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.60      0.75         5
+      DRUSEN       0.85      1.00      0.92        11
+
+    accuracy                           0.88        16
+   macro avg       0.92      0.80      0.83        16
+weighted avg       0.89      0.88      0.86        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+      DRUSEN       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         4
+      DRUSEN       0.83      0.83      0.83        12
+
+    accuracy                           0.75        16
+   macro avg       0.67      0.67      0.67        16
+weighted avg       0.75      0.75      0.75        16
+
+----------------------
+
+Training accuracy [0.5211267605633803, 0.79375, 0.75625, 0.7625, 0.7183098591549296, 0.79375, 0.7323943661971831, 0.84375]
+ 
+Avg Training Stats after 8 global rounds:
+Training Loss : 0.24046551344782444
+Train Accuracy: 84.38% 
+
+
+ | Global Training Round : 9 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 8 | Local Epoch : 0 | [0/1273 (0%)]	Loss: 0.001805
+| Global Round : 8 | Local Epoch : 0 | [100/1273 (8%)]	Loss: 0.001992
+| Global Round : 8 | Local Epoch : 0 | [200/1273 (16%)]	Loss: 0.029140
+| Global Round : 8 | Local Epoch : 0 | [300/1273 (23%)]	Loss: 0.009244
+| Global Round : 8 | Local Epoch : 0 | [400/1273 (31%)]	Loss: 0.074443
+| Global Round : 8 | Local Epoch : 0 | [500/1273 (39%)]	Loss: 0.104506
+| Global Round : 8 | Local Epoch : 0 | [600/1273 (47%)]	Loss: 0.007871
+| Global Round : 8 | Local Epoch : 0 | [700/1273 (55%)]	Loss: 0.000831
+| Global Round : 8 | Local Epoch : 0 | [800/1273 (62%)]	Loss: 0.035742
+| Global Round : 8 | Local Epoch : 0 | [900/1273 (70%)]	Loss: 0.038970
+| Global Round : 8 | Local Epoch : 0 | [1000/1273 (78%)]	Loss: 0.001763
+| Global Round : 8 | Local Epoch : 0 | [1100/1273 (86%)]	Loss: 0.006952
+| Global Round : 8 | Local Epoch : 0 | [1200/1273 (94%)]	Loss: 0.001299
+| Global Round : 8 | Local Epoch : 1 | [0/1273 (0%)]	Loss: 0.016016
+| Global Round : 8 | Local Epoch : 1 | [100/1273 (8%)]	Loss: 0.013564
+| Global Round : 8 | Local Epoch : 1 | [200/1273 (16%)]	Loss: 0.001629
+| Global Round : 8 | Local Epoch : 1 | [300/1273 (23%)]	Loss: 0.042055
+| Global Round : 8 | Local Epoch : 1 | [400/1273 (31%)]	Loss: 0.000266
+| Global Round : 8 | Local Epoch : 1 | [500/1273 (39%)]	Loss: 0.001944
+| Global Round : 8 | Local Epoch : 1 | [600/1273 (47%)]	Loss: 0.006221
+| Global Round : 8 | Local Epoch : 1 | [700/1273 (55%)]	Loss: 0.005956
+| Global Round : 8 | Local Epoch : 1 | [800/1273 (62%)]	Loss: 0.000674
+| Global Round : 8 | Local Epoch : 1 | [900/1273 (70%)]	Loss: 0.006543
+| Global Round : 8 | Local Epoch : 1 | [1000/1273 (78%)]	Loss: 0.459274
+| Global Round : 8 | Local Epoch : 1 | [1100/1273 (86%)]	Loss: 0.025420
+| Global Round : 8 | Local Epoch : 1 | [1200/1273 (94%)]	Loss: 0.004955
+| Global Round : 8 | Local Epoch : 2 | [0/1273 (0%)]	Loss: 0.027020
+| Global Round : 8 | Local Epoch : 2 | [100/1273 (8%)]	Loss: 0.003774
+| Global Round : 8 | Local Epoch : 2 | [200/1273 (16%)]	Loss: 0.000255
+| Global Round : 8 | Local Epoch : 2 | [300/1273 (23%)]	Loss: 0.080547
+| Global Round : 8 | Local Epoch : 2 | [400/1273 (31%)]	Loss: 0.036146
+| Global Round : 8 | Local Epoch : 2 | [500/1273 (39%)]	Loss: 0.006783
+| Global Round : 8 | Local Epoch : 2 | [600/1273 (47%)]	Loss: 0.002483
+| Global Round : 8 | Local Epoch : 2 | [700/1273 (55%)]	Loss: 0.002555
+| Global Round : 8 | Local Epoch : 2 | [800/1273 (62%)]	Loss: 0.014136
+| Global Round : 8 | Local Epoch : 2 | [900/1273 (70%)]	Loss: 0.036543
+| Global Round : 8 | Local Epoch : 2 | [1000/1273 (78%)]	Loss: 0.008637
+| Global Round : 8 | Local Epoch : 2 | [1100/1273 (86%)]	Loss: 0.001132
+| Global Round : 8 | Local Epoch : 2 | [1200/1273 (94%)]	Loss: 1.070448
+| Global Round : 8 | Local Epoch : 3 | [0/1273 (0%)]	Loss: 0.177498
+| Global Round : 8 | Local Epoch : 3 | [100/1273 (8%)]	Loss: 0.147329
+| Global Round : 8 | Local Epoch : 3 | [200/1273 (16%)]	Loss: 0.002067
+| Global Round : 8 | Local Epoch : 3 | [300/1273 (23%)]	Loss: 0.022662
+| Global Round : 8 | Local Epoch : 3 | [400/1273 (31%)]	Loss: 0.000042
+| Global Round : 8 | Local Epoch : 3 | [500/1273 (39%)]	Loss: 0.077381
+| Global Round : 8 | Local Epoch : 3 | [600/1273 (47%)]	Loss: 0.000268
+| Global Round : 8 | Local Epoch : 3 | [700/1273 (55%)]	Loss: 0.006684
+| Global Round : 8 | Local Epoch : 3 | [800/1273 (62%)]	Loss: 0.000713
+| Global Round : 8 | Local Epoch : 3 | [900/1273 (70%)]	Loss: 0.008872
+| Global Round : 8 | Local Epoch : 3 | [1000/1273 (78%)]	Loss: 0.012294
+| Global Round : 8 | Local Epoch : 3 | [1100/1273 (86%)]	Loss: 0.013025
+| Global Round : 8 | Local Epoch : 3 | [1200/1273 (94%)]	Loss: 0.001731
+| Global Round : 8 | Local Epoch : 4 | [0/1273 (0%)]	Loss: 0.000874
+| Global Round : 8 | Local Epoch : 4 | [100/1273 (8%)]	Loss: 0.009254
+| Global Round : 8 | Local Epoch : 4 | [200/1273 (16%)]	Loss: 0.008725
+| Global Round : 8 | Local Epoch : 4 | [300/1273 (23%)]	Loss: 0.002585
+| Global Round : 8 | Local Epoch : 4 | [400/1273 (31%)]	Loss: 0.000710
+| Global Round : 8 | Local Epoch : 4 | [500/1273 (39%)]	Loss: 0.047336
+| Global Round : 8 | Local Epoch : 4 | [600/1273 (47%)]	Loss: 0.005187
+| Global Round : 8 | Local Epoch : 4 | [700/1273 (55%)]	Loss: 0.012574
+| Global Round : 8 | Local Epoch : 4 | [800/1273 (62%)]	Loss: 0.017583
+| Global Round : 8 | Local Epoch : 4 | [900/1273 (70%)]	Loss: 0.005382
+| Global Round : 8 | Local Epoch : 4 | [1000/1273 (78%)]	Loss: 0.102656
+| Global Round : 8 | Local Epoch : 4 | [1100/1273 (86%)]	Loss: 0.000761
+| Global Round : 8 | Local Epoch : 4 | [1200/1273 (94%)]	Loss: 0.014286
+| Global Round : 8 | Local Epoch : 5 | [0/1273 (0%)]	Loss: 0.001137
+| Global Round : 8 | Local Epoch : 5 | [100/1273 (8%)]	Loss: 0.004326
+| Global Round : 8 | Local Epoch : 5 | [200/1273 (16%)]	Loss: 0.070938
+| Global Round : 8 | Local Epoch : 5 | [300/1273 (23%)]	Loss: 0.000226
+| Global Round : 8 | Local Epoch : 5 | [400/1273 (31%)]	Loss: 0.022369
+| Global Round : 8 | Local Epoch : 5 | [500/1273 (39%)]	Loss: 0.000240
+| Global Round : 8 | Local Epoch : 5 | [600/1273 (47%)]	Loss: 0.007585
+| Global Round : 8 | Local Epoch : 5 | [700/1273 (55%)]	Loss: 0.000303
+| Global Round : 8 | Local Epoch : 5 | [800/1273 (62%)]	Loss: 0.011429
+| Global Round : 8 | Local Epoch : 5 | [900/1273 (70%)]	Loss: 0.000282
+| Global Round : 8 | Local Epoch : 5 | [1000/1273 (78%)]	Loss: 0.050568
+| Global Round : 8 | Local Epoch : 5 | [1100/1273 (86%)]	Loss: 0.000076
+| Global Round : 8 | Local Epoch : 5 | [1200/1273 (94%)]	Loss: 0.005433
+| Global Round : 8 | Local Epoch : 6 | [0/1273 (0%)]	Loss: 0.000352
+| Global Round : 8 | Local Epoch : 6 | [100/1273 (8%)]	Loss: 0.003270
+| Global Round : 8 | Local Epoch : 6 | [200/1273 (16%)]	Loss: 0.007723
+| Global Round : 8 | Local Epoch : 6 | [300/1273 (23%)]	Loss: 0.003969
+| Global Round : 8 | Local Epoch : 6 | [400/1273 (31%)]	Loss: 0.003516
+| Global Round : 8 | Local Epoch : 6 | [500/1273 (39%)]	Loss: 0.000212
+| Global Round : 8 | Local Epoch : 6 | [600/1273 (47%)]	Loss: 0.028110
+| Global Round : 8 | Local Epoch : 6 | [700/1273 (55%)]	Loss: 0.011064
+| Global Round : 8 | Local Epoch : 6 | [800/1273 (62%)]	Loss: 0.006297
+| Global Round : 8 | Local Epoch : 6 | [900/1273 (70%)]	Loss: 0.250202
+| Global Round : 8 | Local Epoch : 6 | [1000/1273 (78%)]	Loss: 0.004475
+| Global Round : 8 | Local Epoch : 6 | [1100/1273 (86%)]	Loss: 0.011483
+| Global Round : 8 | Local Epoch : 6 | [1200/1273 (94%)]	Loss: 0.016411
+| Global Round : 8 | Local Epoch : 7 | [0/1273 (0%)]	Loss: 0.014738
+| Global Round : 8 | Local Epoch : 7 | [100/1273 (8%)]	Loss: 0.001621
+| Global Round : 8 | Local Epoch : 7 | [200/1273 (16%)]	Loss: 0.000642
+| Global Round : 8 | Local Epoch : 7 | [300/1273 (23%)]	Loss: 0.001276
+| Global Round : 8 | Local Epoch : 7 | [400/1273 (31%)]	Loss: 0.012625
+| Global Round : 8 | Local Epoch : 7 | [500/1273 (39%)]	Loss: 0.000650
+| Global Round : 8 | Local Epoch : 7 | [600/1273 (47%)]	Loss: 0.019576
+| Global Round : 8 | Local Epoch : 7 | [700/1273 (55%)]	Loss: 0.001570
+| Global Round : 8 | Local Epoch : 7 | [800/1273 (62%)]	Loss: 0.008555
+| Global Round : 8 | Local Epoch : 7 | [900/1273 (70%)]	Loss: 0.000918
+| Global Round : 8 | Local Epoch : 7 | [1000/1273 (78%)]	Loss: 0.000176
+| Global Round : 8 | Local Epoch : 7 | [1100/1273 (86%)]	Loss: 0.001982
+| Global Round : 8 | Local Epoch : 7 | [1200/1273 (94%)]	Loss: 0.004484
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         3
+         DME       0.86      0.92      0.89        13
+
+    accuracy                           0.81        16
+   macro avg       0.68      0.63      0.64        16
+weighted avg       0.79      0.81      0.80        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         0
+         DME       1.00      1.00      1.00        16
+
+   micro avg       1.00      1.00      1.00        16
+   macro avg       0.50      0.50      0.50        16
+weighted avg       1.00      1.00      1.00        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+         DME       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.33      0.33      0.33         3
+         DME       0.85      0.85      0.85        13
+
+    accuracy                           0.75        16
+   macro avg       0.59      0.59      0.59        16
+weighted avg       0.75      0.75      0.75        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         4
+         DME       0.83      0.83      0.83        12
+
+    accuracy                           0.75        16
+   macro avg       0.67      0.67      0.67        16
+weighted avg       0.75      0.75      0.75        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.62      0.77         8
+         DME       0.73      1.00      0.84         8
+
+    accuracy                           0.81        16
+   macro avg       0.86      0.81      0.81        16
+weighted avg       0.86      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.60      1.00      0.75         3
+         DME       1.00      0.85      0.92        13
+
+    accuracy                           0.88        16
+   macro avg       0.80      0.92      0.83        16
+weighted avg       0.93      0.88      0.89        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.60      0.75         5
+         DME       0.85      1.00      0.92        11
+
+    accuracy                           0.88        16
+   macro avg       0.92      0.80      0.83        16
+weighted avg       0.89      0.88      0.86        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.50      0.60         6
+         DME       0.75      0.90      0.82        10
+
+    accuracy                           0.75        16
+   macro avg       0.75      0.70      0.71        16
+weighted avg       0.75      0.75      0.74        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+         DME       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.33      0.40         3
+      DRUSEN       0.86      0.92      0.89        13
+
+    accuracy                           0.81        16
+   macro avg       0.68      0.63      0.64        16
+weighted avg       0.79      0.81      0.80        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         0
+      DRUSEN       1.00      1.00      1.00        16
+
+   micro avg       1.00      1.00      1.00        16
+   macro avg       0.50      0.50      0.50        16
+weighted avg       1.00      1.00      1.00        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+      DRUSEN       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.33      0.33      0.33         3
+      DRUSEN       0.85      0.85      0.85        13
+
+    accuracy                           0.75        16
+   macro avg       0.59      0.59      0.59        16
+weighted avg       0.75      0.75      0.75        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         4
+      DRUSEN       0.83      0.83      0.83        12
+
+    accuracy                           0.75        16
+   macro avg       0.67      0.67      0.67        16
+weighted avg       0.75      0.75      0.75        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.62      0.77         8
+      DRUSEN       0.73      1.00      0.84         8
+
+    accuracy                           0.81        16
+   macro avg       0.86      0.81      0.81        16
+weighted avg       0.86      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.60      1.00      0.75         3
+      DRUSEN       1.00      0.85      0.92        13
+
+    accuracy                           0.88        16
+   macro avg       0.80      0.92      0.83        16
+weighted avg       0.93      0.88      0.89        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.60      0.75         5
+      DRUSEN       0.85      1.00      0.92        11
+
+    accuracy                           0.88        16
+   macro avg       0.92      0.80      0.83        16
+weighted avg       0.89      0.88      0.86        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.50      0.60         6
+      DRUSEN       0.75      0.90      0.82        10
+
+    accuracy                           0.75        16
+   macro avg       0.75      0.70      0.71        16
+weighted avg       0.75      0.75      0.74        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+      DRUSEN       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+Training accuracy [0.5211267605633803, 0.79375, 0.75625, 0.7625, 0.7183098591549296, 0.79375, 0.7323943661971831, 0.84375, 0.83125]
+
+ | Global Training Round : 10 |
+
+----------------
+user chosen 1
+----------------
+----------------
+| Global Round : 9 | Local Epoch : 0 | [0/1273 (0%)]	Loss: 0.160002
+| Global Round : 9 | Local Epoch : 0 | [100/1273 (8%)]	Loss: 0.001898
+| Global Round : 9 | Local Epoch : 0 | [200/1273 (16%)]	Loss: 0.108482
+| Global Round : 9 | Local Epoch : 0 | [300/1273 (23%)]	Loss: 0.004948
+| Global Round : 9 | Local Epoch : 0 | [400/1273 (31%)]	Loss: 0.001124
+| Global Round : 9 | Local Epoch : 0 | [500/1273 (39%)]	Loss: 0.005817
+| Global Round : 9 | Local Epoch : 0 | [600/1273 (47%)]	Loss: 0.000351
+| Global Round : 9 | Local Epoch : 0 | [700/1273 (55%)]	Loss: 0.000491
+| Global Round : 9 | Local Epoch : 0 | [800/1273 (62%)]	Loss: 0.001074
+| Global Round : 9 | Local Epoch : 0 | [900/1273 (70%)]	Loss: 0.003490
+| Global Round : 9 | Local Epoch : 0 | [1000/1273 (78%)]	Loss: 0.018052
+| Global Round : 9 | Local Epoch : 0 | [1100/1273 (86%)]	Loss: 0.001055
+| Global Round : 9 | Local Epoch : 0 | [1200/1273 (94%)]	Loss: 0.000090
+| Global Round : 9 | Local Epoch : 1 | [0/1273 (0%)]	Loss: 0.001524
+| Global Round : 9 | Local Epoch : 1 | [100/1273 (8%)]	Loss: 0.002340
+| Global Round : 9 | Local Epoch : 1 | [200/1273 (16%)]	Loss: 0.005859
+| Global Round : 9 | Local Epoch : 1 | [300/1273 (23%)]	Loss: 0.000385
+| Global Round : 9 | Local Epoch : 1 | [400/1273 (31%)]	Loss: 0.008424
+| Global Round : 9 | Local Epoch : 1 | [500/1273 (39%)]	Loss: 0.000083
+| Global Round : 9 | Local Epoch : 1 | [600/1273 (47%)]	Loss: 0.000927
+| Global Round : 9 | Local Epoch : 1 | [700/1273 (55%)]	Loss: 0.000008
+| Global Round : 9 | Local Epoch : 1 | [800/1273 (62%)]	Loss: 0.021798
+| Global Round : 9 | Local Epoch : 1 | [900/1273 (70%)]	Loss: 0.000016
+| Global Round : 9 | Local Epoch : 1 | [1000/1273 (78%)]	Loss: 0.245523
+| Global Round : 9 | Local Epoch : 1 | [1100/1273 (86%)]	Loss: 0.000051
+| Global Round : 9 | Local Epoch : 1 | [1200/1273 (94%)]	Loss: 0.020358
+| Global Round : 9 | Local Epoch : 2 | [0/1273 (0%)]	Loss: 0.000026
+| Global Round : 9 | Local Epoch : 2 | [100/1273 (8%)]	Loss: 0.000000
+| Global Round : 9 | Local Epoch : 2 | [200/1273 (16%)]	Loss: 0.000002
+| Global Round : 9 | Local Epoch : 2 | [300/1273 (23%)]	Loss: 0.056832
+| Global Round : 9 | Local Epoch : 2 | [400/1273 (31%)]	Loss: 0.000053
+| Global Round : 9 | Local Epoch : 2 | [500/1273 (39%)]	Loss: 0.076901
+| Global Round : 9 | Local Epoch : 2 | [600/1273 (47%)]	Loss: 0.000999
+| Global Round : 9 | Local Epoch : 2 | [700/1273 (55%)]	Loss: 0.000317
+| Global Round : 9 | Local Epoch : 2 | [800/1273 (62%)]	Loss: 0.000515
+| Global Round : 9 | Local Epoch : 2 | [900/1273 (70%)]	Loss: 0.089937
+| Global Round : 9 | Local Epoch : 2 | [1000/1273 (78%)]	Loss: 0.089550
+| Global Round : 9 | Local Epoch : 2 | [1100/1273 (86%)]	Loss: 0.003864
+| Global Round : 9 | Local Epoch : 2 | [1200/1273 (94%)]	Loss: 0.000047
+| Global Round : 9 | Local Epoch : 3 | [0/1273 (0%)]	Loss: 0.000021
+| Global Round : 9 | Local Epoch : 3 | [100/1273 (8%)]	Loss: 0.001183
+| Global Round : 9 | Local Epoch : 3 | [200/1273 (16%)]	Loss: 0.016833
+| Global Round : 9 | Local Epoch : 3 | [300/1273 (23%)]	Loss: 0.001561
+| Global Round : 9 | Local Epoch : 3 | [400/1273 (31%)]	Loss: 0.000076
+| Global Round : 9 | Local Epoch : 3 | [500/1273 (39%)]	Loss: 0.044619
+| Global Round : 9 | Local Epoch : 3 | [600/1273 (47%)]	Loss: 0.001695
+| Global Round : 9 | Local Epoch : 3 | [700/1273 (55%)]	Loss: 0.007016
+| Global Round : 9 | Local Epoch : 3 | [800/1273 (62%)]	Loss: 0.011090
+| Global Round : 9 | Local Epoch : 3 | [900/1273 (70%)]	Loss: 0.000391
+| Global Round : 9 | Local Epoch : 3 | [1000/1273 (78%)]	Loss: 0.043318
+| Global Round : 9 | Local Epoch : 3 | [1100/1273 (86%)]	Loss: 0.002241
+| Global Round : 9 | Local Epoch : 3 | [1200/1273 (94%)]	Loss: 0.001034
+| Global Round : 9 | Local Epoch : 4 | [0/1273 (0%)]	Loss: 0.000768
+| Global Round : 9 | Local Epoch : 4 | [100/1273 (8%)]	Loss: 0.000813
+| Global Round : 9 | Local Epoch : 4 | [200/1273 (16%)]	Loss: 0.054688
+| Global Round : 9 | Local Epoch : 4 | [300/1273 (23%)]	Loss: 0.001012
+| Global Round : 9 | Local Epoch : 4 | [400/1273 (31%)]	Loss: 0.047327
+| Global Round : 9 | Local Epoch : 4 | [500/1273 (39%)]	Loss: 0.001243
+| Global Round : 9 | Local Epoch : 4 | [600/1273 (47%)]	Loss: 0.000762
+| Global Round : 9 | Local Epoch : 4 | [700/1273 (55%)]	Loss: 0.000687
+| Global Round : 9 | Local Epoch : 4 | [800/1273 (62%)]	Loss: 0.000954
+| Global Round : 9 | Local Epoch : 4 | [900/1273 (70%)]	Loss: 0.000075
+| Global Round : 9 | Local Epoch : 4 | [1000/1273 (78%)]	Loss: 0.008629
+| Global Round : 9 | Local Epoch : 4 | [1100/1273 (86%)]	Loss: 0.029150
+| Global Round : 9 | Local Epoch : 4 | [1200/1273 (94%)]	Loss: 0.006537
+| Global Round : 9 | Local Epoch : 5 | [0/1273 (0%)]	Loss: 0.000161
+| Global Round : 9 | Local Epoch : 5 | [100/1273 (8%)]	Loss: 0.002144
+| Global Round : 9 | Local Epoch : 5 | [200/1273 (16%)]	Loss: 0.009691
+| Global Round : 9 | Local Epoch : 5 | [300/1273 (23%)]	Loss: 0.000044
+| Global Round : 9 | Local Epoch : 5 | [400/1273 (31%)]	Loss: 0.051364
+| Global Round : 9 | Local Epoch : 5 | [500/1273 (39%)]	Loss: 0.030633
+| Global Round : 9 | Local Epoch : 5 | [600/1273 (47%)]	Loss: 0.020476
+| Global Round : 9 | Local Epoch : 5 | [700/1273 (55%)]	Loss: 0.124576
+| Global Round : 9 | Local Epoch : 5 | [800/1273 (62%)]	Loss: 0.001664
+| Global Round : 9 | Local Epoch : 5 | [900/1273 (70%)]	Loss: 0.000183
+| Global Round : 9 | Local Epoch : 5 | [1000/1273 (78%)]	Loss: 0.000818
+| Global Round : 9 | Local Epoch : 5 | [1100/1273 (86%)]	Loss: 0.136581
+| Global Round : 9 | Local Epoch : 5 | [1200/1273 (94%)]	Loss: 0.104795
+| Global Round : 9 | Local Epoch : 6 | [0/1273 (0%)]	Loss: 0.000282
+| Global Round : 9 | Local Epoch : 6 | [100/1273 (8%)]	Loss: 0.010436
+| Global Round : 9 | Local Epoch : 6 | [200/1273 (16%)]	Loss: 0.046716
+| Global Round : 9 | Local Epoch : 6 | [300/1273 (23%)]	Loss: 0.001994
+| Global Round : 9 | Local Epoch : 6 | [400/1273 (31%)]	Loss: 0.016517
+| Global Round : 9 | Local Epoch : 6 | [500/1273 (39%)]	Loss: 0.001907
+| Global Round : 9 | Local Epoch : 6 | [600/1273 (47%)]	Loss: 0.000951
+| Global Round : 9 | Local Epoch : 6 | [700/1273 (55%)]	Loss: 0.001381
+| Global Round : 9 | Local Epoch : 6 | [800/1273 (62%)]	Loss: 0.019901
+| Global Round : 9 | Local Epoch : 6 | [900/1273 (70%)]	Loss: 0.006691
+| Global Round : 9 | Local Epoch : 6 | [1000/1273 (78%)]	Loss: 0.001346
+| Global Round : 9 | Local Epoch : 6 | [1100/1273 (86%)]	Loss: 0.006984
+| Global Round : 9 | Local Epoch : 6 | [1200/1273 (94%)]	Loss: 0.027036
+| Global Round : 9 | Local Epoch : 7 | [0/1273 (0%)]	Loss: 0.026077
+| Global Round : 9 | Local Epoch : 7 | [100/1273 (8%)]	Loss: 0.017617
+| Global Round : 9 | Local Epoch : 7 | [200/1273 (16%)]	Loss: 0.013127
+| Global Round : 9 | Local Epoch : 7 | [300/1273 (23%)]	Loss: 0.000848
+| Global Round : 9 | Local Epoch : 7 | [400/1273 (31%)]	Loss: 0.000232
+| Global Round : 9 | Local Epoch : 7 | [500/1273 (39%)]	Loss: 0.056511
+| Global Round : 9 | Local Epoch : 7 | [600/1273 (47%)]	Loss: 0.001511
+| Global Round : 9 | Local Epoch : 7 | [700/1273 (55%)]	Loss: 0.011237
+| Global Round : 9 | Local Epoch : 7 | [800/1273 (62%)]	Loss: 0.000171
+| Global Round : 9 | Local Epoch : 7 | [900/1273 (70%)]	Loss: 0.017312
+| Global Round : 9 | Local Epoch : 7 | [1000/1273 (78%)]	Loss: 0.001336
+| Global Round : 9 | Local Epoch : 7 | [1100/1273 (86%)]	Loss: 0.000057
+| Global Round : 9 | Local Epoch : 7 | [1200/1273 (94%)]	Loss: 0.002116
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      1.00      0.67         1
+         DME       1.00      0.93      0.97        15
+
+    accuracy                           0.94        16
+   macro avg       0.75      0.97      0.82        16
+weighted avg       0.97      0.94      0.95        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         0
+         DME       1.00      1.00      1.00        16
+
+   micro avg       1.00      1.00      1.00        16
+   macro avg       0.50      0.50      0.50        16
+weighted avg       1.00      1.00      1.00        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+         DME       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.33      0.20      0.25         5
+         DME       0.69      0.82      0.75        11
+
+    accuracy                           0.62        16
+   macro avg       0.51      0.51      0.50        16
+weighted avg       0.58      0.62      0.59        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.75      0.75         4
+         DME       0.92      0.92      0.92        12
+
+    accuracy                           0.88        16
+   macro avg       0.83      0.83      0.83        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.71      0.83         7
+         DME       0.82      1.00      0.90         9
+
+    accuracy                           0.88        16
+   macro avg       0.91      0.86      0.87        16
+weighted avg       0.90      0.88      0.87        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.60      0.75      0.67         4
+         DME       0.91      0.83      0.87        12
+
+    accuracy                           0.81        16
+   macro avg       0.75      0.79      0.77        16
+weighted avg       0.83      0.81      0.82        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.60      0.75         5
+         DME       0.85      1.00      0.92        11
+
+    accuracy                           0.88        16
+   macro avg       0.92      0.80      0.83        16
+weighted avg       0.89      0.88      0.86        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.50      0.60         6
+         DME       0.75      0.90      0.82        10
+
+    accuracy                           0.75        16
+   macro avg       0.75      0.70      0.71        16
+weighted avg       0.75      0.75      0.74        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+         DME       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      1.00      0.67         1
+      DRUSEN       1.00      0.93      0.97        15
+
+    accuracy                           0.94        16
+   macro avg       0.75      0.97      0.82        16
+weighted avg       0.97      0.94      0.95        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.00      0.00      0.00         0
+      DRUSEN       1.00      1.00      1.00        16
+
+   micro avg       1.00      1.00      1.00        16
+   macro avg       0.50      0.50      0.50        16
+weighted avg       1.00      1.00      1.00        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.50      0.50      0.50         2
+      DRUSEN       0.93      0.93      0.93        14
+
+    accuracy                           0.88        16
+   macro avg       0.71      0.71      0.71        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.33      0.20      0.25         5
+      DRUSEN       0.69      0.82      0.75        11
+
+    accuracy                           0.62        16
+   macro avg       0.51      0.51      0.50        16
+weighted avg       0.58      0.62      0.59        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.75      0.75         4
+      DRUSEN       0.92      0.92      0.92        12
+
+    accuracy                           0.88        16
+   macro avg       0.83      0.83      0.83        16
+weighted avg       0.88      0.88      0.88        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.71      0.83         7
+      DRUSEN       0.82      1.00      0.90         9
+
+    accuracy                           0.88        16
+   macro avg       0.91      0.86      0.87        16
+weighted avg       0.90      0.88      0.87        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.60      0.75      0.67         4
+      DRUSEN       0.91      0.83      0.87        12
+
+    accuracy                           0.81        16
+   macro avg       0.75      0.79      0.77        16
+weighted avg       0.83      0.81      0.82        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.60      0.75         5
+      DRUSEN       0.85      1.00      0.92        11
+
+    accuracy                           0.88        16
+   macro avg       0.92      0.80      0.83        16
+weighted avg       0.89      0.88      0.86        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.50      0.60         6
+      DRUSEN       0.75      0.90      0.82        10
+
+    accuracy                           0.75        16
+   macro avg       0.75      0.70      0.71        16
+weighted avg       0.75      0.75      0.74        16
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.75      0.60      0.67         5
+      DRUSEN       0.83      0.91      0.87        11
+
+    accuracy                           0.81        16
+   macro avg       0.79      0.75      0.77        16
+weighted avg       0.81      0.81      0.81        16
+
+----------------------
+
+Training accuracy [0.5211267605633803, 0.79375, 0.75625, 0.7625, 0.7183098591549296, 0.79375, 0.7323943661971831, 0.84375, 0.83125, 0.84375]
+ 
+Avg Training Stats after 10 global rounds:
+Training Loss : 0.1976353174297551
+Train Accuracy: 84.38% 
+
+########################
+
+Client 1 Test Statistics
+
+==========================
+
+For client 1 original classes :  ['NORMAL', 'DME']
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.73      0.69      0.71        35
+         DME       0.88      0.90      0.89        93
+
+    accuracy                           0.84       128
+   macro avg       0.81      0.79      0.80       128
+weighted avg       0.84      0.84      0.84       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.72      0.78      0.75        27
+         DME       0.94      0.92      0.93       101
+
+    accuracy                           0.89       128
+   macro avg       0.83      0.85      0.84       128
+weighted avg       0.89      0.89      0.89       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.86      0.56      0.68        32
+         DME       0.87      0.97      0.92        96
+
+    accuracy                           0.87       128
+   macro avg       0.86      0.77      0.80       128
+weighted avg       0.87      0.87      0.86       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.40      0.57         5
+         DME       0.84      1.00      0.91        16
+
+    accuracy                           0.86        21
+   macro avg       0.92      0.70      0.74        21
+weighted avg       0.88      0.86      0.83        21
+
+----------------------
+
+==========================
+
+Testing client 1 on client 2 original classes :  ['NORMAL', 'DRUSEN']
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.79      0.71      0.75        59
+      DRUSEN       0.77      0.84      0.81        69
+
+    accuracy                           0.78       128
+   macro avg       0.78      0.78      0.78       128
+weighted avg       0.78      0.78      0.78       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.85      0.81      0.83        27
+      DRUSEN       0.67      0.71      0.69        14
+
+    accuracy                           0.78        41
+   macro avg       0.76      0.76      0.76        41
+weighted avg       0.78      0.78      0.78        41
+
+----------------------
+
+########################
+
+Client 2 Test Statistics
+
+==========================
+
+For client 2 original classes :  ['NORMAL', 'DRUSEN']
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.79      0.71      0.75        59
+      DRUSEN       0.77      0.84      0.81        69
+
+    accuracy                           0.78       128
+   macro avg       0.78      0.78      0.78       128
+weighted avg       0.78      0.78      0.78       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.85      0.81      0.83        27
+      DRUSEN       0.67      0.71      0.69        14
+
+    accuracy                           0.78        41
+   macro avg       0.76      0.76      0.76        41
+weighted avg       0.78      0.78      0.78        41
+
+----------------------
+
+==========================
+
+Testing client 2 on client 1 original classes :  ['NORMAL', 'DME']
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.73      0.69      0.71        35
+         DME       0.88      0.90      0.89        93
+
+    accuracy                           0.84       128
+   macro avg       0.81      0.79      0.80       128
+weighted avg       0.84      0.84      0.84       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.72      0.78      0.75        27
+         DME       0.94      0.92      0.93       101
+
+    accuracy                           0.89       128
+   macro avg       0.83      0.85      0.84       128
+weighted avg       0.89      0.89      0.89       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       0.86      0.56      0.68        32
+         DME       0.87      0.97      0.92        96
+
+    accuracy                           0.87       128
+   macro avg       0.86      0.77      0.80       128
+weighted avg       0.87      0.87      0.86       128
+
+----------------------
+
+----------------------
+
+              precision    recall  f1-score   support
+
+      NORMAL       1.00      0.40      0.57         5
+         DME       0.84      1.00      0.91        16
+
+    accuracy                           0.86        21
+   macro avg       0.92      0.70      0.74        21
+weighted avg       0.88      0.86      0.83        21
+
+----------------------
+
+Test accuracy on client 1 0.8666666666666667
+Test accuracy on client 2 0.7810650887573964
+========================================
+
+========================================
+
+Test on original client distribution for client 1 : 86.67%
+Test on client 2 distribution for client 1 : 78.11%
+Test on original client distribution for client 2 : 78.11%
+Test on client 1 distribution for client 2 : 86.67%

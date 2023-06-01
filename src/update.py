@@ -31,7 +31,7 @@ class LocalUpdate(object):
         self.logger = logger
         self.trainloader, self.validloader, self.testloader = self.train_val_test(
             dataset, list(idxs))
-        self.device = 'mps' if args.gpu else 'cpu'
+        self.device = 'cuda:0' if args.gpu else 'cpu'
         self.userId = int(userId)
 
         # Default criterion set to NLL loss function
@@ -110,7 +110,7 @@ class LocalUpdate(object):
         """ Returns the inference accuracy and loss.
         """
 
-        device = 'mps' 
+        device = 'cuda:0' 
 
 
         model.eval()
@@ -183,13 +183,13 @@ def test_inference(args, model, test_dataset1, test_dataset2):
 
     model.eval()
 
-    device = 'mps' if args.gpu else 'cpu'
+    device = 'cuda:0' if args.gpu else 'cpu'
     criterion = nn.NLLLoss().to(device)
     acc1, acc_on_other1 = inf_test(model, args, test_dataset1, test_dataset2, device, criterion, "client1")
 
     model.eval()
 
-    device = 'mps' if args.gpu else 'cpu'
+    device = 'cuda:0' if args.gpu else 'cpu'
     criterion = nn.NLLLoss().to(device)
     acc2, acc_on_other2 = inf_test( model, args, test_dataset1, test_dataset2,device, criterion, "client2")
 

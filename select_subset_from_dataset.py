@@ -36,10 +36,11 @@ from submodlib import FacilityLocationFunction, DisparitySumFunction, DisparityM
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default='COVID', help='dataset name')
-parser.add_argument('--algo', type=str, default='LogDeterminantFunction', help='algo name')
+parser.add_argument('--algo', type=str, default='logdet', help='algo name')
 parser.add_argument('--budget', type=str, default="0.1", help='budget')
 parser.add_argument('--sample', type=str, default='False', help='sample or not')
 parser.add_argument('--sample_size', type=int, default=3000, help='sample size')
+parser.add_argument('--lake_file_given', type=str, default='False', help='is lake file already computed or not')
 args = parser.parse_args()
 
 
@@ -124,18 +125,21 @@ f_names = dataset_class_names[args.dataset]
 groundData = pd.DataFrame()
 save_file = 'img_features_lake_{}_resnet.xlsx'.format(args.dataset)
 
-for f_name in f_names:
-    print('Extracting features for {} ...'.format(f_name))
-    folder_path = os.path.join(pwd, dataset_folder_names[args.dataset], f_name, 'images')
-    if args.sample == 'True':
-        img_files = random.sample(os.listdir(folder_path), args.sample_size)
-    else:
-        img_files = os.listdir(folder_path)
+if args.lake_file_given == "True":
+    print("Skipping lake file generation...")
+else:
+    for f_name in f_names:
+        print('Extracting features for {} ...'.format(f_name))
+        folder_path = os.path.join(pwd, dataset_folder_names[args.dataset], f_name, 'images')
+        if args.sample == 'True':
+            img_files = random.sample(os.listdir(folder_path), args.sample_size)
+        else:
+            img_files = os.listdir(folder_path)
 
-    df = extract_features_resnet(img_files, folder_path)
-    groundData = pd.concat([groundData, df])
+        df = extract_features_resnet(img_files, folder_path)
+        groundData = pd.concat([groundData, df])
 
-groundData.to_excel(save_file)
+    groundData.to_excel(save_file)
 
 print('Reading data...')
 groundData = pd.read_excel('img_features_lake_{}_resnet.xlsx'.format(args.dataset))

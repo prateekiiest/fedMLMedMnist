@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
     #if args.gpu:
      #   torch.mps.set_device(args.gpu)
-    device = 'mps' if args.gpu else 'cpu'
+    device = "cuda:0" if args.gpu else 'cpu'
 
     target_name_client1 = []
     target_name_client2 = []
