@@ -125,7 +125,7 @@ if __name__ == '__main__':
                         y_true = labels
                         y_pred_d = y_pred.cpu().detach().numpy()
                         y_true_d = y_true.cpu().detach().numpy()
-                        rep = classification_report(y_pred_d, y_true_d, target_names=target_names)
+                        rep = classification_report(y_pred_d, y_true_d, target_names=target_names, labels=[0,1])
                         print(rep)
                     batch_loss.append(loss.item())
 
@@ -170,7 +170,7 @@ if __name__ == '__main__':
                         y_true = labels
                         y_pred_d = y_pred.cpu().detach().numpy()
                         y_true_d = y_true.cpu().detach().numpy()
-                        rep = classification_report(y_pred_d, y_true_d, target_names=target_names)
+                        rep = classification_report(y_pred_d, y_true_d, target_names=target_names, labels = [0,1])
                         print(rep)
                     batch_loss.append(loss.item())
 
