@@ -655,11 +655,11 @@ def test_inference_base2(args, model, test_dataset1, test_dataset2):
 
     model.eval()
 
-    device = 'cpu' if args.gpu else 'cpu'
+    device = 'cuda:0' if args.gpu else 'cpu'
     criterion = nn.NLLLoss().to(device)
     acc1, acc_on_other1 = inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion, "client1")
     
-    device = 'cpu' if args.gpu else 'cpu'
+    device = 'cuda:0' if args.gpu else 'cpu'
     criterion = nn.NLLLoss().to(device)
     acc2, acc_on_other2 = inf_test_base2(model, args, test_dataset1, test_dataset2,device, criterion, "client2")
 

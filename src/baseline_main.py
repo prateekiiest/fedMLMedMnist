@@ -105,7 +105,11 @@ if __name__ == '__main__':
                     optimizer.zero_grad()
                     outputs = global_model(images)
                     labels = labels.long()
-                    labels[labels==2]= 1
+
+                    if args.dataset == "COVID":
+                        labels[labels==3] = 0
+                        labels[labels==1] = 1
+                        
                     loss = criterion(outputs, labels)
                     loss.backward()
                     optimizer.step()
@@ -143,8 +147,14 @@ if __name__ == '__main__':
                     optimizer.zero_grad()
                     outputs = global_model(images)
                     labels = labels.long()
-                    labels[labels==1]= 0
-                    labels[labels==3]= 1
+
+                    if args.dataset == "COVID":
+                        labels[labels==0] = 1
+                        labels[labels==2] = 0
+                    elif args.dataset == "aptos" or args.dataset == "octmnist":
+                        labels[labels==3] = 1
+                        labels[labels==2] = 0
+                
                     loss = criterion(outputs, labels)
                     loss.backward()
                     optimizer.step()
