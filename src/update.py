@@ -475,8 +475,8 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             pred_labels = pred_labels.view(-1)
             y_pred =  pred_labels
             y_true = labels
-            y_pred_d = y_pred.detach().numpy()
-            y_true_d = y_true.detach().numpy()
+            y_pred_d = y_pred.cpu().detach().numpy()
+            y_true_d = y_true.cpu().detach().numpy()
             #print("========================")
             #print("Prediction :",y_pred_d)
             #print("True :",y_true_d)
@@ -530,8 +530,8 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             y_pred = pred_labels
             y_true = labels
            
-            y_pred_d = y_pred.detach().numpy()
-            y_true_d = y_true.detach().numpy()
+            y_pred_d = y_pred.cpu().detach().numpy()
+            y_true_d = y_true.cpu().detach().numpy()
             
             rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
@@ -589,8 +589,8 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             pred_labels = pred_labels.view(-1)
             y_pred =  pred_labels
             y_true = labels
-            y_pred_d = y_pred.detach().numpy()
-            y_true_d = y_true.detach().numpy()
+            y_pred_d = y_pred.cpu().detach().numpy()
+            y_true_d = y_true.cpu().detach().numpy()
        
             rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
@@ -636,8 +636,8 @@ def inf_test_base2(model, args, test_dataset1, test_dataset2, device, criterion,
             pred_labels = pred_labels.view(-1)
             y_pred =  pred_labels
             y_true = labels
-            y_pred_d = y_pred.detach().numpy()
-            y_true_d = y_true.detach().numpy()
+            y_pred_d = y_pred.cpu().detach().numpy()
+            y_true_d = y_true.cpu().detach().numpy()
             
             rep = classification_report(y_pred_d, y_true_d, target_names=target_names,labels=[0,1])
             print("----------------------\n")
