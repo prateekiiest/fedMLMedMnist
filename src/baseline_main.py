@@ -190,8 +190,6 @@ if __name__ == '__main__':
     print('Test on original client distribution for client 2 : {:.2f}%'.format(100*test_acc2))
     print('Test on client 1 distribution for client 2 : {:.2f}%'.format(100*test_acc2_on_other))
 
-
-
 """
 
     # Plot loss
